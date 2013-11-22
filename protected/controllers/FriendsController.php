@@ -1,23 +1,33 @@
 <?php
 
-class UsersController extends Controller
+class FriendsController extends Controller
 {
 
-    public $defaultAction = 'Profile';
+    public $defaultAction = 'FriendList';
 
-	public function actionFriends()
+	public function actionAccept()
 	{
-		$this->render('Friends');
+		$this->render('Accept');
 	}
 
-	public function actionProfile()
+	public function actionAdd()
 	{
-		$this->render('Profile');
+		$this->render('Add');
 	}
 
-	public function actionSearch()
+	public function actionDelete()
 	{
-		$this->render('Search');
+		$this->render('Delete');
+	}
+
+	public function actionFriendList()
+	{
+		$this->render('FriendList');
+	}
+
+	public function actionReject()
+	{
+		$this->render('Reject');
 	}
 
 	// Uncomment the following methods and override them if needed

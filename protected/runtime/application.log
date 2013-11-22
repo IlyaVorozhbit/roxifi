@@ -29,3 +29,14 @@ Stack trace:
 #26 {main}
 REQUEST_URI=/gii/default/login
 ---
+2013/11/22 21:50:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('Friends')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Friends
+HTTP_REFERER=http://roxifi/gii/controller/index
+---

@@ -3,7 +3,7 @@
 
 $this->breadcrumbs=array(
 	'Groups'=>array('/groups'),
-	'Create',
+	'Edit',
 );
 ?>
 <h1><?php echo $this->id . '/' . $this->action->id; ?></h1>

@@ -1,9 +1,9 @@
 <?php
-/* @var $this GroupsController */
+/* @var $this DialogsController */
 
 $this->breadcrumbs=array(
-	'Groups'=>array('/groups'),
-	'Create',
+	'Dialogs'=>array('/dialogs'),
+	'Delete',
 );
 ?>
 <h1><?php echo $this->id . '/' . $this->action->id; ?></h1>

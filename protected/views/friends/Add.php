@@ -1,9 +1,9 @@
 <?php
-/* @var $this GroupsController */
+/* @var $this FriendsController */
 
 $this->breadcrumbs=array(
-	'Groups'=>array('/groups'),
-	'Create',
+	'Friends'=>array('/friends'),
+	'Add',
 );
 ?>
 <h1><?php echo $this->id . '/' . $this->action->id; ?></h1>

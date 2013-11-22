@@ -2,7 +2,144 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17b05958-521c-4d37-97f4-284f165c6c45" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\controllers\EventsController.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\controllers\EventsMembersController.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\controllers\EventsRightsController.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\controllers\GroupsMembersController.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\controllers\GroupsRightsController.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\controllers\MessagesController.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\controllers\NotesController.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\controllers\UsersFieldsController.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\controllers\UsersFriendsController.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\controllers\UsersInfoController.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\controllers\UsersRegistryHashController.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\controllers\WallRecordsController.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\dialogs\_form.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\dialogs\_search.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\dialogs\_view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\dialogs\admin.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\dialogs\create.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\dialogs\index.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\dialogs\update.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\dialogs\view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\eventsMembers\_form.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\eventsMembers\_search.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\eventsMembers\_view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\eventsMembers\admin.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\eventsMembers\create.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\eventsMembers\index.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\eventsMembers\update.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\eventsMembers\view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\eventsRights\_form.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\eventsRights\_search.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\eventsRights\_view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\eventsRights\admin.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\eventsRights\create.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\eventsRights\index.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\eventsRights\update.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\eventsRights\view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\events\_form.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\events\_search.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\events\_view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\events\admin.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\events\create.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\events\index.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\events\update.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\events\view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groupsMembers\_form.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groupsMembers\_search.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groupsMembers\_view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groupsMembers\admin.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groupsMembers\create.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groupsMembers\index.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groupsMembers\update.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groupsMembers\view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groupsRights\_form.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groupsRights\_search.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groupsRights\_view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groupsRights\admin.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groupsRights\create.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groupsRights\index.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groupsRights\update.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groupsRights\view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groups\_form.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groups\_search.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groups\_view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groups\admin.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groups\index.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groups\update.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\groups\view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\messages\_form.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\messages\_search.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\messages\_view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\messages\admin.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\messages\create.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\messages\index.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\messages\update.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\messages\view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\notes\_form.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\notes\_search.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\notes\_view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\notes\admin.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\notes\create.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\notes\index.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\notes\update.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\notes\view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersFields\_form.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersFields\_search.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersFields\_view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersFields\admin.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersFields\create.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersFields\index.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersFields\update.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersFields\view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersFriends\_form.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersFriends\_search.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersFriends\_view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersFriends\admin.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersFriends\create.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersFriends\index.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersFriends\update.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersFriends\view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersInfo\_form.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersInfo\_search.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersInfo\_view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersInfo\admin.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersInfo\create.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersInfo\index.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersInfo\update.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersInfo\view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersRegistryHash\_form.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersRegistryHash\_search.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersRegistryHash\_view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersRegistryHash\admin.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersRegistryHash\create.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersRegistryHash\index.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersRegistryHash\update.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\usersRegistryHash\view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\users\_form.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\users\_search.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\users\_view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\users\admin.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\users\create.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\users\index.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\users\update.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\users\view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\wallRecords\_form.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\wallRecords\_search.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\wallRecords\_view.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\wallRecords\admin.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\wallRecords\create.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\wallRecords\index.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\wallRecords\update.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Rada\home\roxifi\www\protected\views\wallRecords\view.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/config/main.php" afterPath="$PROJECT_DIR$/protected/config/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/DialogsController.php" afterPath="$PROJECT_DIR$/protected/controllers/DialogsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/GroupsController.php" afterPath="$PROJECT_DIR$/protected/controllers/GroupsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/UsersController.php" afterPath="$PROJECT_DIR$/protected/controllers/UsersController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/runtime/application.log" afterPath="$PROJECT_DIR$/protected/runtime/application.log" />
+      <change type="MODIFICATION" beforePath="C:\Rada\home\roxifi\www\protected\views\groups\create.php" afterPath="C:\Rada\home\roxifi\www\protected\views\groups\create.php" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,43 +161,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
+      <file leaf-file-name="SiteController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/controllers/SiteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="28" selection-start="78" selection-end="95" vertical-scroll-proportion="0.0">
+            <state line="71" column="8" selection-start="1823" selection-end="1823" vertical-scroll-proportion="-0.65384614">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/protected/config/main.php">
+      <file leaf-file-name="UsersController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/controllers/UsersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="26" selection-start="671" selection-end="671" vertical-scroll-proportion="0.7030075">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../mctop.ru/www/protected/config/main.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="0" selection-start="1775" selection-end="1979" vertical-scroll-proportion="-7.1923075">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/blackboot/views/layouts/main.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="4" selection-start="2368" selection-end="2368" vertical-scroll-proportion="-6.6538463">
+            <state line="5" column="36" selection-start="87" selection-end="87" vertical-scroll-proportion="0.15977444">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -70,6 +194,10 @@
       <list>
         <option value="$PROJECT_DIR$/themes/blackboot/views/layouts/main.php" />
         <option value="$PROJECT_DIR$/protected/config/main.php" />
+        <option value="$PROJECT_DIR$/protected/controllers/DialogsController.php" />
+        <option value="$PROJECT_DIR$/protected/controllers/FriendsController.php" />
+        <option value="$PROJECT_DIR$/protected/controllers/GroupsController.php" />
+        <option value="$PROJECT_DIR$/protected/controllers/UsersController.php" />
       </list>
     </option>
   </component>
@@ -220,6 +348,42 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -250,8 +414,8 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="options.lastSelected" value="preferences.externalResources" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PublishConfig" serverName="mctop" serverId="53cfc561-a8f4-4ced-983b-c05e6a46c9c2">
     <servers>
@@ -335,11 +499,39 @@
     </servers>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method>
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method>
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method>
+        <option name="FtpUpload" enabled="false">
+          <server_id />
+          <server_name />
+        </option>
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="17b05958-521c-4d37-97f4-284f165c6c45" name="Default" comment="" />
       <created>1385063620377</created>
       <updated>1385063620377</updated>
     </task>
@@ -349,23 +541,23 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25378788" sideWeight="0.60034305" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39965695" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
@@ -426,28 +618,61 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="28" selection-start="78" selection-end="95" vertical-scroll-proportion="0.0">
+        <state line="3" column="28" selection-start="78" selection-end="95" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../mctop.ru/www/protected/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="0" selection-start="1775" selection-end="1979" vertical-scroll-proportion="0.03195489">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/blackboot/views/layouts/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="4" selection-start="2368" selection-end="2368" vertical-scroll-proportion="-6.6538463">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../mctop.ru/www/protected/config/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="0" selection-start="1775" selection-end="1979" vertical-scroll-proportion="-7.1923075">
+        <state line="39" column="4" selection-start="2368" selection-end="2368" vertical-scroll-proportion="0.0327553">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/config/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="26" selection-start="671" selection-end="671" vertical-scroll-proportion="0.7030075">
+        <state line="23" column="16" selection-start="617" selection-end="617" vertical-scroll-proportion="-0.63909775">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/DialogsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="53" selection-end="94" vertical-scroll-proportion="-3.2692308">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/FriendsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="53" selection-end="94" vertical-scroll-proportion="-3.2692308">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/GroupsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="4" selection-start="55" selection-end="55" vertical-scroll-proportion="0.12781955">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="8" selection-start="1823" selection-end="1823" vertical-scroll-proportion="-0.65384614">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="36" selection-start="87" selection-end="87" vertical-scroll-proportion="0.15977444">
           <folding />
         </state>
       </provider>
