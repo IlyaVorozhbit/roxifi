@@ -2,13 +2,53 @@
 /* @var $this UsersController */
 
 $this->breadcrumbs=array(
-	'Users'=>array('/users'),
-	'Profile',
+	'Профиль',
 );
 ?>
-<h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
+<h1><?php echo $user->login;?></h1>
 
-<p>
-	You may change the content of this page by modifying
-	the file <tt><?php echo __FILE__; ?></tt>.
-</p>
+<div class="user_profile">
+
+    <div class="avatar">
+        <img src="/images/no_avatar.png"/>
+    </div>
+
+    <div class="block_user_info">
+
+        <div class="main_info">
+            <p>О себе: Люблю покушать.</p>
+            <p>Увлечения: Программирование, спорт, музыка.</p>
+        </div>
+
+    </div>
+
+    <div class="wall">
+
+        <p>Стена.<p/>
+
+        <?php
+
+            $authors = array();
+
+            foreach($user['wallRecords'] as $key=>$record)
+            {
+                if(empty($authors[$record->user_from]))
+                    $authors[$record->user_from] = Users::model()->findByPk($record->user_from);
+            }
+
+            foreach($user['wallRecords'] as $key=>$record)
+            {
+                $this->renderPartial('profile/wallRecord',array(
+                    'authors'=>$authors,
+                    'record'=>$record
+                ));
+            }
+
+            if(empty($user['wallRecords']))
+            {
+                echo 'У Вас еще нет записей.';
+            }
+        ?>
+
+    </div>
+</div>

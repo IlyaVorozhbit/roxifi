@@ -152,4 +152,26 @@ class Users extends CActiveRecord
         $hash->hash = uniqid();
         $hash->save();
     }
+
+    public function validatePassword($password)
+    {
+        {
+            if (crypt($password, $this->password) == $this->password)
+                return true;
+            else
+                return false;
+        }
+    }
+
+    public function findByPk($pk,$condition='',$params=array())
+    {
+        Yii::trace(get_class($this).'.findByPk()','system.db.ar.CActiveRecord');
+        $prefix=$this->getTableAlias(true).'.';
+        $criteria=$this->getCommandBuilder()->createPkCriteria($this->getTableSchema(),$pk,$condition,$params,$prefix);
+        $result =  $this->query($criteria);
+
+        if(is_null($result))
+            throw new CHttpException(404,'Профиль не найден');
+        return $result;
+    }
 }

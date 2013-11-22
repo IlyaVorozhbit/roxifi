@@ -34,7 +34,7 @@ class WallRecords extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('user_from, user_to, text, time, status', 'required'),
-			array('user_from, user_to, text, status', 'numerical', 'integerOnly'=>true),
+			array('user_from, user_to, status', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, user_from, user_to, text, time, status', 'safe', 'on'=>'search'),

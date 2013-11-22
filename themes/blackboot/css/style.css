@@ -6,14 +6,18 @@
  *
  * Designed by Nachi
  */
- 
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Marmelad&subset=latin,cyrillic);
+
 body {
 	padding-top: 40px;
 
   }
 
 div.cont {
-	background:url(../img/tiny_grid.png) repeat 0 0;
+	#background:url(../img/tiny_grid.png) repeat 0 0;
 	height:100%;
 	min-height:500px;
 	padding-top:30px;
@@ -34,16 +38,14 @@ border-radius:3px;
 -webkit-border-radius:3px;
 -moz-border-radius:3px;
 margin-bottom: 10px ;
-box-shadow: 0 0 10px rgba(189, 189, 189, 0.4);
--webkit-box-shadow: 0 0 10px rgba(189, 189, 189, 0.4);
--moz-box-shadow: 0 0 10px rgba(189, 189, 189, 0.4);
 min-height:300px;
 }
 
 
  
 p, div {
-  font-size:13px;
+  font-size:16px;
+  font-family: 'Marmelad', sans-serif;
 }
 
 div.portlet-decoration {
@@ -491,13 +493,11 @@ div.rememberMe { display:block; margin-left:60px;}
 p.hint { float:left; display:block;}
 
 .extra {
-  border-top: 1px solid #000;
-  padding: 20px 0;
-  font-size: 11px;
-  color: #BBB;
-  background: #1A1A1A;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border-top: 1px solid #000;
+    padding: 20px 0;
+    font-size: 11px;
+    color: #FFF;
+    background: #E7E7E7;
 }
 
 .extra ul {
@@ -552,3 +552,67 @@ p.hint { float:left; display:block;}
     text-align: center;
     padding-top: 10px;
 }
+
+.navbar-inverse .navbar-inner {
+    background-color: #1b1b1b;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#000000), to(#6B6B6B));
+    background-repeat: repeat-x;
+}
+
+.navbar-inverse .brand {
+    color: #FFFFFF;
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a {
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px rgba(184, 126, 23, 1);
+}
+
+.navbar-inverse .nav > li > a:focus, .navbar-inverse .nav > li > a:hover {
+    color: #ffffff;
+    background-color: rgba(209, 209, 209, 0.63);
+}
+
+.user_profile{
+
+}
+
+.user_profile .avatar{
+    border: 1px solid #f3f3f3;
+    width:200px;
+    height:200px;
+    float:left;
+}
+
+.user_profile .block_user_info{
+    padding: 10px;
+    border: 1px solid #f3f3f3;
+    margin-left: 220px;
+}
+
+.user_profile .block_user_info .main_info p{
+    border-bottom: 1px solid #E9E9E9;;
+}
+
+.user_profile .wall{
+    padding: 10px;
+    border: 1px solid #f3f3f3;
+    margin-left: 220px;
+    margin-top: 10px;
+}
+
+
+.user_profile .wall .record{
+    padding: 10px;
+    border: 1px solid #f3f3f3;
+    margin-top: 10px;
+}
+
+.user_profile .wall .record .author{
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.user_profile .wall .record .message{
+    padding: 10px;
+}
+

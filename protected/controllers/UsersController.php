@@ -10,9 +10,9 @@ class UsersController extends Controller
 		$this->render('Friends');
 	}
 
-	public function actionProfile()
+	public function actionProfile($id)
 	{
-		$this->render('Profile');
+		$this->render('Profile',array('user'=>Users::model()->with('wallRecords')->findByPk($id)));
 	}
 
 	public function actionSearch()
