@@ -131,12 +131,6 @@
 	<div class="footer">
 	  <div class="container">
 		<div class="row">
-			<div id="footer-copyright" class="col-md-6">
-				About us | Contact us | Terms & Conditions
-			</div> <!-- /span6 -->
-			<div id="footer-terms" class="col-md-6">
-				© 2012-13 Black Bootstrap. <a href="http://nachi.me.pn" target="_blank">Nachi</a>.
-			</div> <!-- /.span6 -->
 		 </div> <!-- /row -->
 	  </div> <!-- /container -->
 	</div>
