@@ -45,6 +45,7 @@ class Users extends CActiveRecord
 		return array(
 			array('login, email, password', 'required'),
 			array('login, email, password', 'length', 'max'=>255),
+            array('email','email'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, login, email, password', 'safe', 'on'=>'search'),
@@ -127,4 +128,28 @@ class Users extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public function beforeValidate()
+    {
+        if($this->isNewRecord == 1)
+        {
+
+            if(Users::model()->exists('login=:login',array(':login'=>$this->login)))
+                $this->addError('login','Логин '.$this->login .' уже используется.');
+
+            if(Users::model()->exists('email=:email',array(':email'=>$this->email)))
+                $this->addError('email','Email '.$this->email .' уже используется.');
+
+            $this->password = crypt($this->password);
+        }
+        return parent::beforeValidate();
+    }
+
+    public function generateRegisterHash()
+    {
+        $hash = new UsersRegistryHash();
+        $hash->user = $this->id;
+        $hash->hash = uniqid();
+        $hash->save();
+    }
 }
