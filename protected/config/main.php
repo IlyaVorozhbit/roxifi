@@ -50,13 +50,13 @@ return array(
 			),
 		),
 
-        'db'=>array(
-            'connectionString' => 'mysql:host=178.32.53.111;dbname=roxifi_roxifi',
-            'emulatePrepare' => true,
-            'username' => 'roxifi_roxifi',
-            'password' => '12345678',
-            'charset' => 'utf8',
-        ),
+    'db'=>array(
+        'connectionString' => 'mysql:host=178.32.53.111;dbname=roxifi_roxifi',
+        'emulatePrepare' => true,
+        'username' => 'roxifi_roxifi',
+        'password' => '12345678',
+        'charset' => 'utf8',
+    ),
 
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
