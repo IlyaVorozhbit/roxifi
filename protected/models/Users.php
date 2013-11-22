@@ -127,4 +127,12 @@ class Users extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public function validatePassword($password)
+  {
+    if (crypt($password, $this->password) == $this->password)
+      return true;
+    else
+      return false;
+	}
 }
