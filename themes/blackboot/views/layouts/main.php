@@ -54,7 +54,7 @@
 						'activeCssClass'	=> 'active',
 						'items'=>array(
 							array('label'=>$lang->Translate(10), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-							array('label'=>$lang->Translate(4), 'url'=>array('/profile/'.Yii::app()->user->id), 'visible'=>!Yii::app()->user->isGuest),
+							array('label'=>$lang->Translate(4), 'url'=>array('/u'.Yii::app()->user->id), 'visible'=>!Yii::app()->user->isGuest),
 							array('label'=>$lang->Translate(9).' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 						),
 					)); ?>

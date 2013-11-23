@@ -32,7 +32,7 @@ class Notes extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name, text, creator, time', 'required'),
-			array('name, creator', 'numerical', 'integerOnly'=>true),
+			array('creator', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, name, text, creator, time', 'safe', 'on'=>'search'),
