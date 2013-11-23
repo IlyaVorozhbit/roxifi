@@ -1,7 +1,5 @@
 <?php
 
-include_once('d_console.php');
-
 class UsersController extends Controller
 {
   public $defaultAction = 'Profile';
