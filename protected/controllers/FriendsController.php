@@ -5,29 +5,67 @@ class FriendsController extends Controller
 
     public $defaultAction = 'FriendList';
 
-	public function actionAccept()
+	public function actionAccept($id)
 	{
-		$this->render('Accept');
+		if(UsersFriends::acceptRequest($id,Yii::app()->user->id))
+            echo 'Заявка принята';
+        else
+            echo 'Произошла ошибка';
 	}
 
-	public function actionAdd()
+	public function actionAdd($id)
 	{
-		$this->render('Add');
+
+        if(UsersFriends::sendRequest(Yii::app()->user->id,$id))
+            echo 'success';
+
+        else
+            echo 'failed';
+
 	}
 
-	public function actionDelete()
+	public function actionDelete($id)
 	{
-		$this->render('Delete');
+
 	}
 
 	public function actionFriendList()
 	{
-		$this->render('FriendList');
+
+        $criteria=new CDbCriteria;
+        $criteria->condition = '(user_to =:user or user_from=:user) and status = 1';
+        $criteria->params = array(':user'=>Yii::app()->user->id);
+        $pages=new CPagination(UsersFriends::model()->count($criteria));
+        $pages->pageSize=10;
+        $pages->applyLimit($criteria);
+
+        $friends = UsersFriends::model()->findAll($criteria);
+
+        foreach($friends as $key=>$friend)
+        {
+
+            $friend_id = $friend->user_from;
+
+            if($friend_id == Yii::app()->user->id)
+                $friend_id = $friend->user_to;
+
+            $friends[$key] = Users::model()->findByPk($friend_id);
+
+        }
+
+		$this->render('FriendList',array(
+            'friends'=>$friends,
+            'pages'=>$pages
+        ));
+
 	}
 
-	public function actionReject()
+	public function actionReject($id)
 	{
-		$this->render('Reject');
+        if(UsersFriends::rejectRequest($id,Yii::app()->user->id))
+            echo 'Заявка отклонена';
+        else
+            echo 'Произошла ошибка';
 	}
 
 	// Uncomment the following methods and override them if needed

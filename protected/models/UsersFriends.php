@@ -15,6 +15,11 @@
  */
 class UsersFriends extends CActiveRecord
 {
+
+    const STATUS_NEW_REQUEST = 0;
+    const STATUS_FRIEND = 1;
+    const STATUS_DELETED_REQUEST = 2;
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -103,4 +108,119 @@ class UsersFriends extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public static function sendRequest($from,$to)
+    {
+
+        if(self::canRegisterRequest($from,$to))
+        {
+
+            $request = self::getRequest($from,$to);
+            $request->user_from = $from;
+            $request->user_to = $to;
+            $request->status = 0;
+            if($request->save())
+                return 1;
+            else
+                return 0;
+
+        }
+
+    }
+
+    public static function canRegisterRequest($from,$to)
+    {
+
+        return !UsersFriends::model()->exists('((user_from=:from and user_to=:to) or (user_from=:to and user_to=:from)) and status <> '.self::STATUS_DELETED_REQUEST.'',array(
+            ':from'=>$from,
+            ':to'=>$to
+        ));
+
+    }
+
+    public static function acceptRequest($from,$to)
+    {
+
+        $request = UsersFriends::model()->find('((user_from=:from and user_to=:to) and (status = '.self::STATUS_DELETED_REQUEST.' or status = '.self::STATUS_NEW_REQUEST.'))',array(
+            ':from'=>$from,
+            ':to'=>$to
+        ));
+
+        if(is_null($request))
+            throw new CHttpException('404','Заявка не найдена');
+
+        $request->status = self::STATUS_FRIEND;
+
+        if($request->save())
+            return 1;
+
+        else
+            return 0;
+
+    }
+
+    public static function rejectRequest($from,$to)
+    {
+
+        $request = UsersFriends::model()->find('((user_from=:from and user_to=:to) and (status = '.self::STATUS_DELETED_REQUEST.' or status = '.self::STATUS_NEW_REQUEST.'))',array(
+            ':from'=>$from,
+            ':to'=>$to
+        ));
+
+        if(is_null($request))
+            throw new CHttpException('404','Заявка не найдена');
+
+        $request->status = self::STATUS_FOLLOWER;
+
+        if($request->save())
+            return 1;
+
+        else
+            return 0;
+
+    }
+
+    public static function deleteFromFriends($removing,$removed)
+    {
+
+        $request = UsersFriends::model()->find('(((user_from=:removing and user_to=:removed) or (user_from=:removed and user_to=:removing)) and (status <> '.self::STATUS_DELETED_REQUEST.' or status <> '.self::STATUS_NEW_REQUEST.'))',array(
+            ':removing'=>$removing,
+            ':removed'=>$removed
+        ));
+
+        if(is_null($request))
+            throw new CHttpException('403','Пользователь не является Вашим другом');
+
+        $request->status = self::STATUS_DELETED_REQUEST;
+
+        if($request->save())
+            return 1;
+
+        else
+            return 0;
+
+    }
+
+    public static function getUserFriends($user)
+    {
+        return UsersFriends::model()->findAll('((user_from=:from) or (user_to=:from)) and status = '.self::STATUS_FRIEND.'',array(
+            ':user'=>$user,
+        ));
+    }
+
+    public static function getRequest($from,$to)
+    {
+
+        $request = UsersFriends::model()->find('((user_from=:from and user_to=:to) or (user_from=:to and user_to=:from)) and status = '.self::STATUS_DELETED_REQUEST.'',array(
+            ':from'=>$from,
+            ':to'=>$to
+        ));
+
+        if(is_null($request))
+            return new UsersFriends();
+
+        else
+            return $request;
+
+    }
 }

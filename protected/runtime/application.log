@@ -915,3 +915,263 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/favicon.ico
 ---
+2013/11/23 22:34:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "notes".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php:286
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('notes')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 R:\home\roxifi\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/notes
+---
+2013/11/23 22:34:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "notes".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('notes')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('notes')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/notes')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/users/notes
+---
+2013/11/23 22:36:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "notes".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('notes')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('notes')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/notes')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/users/notes
+---
+2013/11/23 22:36:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "notes".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('notes')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('notes')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/notes')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/notes
+---
+2013/11/23 22:37:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "notes".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('notes')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('notes')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/notes')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/notes
+---
+2013/11/23 22:39:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "notes".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('notes')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('notes')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/notes')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/notes
+---
+2013/11/23 22:41:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "notes".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('notes')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('notes')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/notes')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/notes
+---
+2013/11/23 22:43:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "notes".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('notes')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('notes')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/notes')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/notes
+---
+2013/11/23 22:44:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "notes".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php:286
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('notes')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 R:\home\roxifi\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/notes
+---
+2013/11/23 23:14:44 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetch(): SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. Выполнявшийся SQL-запрос: SELECT 1 FROM `users_friends` `t` WHERE (user_from=:from and user_to=:to) or (user_from=:to and user_to=:from) and status LIMIT 1.
+in R:\home\roxifi\www\protected\models\UsersFriends.php (126)
+in R:\home\roxifi\www\protected\models\UsersFriends.php (110)
+in R:\home\roxifi\www\protected\controllers\FriendsController.php (15)
+2013/11/23 23:14:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[HY093]: Invalid parameter number: no parameters were bound. The SQL statement executed was: SELECT 1 FROM `users_friends` `t` WHERE (user_from=:from and user_to=:to) or (user_from=:to and user_to=:from) and status LIMIT 1' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php:543
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1670): CDbCommand->queryRow()
+#2 R:\home\roxifi\www\protected\models\UsersFriends.php(126): CActiveRecord->exists('(user_from=:fro...')
+#3 R:\home\roxifi\www\protected\models\UsersFriends.php(110): UsersFriends::canRegisterRequest('7', '1')
+#4 R:\home\roxifi\www\protected\controllers\FriendsController.php(15): UsersFriends::sendRequest('7', '1')
+#5 [internal function]: FriendsController->actionAdd('1')
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(FriendsController), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(FriendsController), Object(ReflectionMethod), Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('add')
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('friends/add')
+#13 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 R:\home\roxifi\www\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/friends/add/1
+---
+2013/11/23 23:31:30 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetch(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 1' at line 1. Выполнявшийся SQL-запрос: SELECT * FROM `users_friends` `t` WHERE ((user_from=:from and user_to=:to)and (status <> 3) LIMIT 1.
+in R:\home\roxifi\www\protected\models\UsersFriends.php (147)
+in R:\home\roxifi\www\protected\controllers\FriendsController.php (10)
+in R:\home\roxifi\www\index.php (13)
+2013/11/23 23:31:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `users_friends` `t` WHERE ((user_from=:from and user_to=:to)and (status <> 3) LIMIT 1' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php:543
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 R:\home\roxifi\www\protected\models\UsersFriends.php(147): CActiveRecord->find('((user_from=:fr...', Array)
+#4 R:\home\roxifi\www\protected\controllers\FriendsController.php(10): UsersFriends::acceptRequest('1', '7')
+#5 [internal function]: FriendsController->actionAccept('1')
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(FriendsController), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(FriendsController), Object(ReflectionMethod), Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('accept')
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('friends/accept')
+#13 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 R:\home\roxifi\www\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/friends/accept/1
+---
+2013/11/23 23:34:40 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetch(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 1' at line 1. Выполнявшийся SQL-запрос: SELECT * FROM `users_friends` `t` WHERE ((user_from=:from and user_to=:to) and (status = 3 or status = 0) LIMIT 1.
+in R:\home\roxifi\www\protected\models\UsersFriends.php (147)
+in R:\home\roxifi\www\protected\controllers\FriendsController.php (10)
+in R:\home\roxifi\www\index.php (13)
+2013/11/23 23:34:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `users_friends` `t` WHERE ((user_from=:from and user_to=:to) and (status = 3 or status = 0) LIMIT 1' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php:543
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 R:\home\roxifi\www\protected\models\UsersFriends.php(147): CActiveRecord->find('((user_from=:fr...', Array)
+#4 R:\home\roxifi\www\protected\controllers\FriendsController.php(10): UsersFriends::acceptRequest('1', '7')
+#5 [internal function]: FriendsController->actionAccept('1')
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(FriendsController), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(FriendsController), Object(ReflectionMethod), Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('accept')
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('friends/accept')
+#13 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 R:\home\roxifi\www\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/friends/accept/1
+---
+2013/11/23 23:34:41 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetch(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 1' at line 1. Выполнявшийся SQL-запрос: SELECT * FROM `users_friends` `t` WHERE ((user_from=:from and user_to=:to) and (status = 3 or status = 0) LIMIT 1.
+in R:\home\roxifi\www\protected\models\UsersFriends.php (147)
+in R:\home\roxifi\www\protected\controllers\FriendsController.php (10)
+in R:\home\roxifi\www\index.php (13)
+2013/11/23 23:34:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `users_friends` `t` WHERE ((user_from=:from and user_to=:to) and (status = 3 or status = 0) LIMIT 1' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php:543
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 R:\home\roxifi\www\protected\models\UsersFriends.php(147): CActiveRecord->find('((user_from=:fr...', Array)
+#4 R:\home\roxifi\www\protected\controllers\FriendsController.php(10): UsersFriends::acceptRequest('1', '7')
+#5 [internal function]: FriendsController->actionAccept('1')
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(FriendsController), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(FriendsController), Object(ReflectionMethod), Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('accept')
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('friends/accept')
+#13 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 R:\home\roxifi\www\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/friends/accept/1
+---
+2013/11/23 23:35:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Заявка не найдена' in R:\home\roxifi\www\protected\models\UsersFriends.php:150
+Stack trace:
+#0 R:\home\roxifi\www\protected\controllers\FriendsController.php(10): UsersFriends::acceptRequest('1', '7')
+#1 [internal function]: FriendsController->actionAccept('1')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(FriendsController), Array)
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(FriendsController), Object(ReflectionMethod), Array)
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('accept')
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('friends/accept')
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 R:\home\roxifi\www\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/friends/accept/1
+---
+2013/11/23 23:36:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Заявка не найдена' in R:\home\roxifi\www\protected\models\UsersFriends.php:150
+Stack trace:
+#0 R:\home\roxifi\www\protected\controllers\FriendsController.php(10): UsersFriends::acceptRequest('7', '7')
+#1 [internal function]: FriendsController->actionAccept('7')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(FriendsController), Array)
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(FriendsController), Object(ReflectionMethod), Array)
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('accept')
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('friends/accept')
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 R:\home\roxifi\www\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/friends/accept/7
+---
+2013/11/23 23:36:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Заявка не найдена' in R:\home\roxifi\www\protected\models\UsersFriends.php:150
+Stack trace:
+#0 R:\home\roxifi\www\protected\controllers\FriendsController.php(10): UsersFriends::acceptRequest('1', '7')
+#1 [internal function]: FriendsController->actionAccept('1')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(FriendsController), Array)
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(FriendsController), Object(ReflectionMethod), Array)
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('accept')
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('friends/accept')
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 R:\home\roxifi\www\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/friends/accept/1
+---
+2013/11/23 23:36:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Заявка не найдена' in R:\home\roxifi\www\protected\models\UsersFriends.php:150
+Stack trace:
+#0 R:\home\roxifi\www\protected\controllers\FriendsController.php(10): UsersFriends::acceptRequest('1', '7')
+#1 [internal function]: FriendsController->actionAccept('1')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(FriendsController), Array)
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(FriendsController), Object(ReflectionMethod), Array)
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('accept')
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('friends/accept')
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 R:\home\roxifi\www\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/friends/accept/1
+---
+2013/11/24 00:17:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Профиль не найден' in R:\home\roxifi\www\protected\models\Users.php:171
+Stack trace:
+#0 R:\home\roxifi\www\protected\controllers\FriendsController.php(52): Users->findByPk(NULL)
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): FriendsController->actionFriendList()
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('')
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('friends')
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 R:\home\roxifi\www\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/friends
+---
