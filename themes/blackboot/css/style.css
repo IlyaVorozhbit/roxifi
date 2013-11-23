@@ -584,6 +584,10 @@ p.hint { float:left; display:block;}
     float:left;
 }
 
+.user_profile .profile_buttons{
+    padding:10px;
+}
+
 .icon
 {
   width: 15px;

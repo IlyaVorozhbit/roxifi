@@ -7,25 +7,45 @@ class FriendsController extends Controller
 
 	public function actionAccept($id)
 	{
+
+        $lang = new Language;
+
 		if(UsersFriends::acceptRequest($id,Yii::app()->user->id))
-            echo 'Заявка принята';
+            Yii::app()->user->setFlash('success', $lang->Translate(25));
         else
-            echo 'Произошла ошибка';
+            Yii::app()->user->setFlash('success', $lang->Translate(31));
+
+        $this->render('Accept');
+
 	}
 
 	public function actionAdd($id)
 	{
 
+        $lang = new Language;
+
         if(UsersFriends::sendRequest(Yii::app()->user->id,$id))
-            echo 'success';
+            Yii::app()->user->setFlash('success', $lang->Translate(24));
 
         else
-            echo 'failed';
+            Yii::app()->user->setFlash('fail', 'an error occured');
+
+        $this->render('Add');
 
 	}
 
 	public function actionDelete($id)
 	{
+
+        $lang = new Language;
+
+        if(UsersFriends::deleteFromFriends(Yii::app()->user->id,$id))
+            Yii::app()->user->setFlash('success', $lang->Translate(28));
+
+        else
+            Yii::app()->user->setFlash('fail', 'an error occured');
+
+        $this->render('Delete');
 
 	}
 
@@ -40,6 +60,7 @@ class FriendsController extends Controller
         $pages->applyLimit($criteria);
 
         $friends = UsersFriends::model()->findAll($criteria);
+        $requests = UsersFriends::getUserIncommingFriends(Yii::app()->user->id);
 
         foreach($friends as $key=>$friend)
         {
@@ -53,8 +74,10 @@ class FriendsController extends Controller
 
         }
 
+
 		$this->render('FriendList',array(
             'friends'=>$friends,
+            'requests'=>$requests,
             'pages'=>$pages
         ));
 
@@ -62,10 +85,15 @@ class FriendsController extends Controller
 
 	public function actionReject($id)
 	{
+
+        $lang = new Language;
+
         if(UsersFriends::rejectRequest($id,Yii::app()->user->id))
-            echo 'Заявка отклонена';
+            Yii::app()->user->setFlash('success', $lang->Translate(26));
         else
-            echo 'Произошла ошибка';
+            Yii::app()->user->setFlash('success', $lang->Translate(31));
+
+        $this->render('Reject');
 	}
 
 	// Uncomment the following methods and override them if needed

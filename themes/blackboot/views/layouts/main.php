@@ -3,9 +3,9 @@
 		// use it when you need it!
 		/*
 		->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap.css' )
-		->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap-responsive.css' )
+		->registerCssFile( Yii::app()->theme->baseUrl . '/css/bootstrap-responsive.css' )*/
 		->registerCoreScript( 'jquery' )
-		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-transition.js', CClientScript::POS_END )
+		/*->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-transition.js', CClientScript::POS_END )
 		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-alert.js', CClientScript::POS_END )
 		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-modal.js', CClientScript::POS_END )
 		->registerScriptFile( Yii::app()->theme->baseUrl . '/js/bootstrap-dropdown.js', CClientScript::POS_END )
@@ -54,6 +54,7 @@
 						'activeCssClass'	=> 'active',
 						'items'=>array(
 							array('label'=>$lang->Translate(10), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+							array('label'=>$lang->Translate(19), 'url'=>array('/friends'), 'visible'=>!Yii::app()->user->isGuest),
 							array('label'=>$lang->Translate(4), 'url'=>array('/u'.Yii::app()->user->id), 'visible'=>!Yii::app()->user->isGuest),
 							array('label'=>$lang->Translate(9).' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 						),

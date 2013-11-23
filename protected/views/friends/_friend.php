@@ -1,1 +1,1 @@
-<?php echo $friend->login; ?>
+<a href="/u<?php echo $friend->id;?>"><?php echo $friend->login; ?></a> <a class="btn" href="/friends/delete/<?php echo $friend->id?>">Удалить</a>

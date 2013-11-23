@@ -9,9 +9,23 @@
 ?>
 <h1><?php echo $user->login;?></h1>
 <div class="user_profile">
+
+    <div class="profile_buttons">
+        <?php
+            if(UsersFriends::canRegisterRequest(Yii::app()->user->id,$user->id))
+                echo '<a class="btn" href="/friends/add/'.$user->id.'">'.$lang->Translate(20).'</a>';
+            else
+            {
+                if(UsersFriends::isFriends(Yii::app()->user->id,$user->id))
+                    echo '<a class="btn" href="/friends/delete/'.$user->id.'">'.$lang->Translate(21).'</a>';
+            }
+            ?>
+    </div>
+
   <div class="avatar">
     <img src="/images/no_avatar.png"/>
   </div>
+
   <div class="block_user_info">
     <div class="main_info">
       <p><?php echo $lang->Translate(4);?><img class='icon' src="/images/edit.png" align='right'/><p/>
@@ -19,6 +33,7 @@
       <?php echo '<hr><a href="/u'.$user->id.'/notes">'.$lang->Translate(13).'</a>' ?>
     </div>
   </div>
+
   <div class="wall">
     <p><?php echo $lang->Translate(5);?><p/>
     <?php

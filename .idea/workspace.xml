@@ -2,12 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17b05958-521c-4d37-97f4-284f165c6c45" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/views/friends/_friend.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/views/friends/_friend_incomming.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lang/en.conf" afterPath="$PROJECT_DIR$/lang/en.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lang/ru.conf" afterPath="$PROJECT_DIR$/lang/ru.conf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/FriendsController.php" afterPath="$PROJECT_DIR$/protected/controllers/FriendsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/UsersController.php" afterPath="$PROJECT_DIR$/protected/controllers/UsersController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/UsersFriends.php" afterPath="$PROJECT_DIR$/protected/models/UsersFriends.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/runtime/application.log" afterPath="$PROJECT_DIR$/protected/runtime/application.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/friends/Accept.php" afterPath="$PROJECT_DIR$/protected/views/friends/Accept.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/friends/Add.php" afterPath="$PROJECT_DIR$/protected/views/friends/Add.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/friends/Delete.php" afterPath="$PROJECT_DIR$/protected/views/friends/Delete.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/friends/FriendList.php" afterPath="$PROJECT_DIR$/protected/views/friends/FriendList.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/friends/Reject.php" afterPath="$PROJECT_DIR$/protected/views/friends/Reject.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/friends/_friend.php" afterPath="$PROJECT_DIR$/protected/views/friends/_friend.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/users/Notes.php" afterPath="$PROJECT_DIR$/protected/views/users/Notes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/users/Profile.php" afterPath="$PROJECT_DIR$/protected/views/users/Profile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/users/profile/notes.php" afterPath="$PROJECT_DIR$/protected/views/users/profile/notes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/users/profile/wallRecord.php" afterPath="$PROJECT_DIR$/protected/views/users/profile/wallRecord.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/blackboot/css/style.css" afterPath="$PROJECT_DIR$/themes/blackboot/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/blackboot/views/layouts/main.php" afterPath="$PROJECT_DIR$/themes/blackboot/views/layouts/main.php" />
     </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,25 +46,61 @@
       <file leaf-file-name="FriendsController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/controllers/FriendsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="64" selection-start="1194" selection-end="1194" vertical-scroll-proportion="-15.692307">
+            <state line="62" column="43" selection-start="1553" selection-end="1553" vertical-scroll-proportion="18.961538">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FriendList.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/views/friends/FriendList.php">
+      <file leaf-file-name="UsersController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/controllers/UsersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="35" selection-start="224" selection-end="224" vertical-scroll-proportion="-9.153846">
+            <state line="48" column="24" selection-start="1276" selection-end="1276" vertical-scroll-proportion="-19.615385">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_friend.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/protected/views/friends/_friend.php">
+      <file leaf-file-name="wallRecord.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/views/users/profile/wallRecord.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="29" vertical-scroll-proportion="0.0">
+            <state line="7" column="15" selection-start="339" selection-end="339" vertical-scroll-proportion="-4.576923">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notes.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/views/users/profile/notes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="42" selection-start="395" selection-end="398" vertical-scroll-proportion="-5.8846154">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Notes.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/views/users/Notes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="32" selection-start="184" selection-end="184" vertical-scroll-proportion="0.2620424">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Profile.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/views/users/Profile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="127" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ru.conf" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lang/ru.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="11" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -69,22 +119,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/themes/blackboot/views/layouts/main.php" />
-        <option value="$PROJECT_DIR$/protected/components/UserIdentity.php" />
-        <option value="$PROJECT_DIR$/protected/views/error404.php" />
-        <option value="$PROJECT_DIR$/protected/views/system/error404.php" />
-        <option value="$PROJECT_DIR$/protected/views/site/error.php" />
-        <option value="$PROJECT_DIR$/themes/blackboot/css/style.css" />
-        <option value="$PROJECT_DIR$/protected/models/WallRecords.php" />
-        <option value="$PROJECT_DIR$/protected/models/Users.php" />
-        <option value="$PROJECT_DIR$/protected/views/users/profile/wallRecord.php" />
+        <option value="$PROJECT_DIR$/protected/views/friends/Add.php" />
+        <option value="$PROJECT_DIR$/protected/views/friends/Delete.php" />
         <option value="$PROJECT_DIR$/protected/views/users/Profile.php" />
-        <option value="$PROJECT_DIR$/protected/config/main.php" />
-        <option value="$PROJECT_DIR$/protected/controllers/UsersController.php" />
-        <option value="$PROJECT_DIR$/protected/models/UsersFriends.php" />
         <option value="$PROJECT_DIR$/protected/views/friends/FriendList.php" />
+        <option value="$PROJECT_DIR$/protected/views/friends/_friend_incomming.php" />
+        <option value="$PROJECT_DIR$/lang/ru.conf" />
         <option value="$PROJECT_DIR$/protected/controllers/FriendsController.php" />
+        <option value="$PROJECT_DIR$/protected/views/friends/Accept.php" />
+        <option value="$PROJECT_DIR$/protected/views/friends/Reject.php" />
+        <option value="$PROJECT_DIR$/protected/models/UsersFriends.php" />
         <option value="$PROJECT_DIR$/protected/views/friends/_friend.php" />
+        <option value="$PROJECT_DIR$/lang/en.conf" />
+        <option value="$PROJECT_DIR$/protected/controllers/UsersController.php" />
+        <option value="$PROJECT_DIR$/protected/views/users/profile/wallRecord.php" />
+        <option value="$PROJECT_DIR$/protected/views/users/profile/notes.php" />
+        <option value="$PROJECT_DIR$/protected/views/users/Notes.php" />
       </list>
     </option>
   </component>
@@ -153,7 +203,135 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blackboot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blackboot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blackboot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="profile" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -194,6 +372,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="friends" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -422,104 +632,117 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../yii-1.1.14.f0fee9/framework/db/ar/CActiveRecord.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1480" column="0" selection-start="52896" selection-end="53227" vertical-scroll-proportion="0.34874758" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/Users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="171" column="0" selection-start="5645" selection-end="5645" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/WallRecords.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="37" selection-start="888" selection-end="888" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/blackboot/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="615" column="18" selection-start="12200" selection-end="12200" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/users/profile/wallRecord.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="27" selection-start="81" selection-end="81" vertical-scroll-proportion="0.098265894" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/controllers/SiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="21" selection-start="1963" selection-end="1963" vertical-scroll-proportion="-1.1923077" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/LoginForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="36" selection-start="1084" selection-end="1084" vertical-scroll-proportion="-7.1923075" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/UserIdentity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="6" selection-start="184" selection-end="184" vertical-scroll-proportion="-0.02255639" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/users/Profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="10" selection-start="976" selection-end="976" vertical-scroll-proportion="-0.21428572">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/Notes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.67105263">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/config/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="52" selection-start="1238" selection-end="1238" vertical-scroll-proportion="0.2236842">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/controllers/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="31" selection-start="454" selection-end="454" vertical-scroll-proportion="0.09586466">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/friends/FriendList.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="35" selection-start="224" selection-end="224" vertical-scroll-proportion="-9.153846">
+        <state line="20" column="47" selection-start="355" selection-end="372" vertical-scroll-proportion="-13.076923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/friends/Delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="3" selection-start="0" selection-end="378" vertical-scroll-proportion="-7.8461537">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/friends/Reject.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="34" selection-start="193" selection-end="193" vertical-scroll-proportion="-6.5384617">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/friends/_friend_incomming.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="72" selection-start="0" selection-end="224" vertical-scroll-proportion="-0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/models/UsersFriends.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="6" selection-start="376" selection-end="376" vertical-scroll-proportion="-0.84585744">
+        <state line="242" column="101" selection-start="6640" selection-end="6640" vertical-scroll-proportion="-5.3461537">
           <folding>
             <element signature="n#sendRequest#0;n#UsersFriends#0;n#!!top" expanded="false" />
-            <element signature="n#canRegisterRequest#0;n#UsersFriends#0;n#!!top" expanded="false" />
             <element signature="n#acceptRequest#0;n#UsersFriends#0;n#!!top" expanded="false" />
-            <element signature="n#rejectRequest#0;n#UsersFriends#0;n#!!top" expanded="false" />
-            <element signature="n#deleteFromFriends#0;n#UsersFriends#0;n#!!top" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/controllers/FriendsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="64" selection-start="1194" selection-end="1194" vertical-scroll-proportion="-15.692307">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/friends/_friend.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="29" vertical-scroll-proportion="0.0">
+        <state line="0" column="108" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/friends/Accept.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="23" selection-start="0" selection-end="378" vertical-scroll-proportion="-4.576923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lang/en.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="20" selection-start="577" selection-end="577" vertical-scroll-proportion="0.9139785">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/FriendsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="43" selection-start="1553" selection-end="1553" vertical-scroll-proportion="18.961538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-3.6654136">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="24" selection-start="1276" selection-end="1276" vertical-scroll-proportion="-19.615385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/users/profile/wallRecord.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="15" selection-start="339" selection-end="339" vertical-scroll-proportion="-4.576923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/users/Profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="127" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/users/profile/notes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="42" selection-start="395" selection-end="398" vertical-scroll-proportion="-5.8846154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lang/ru.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="11" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/users/Notes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="32" selection-start="184" selection-end="184" vertical-scroll-proportion="0.2620424">
           <folding />
         </state>
       </provider>

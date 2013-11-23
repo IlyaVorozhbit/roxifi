@@ -131,6 +131,9 @@ class UsersFriends extends CActiveRecord
     public static function canRegisterRequest($from,$to)
     {
 
+        if($from==$to)
+            return 0;
+
         return !UsersFriends::model()->exists('((user_from=:from and user_to=:to) or (user_from=:to and user_to=:from)) and status <> '.self::STATUS_DELETED_REQUEST.'',array(
             ':from'=>$from,
             ':to'=>$to
@@ -162,7 +165,7 @@ class UsersFriends extends CActiveRecord
     public static function rejectRequest($from,$to)
     {
 
-        $request = UsersFriends::model()->find('((user_from=:from and user_to=:to) and (status = '.self::STATUS_DELETED_REQUEST.' or status = '.self::STATUS_NEW_REQUEST.'))',array(
+        $request = UsersFriends::model()->find('((user_from=:from and user_to=:to) and (status = '.self::STATUS_NEW_REQUEST.'))',array(
             ':from'=>$from,
             ':to'=>$to
         ));
@@ -170,7 +173,7 @@ class UsersFriends extends CActiveRecord
         if(is_null($request))
             throw new CHttpException('404','Заявка не найдена');
 
-        $request->status = self::STATUS_FOLLOWER;
+        $request->status = self::STATUS_DELETED_REQUEST;
 
         if($request->save())
             return 1;
@@ -183,7 +186,7 @@ class UsersFriends extends CActiveRecord
     public static function deleteFromFriends($removing,$removed)
     {
 
-        $request = UsersFriends::model()->find('(((user_from=:removing and user_to=:removed) or (user_from=:removed and user_to=:removing)) and (status <> '.self::STATUS_DELETED_REQUEST.' or status <> '.self::STATUS_NEW_REQUEST.'))',array(
+        $request = UsersFriends::model()->find('(((user_from=:removing and user_to=:removed) or (user_from=:removed and user_to=:removing)) and ((status <> '.self::STATUS_DELETED_REQUEST.')))',array(
             ':removing'=>$removing,
             ':removed'=>$removed
         ));
@@ -222,5 +225,44 @@ class UsersFriends extends CActiveRecord
         else
             return $request;
 
+    }
+
+    public static function isFriends($user1,$user2)
+    {
+        if(UsersFriends::model()->exists('((user_from=:from and user_to=:to) or (user_from=:to and user_to=:from)) and (status = '.self::STATUS_FRIEND.')',array(
+            ':from'=>$user1,
+            ':to'=>$user2
+        )))
+            return 1;
+        else
+            return 0;
+    }
+
+    public static function getUserIncommingRequests($user)
+    {
+        return UsersFriends::model()->findAll('(user_to=:user and status = '.self::STATUS_NEW_REQUEST.') ',array(
+            ':user'=>$user
+        ));
+    }
+
+    public static function getUserIncommingFriends($user)
+    {
+
+        $fiends_requests = self::getUserIncommingRequests($user);
+        $friends = array();
+
+        foreach($fiends_requests as $key=>$friend)
+        {
+
+            $friend_id = $friend->user_from;
+
+            if($friend_id == Yii::app()->user->id)
+                $friend_id = $friend->user_to;
+
+            $friends[$key] = Users::model()->findByPk($friend_id);
+
+        }
+
+        return $friends;
     }
 }

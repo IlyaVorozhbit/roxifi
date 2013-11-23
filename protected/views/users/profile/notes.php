@@ -10,3 +10,4 @@
     <?php echo $lang->Translate(15).': '.'<i>'.$note->time.'</i><br>'.$lang->Translate(11).': <i>'.$note->name.'</i><br>'.$lang->Translate(12).': <i>'.$note->text.'<i>';?>
   </div>
 </div>
+<hr/>

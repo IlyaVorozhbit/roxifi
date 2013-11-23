@@ -1,14 +1,23 @@
 <?php
-/* @var $this FriendsController */
+/* @var $this UsersController */
+
+$lang = new Language;
 
 $this->breadcrumbs=array(
-	'Friends'=>array('/friends'),
-	'Delete',
+    $lang->Translate(19)=>'/friends',
+    $lang->Translate(23),
 );
 ?>
-<h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
+<h1><?php echo $lang->Translate(23)?></h1>
 
 <p>
-	You may change the content of this page by modifying
-	the file <tt><?php echo __FILE__; ?></tt>.
+
+
+    <?php
+    foreach(Yii::app()->user->getFlashes() as $key => $message) {
+        echo '<div class="flash-' . $key . '">' . $message . "</div>\n";
+    }
+    ?>
+
+
 </p>

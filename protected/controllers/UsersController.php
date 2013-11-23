@@ -26,7 +26,7 @@ class UsersController extends Controller
     $criteria->order = 'time desc';
     $criteria->params = array(':user'=>$id);
     $pages=new CPagination(Notes::model()->count($criteria));
-    $pages->pageSize=1;
+    $pages->pageSize=10;
     $pages->applyLimit($criteria);
 
     $notes = Notes::model()->findAll($criteria);
@@ -55,7 +55,7 @@ class UsersController extends Controller
     $criteria->order = 'time desc';
     $criteria->params = array(':user'=>$id);
     $pages=new CPagination(WallRecords::model()->count($criteria));
-    $pages->pageSize=1;
+    $pages->pageSize=10;
     $pages->applyLimit($criteria);
 
     $wallRecords = WallRecords::model()->findAll($criteria);

@@ -1,14 +1,27 @@
 <?php
-  $lang = new Language;
+/* @var $this UsersController */
 
-  $this->widget('CLinkPager',array(
-    'pages'=>$pages,
-    'maxButtonCount' => 1,
-    'cssFile'=>'',
-    'header' =>$lang->Translate(13),
+    $creator = Users::model()->findByPk($_GET['id']);
+
+    $lang = new Language;
+
+    $this->breadcrumbs=array(
+        $lang->Translate(4). ' '. $creator->login=>array('/u'.$creator->id),
+        $lang->Translate(13),
+    );
+?>
+
+<h1><?php echo $lang->Translate(13)?></h1>
+
+<?
+    $this->widget('CLinkPager',array(
+        'pages'=>$pages,
+        'maxButtonCount' => 1,
+        'cssFile'=>'',
+        'header' =>$lang->Translate(13),
     ));
 
-  $creator = Users::model()->findByPk(Yii::app()->user->id);
+
 
   foreach($notes as $key=>$note)
     $this->renderPartial('profile/notes',array(

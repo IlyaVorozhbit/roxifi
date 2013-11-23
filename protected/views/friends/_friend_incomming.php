@@ -1,0 +1,1 @@
+<a href="/u<?php echo $friend->id;?>"><?php echo $friend->login; ?></a> <a class="btn" href="/friends/accept/<?php echo $friend->id?>">Добавить</a> <a class="btn" href="/friends/reject/<?php echo $friend->id?>">Отклонить</a>
