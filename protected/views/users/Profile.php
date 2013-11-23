@@ -33,15 +33,25 @@
         echo CHtml::submitButton($lang->Translate(7)).'<br>';
         $this->endWidget();
         $authors = array();
-        foreach($user['wallRecords'] as $key=>$record)
+
+      $this->widget('CLinkPager',array(
+      'pages'=>$pages,
+      'maxButtonCount' => 1,
+      'cssFile'=>'',
+      'header' => '',
+      ));
+
+        foreach($wallRecords as $key=>$record)
           if(empty($authors[$record->user_from]))
             $authors[$record->user_from] = Users::model()->findByPk($record->user_from);
-        foreach($user['wallRecords'] as $key=>$record)
+
+        foreach($wallRecords as $key=>$record)
           $this->renderPartial('profile/wallRecord',array(
               'authors'=>$authors,
               'record'=>$record
           ));
-        if (empty($user['wallRecords']))
+
+        if (empty($wallRecords))
           echo $lang->Translate(8);
     ?>
   </div>

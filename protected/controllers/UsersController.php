@@ -12,7 +12,35 @@ class UsersController extends Controller
 
 	public function actionProfile($id)
 	{
-		$this->render('Profile',array('user'=>Users::model()->with('wallRecords', 'usersInfos')->findByPk($id)));
+
+        $model = new WallRecords();
+
+        if(isset($_POST['WallRecords'])){
+            $model->attributes = $_POST['WallRecords'];
+            $model->user_from = Yii::app()->user->id;
+            $model->user_to = $id;
+            $model->time = date('Y-m-d H:i:s',time());
+            $model->status = 1;
+            $model->save() or die(print_r($model->getErrors()));
+
+        }
+
+        $criteria=new CDbCriteria;
+        $criteria->condition = 'user_to =:user and status = 1';
+        $criteria->order = 'time desc';
+        $criteria->params = array(':user'=>$id);
+        $pages=new CPagination(WallRecords::model()->count($criteria));
+        $pages->pageSize=1;
+        $pages->applyLimit($criteria);
+
+        $wallRecords = WallRecords::model()->findAll($criteria);
+
+		$this->render('Profile',array(
+            'user'=>Users::model()->with('usersInfos')->findByPk($id),
+            'wallRecords'=>$wallRecords,
+            'pages'=>$pages,
+            'model'=>$model
+        ));
 	}
 
 	public function actionSearch()
