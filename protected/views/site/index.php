@@ -1,5 +1,2 @@
-<h1>Добро пожаловать в Roxifi</h1>
-
-    <p>
-        Roxifi является социальной сетью для студентов СПбГПУ
-    </p>
+<h1><?php $lang = new Language; echo $lang->Translate(1);?></h1>
+<p><?php $lang = new Language; echo $lang->Translate(1);?></p>

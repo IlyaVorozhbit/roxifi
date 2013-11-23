@@ -43,12 +43,12 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('login, email, password', 'required'),
-			array('login, email, password', 'length', 'max'=>255),
+			array('login, email, password, language', 'required'),
+			array('login, email, password, language', 'length', 'max'=>255),
             array('email','email'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, login, email, password', 'safe', 'on'=>'search'),
+			array('id, login, email, password, language', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -87,6 +87,7 @@ class Users extends CActiveRecord
 			'login' => 'Login',
 			'email' => 'Email',
 			'password' => 'Password',
+      'language' => 'Language',
 		);
 	}
 
@@ -112,6 +113,7 @@ class Users extends CActiveRecord
 		$criteria->compare('login',$this->login,true);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('password',$this->password,true);
+		$criteria->compare('language',$this->language,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -155,23 +157,18 @@ class Users extends CActiveRecord
 
     public function validatePassword($password)
     {
-        {
-            if (crypt($password, $this->password) == $this->password)
-                return true;
-            else
-                return false;
-        }
+      return crypt($password, $this->password) == $this->password ? true : false;
     }
 
     public function findByPk($pk,$condition='',$params=array())
     {
-        Yii::trace(get_class($this).'.findByPk()','system.db.ar.CActiveRecord');
-        $prefix=$this->getTableAlias(true).'.';
-        $criteria=$this->getCommandBuilder()->createPkCriteria($this->getTableSchema(),$pk,$condition,$params,$prefix);
-        $result =  $this->query($criteria);
+      Yii::trace(get_class($this).'.findByPk()','system.db.ar.CActiveRecord');
+      $prefix = $this->getTableAlias(true).'.';
+      $criteria = $this->getCommandBuilder()->createPkCriteria($this->getTableSchema(), $pk, $condition, $params, $prefix);
+      $result =  $this->query($criteria);
 
-        if(is_null($result))
-            throw new CHttpException(404,'Профиль не найден');
-        return $result;
+      if(is_null($result))
+        throw new CHttpException(404,'Профиль не найден');
+      return $result;
     }
 }

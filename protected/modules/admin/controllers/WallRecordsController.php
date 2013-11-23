@@ -152,7 +152,9 @@ class WallRecordsController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=WallRecords::model()->findByPk($id);
+		$model = WallRecords::model()->findByPk($id);
+    preg_match('/^(\d{4})\-(\d{2})\-(\d{2})\s(\d{2}):(\d{2}):(\d{2})$/', $model->time, $arr);
+    $model->time = $arr[3].'.'.$arr[2].'.'.$arr[1].' '.$arr[4].':'.$arr[5].':'.$arr[6];
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

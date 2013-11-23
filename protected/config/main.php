@@ -43,7 +43,7 @@ return array(
 		'urlManager'=>array(
             'urlFormat'=>'path',
             'showScriptName'=>false,
-            'caseSensitive'=>false,
+            'caseSensitive'=>true,
 			'rules'=>array(
                 'profile/<id:\d+>'=>'users/profile',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',

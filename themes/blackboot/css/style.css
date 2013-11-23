@@ -584,6 +584,14 @@ p.hint { float:left; display:block;}
     float:left;
 }
 
+.icon
+{
+  width: 15px;
+  height: 15px;
+  padding-bottom: 3px;
+  cursor: pointer;
+}
+
 .user_profile .block_user_info{
     padding: 10px;
     border: 1px solid #f3f3f3;
@@ -597,10 +605,10 @@ p.hint { float:left; display:block;}
 .user_profile .wall{
     padding: 10px;
     border: 1px solid #f3f3f3;
-    margin-left: 220px;
     margin-top: 10px;
+    float: none;
+    clear: both;
 }
-
 
 .user_profile .wall .record{
     padding: 10px;

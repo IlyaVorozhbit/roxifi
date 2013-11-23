@@ -47,13 +47,15 @@
 				</a>
 				<a class="brand" href="/"><?php echo Yii::app()->name ?></a>
 				<div class="nav-collapse">
-					<?php $this->widget('zii.widgets.CMenu',array(
+					<?php
+            $lang = new Language;
+            $this->widget('zii.widgets.CMenu',array(
 						'htmlOptions' => array( 'class' => 'nav' ),
 						'activeCssClass'	=> 'active',
 						'items'=>array(
-							array('label'=>'Авторизация', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-							array('label'=>'Профиль', 'url'=>array('/profile/'.Yii::app()->user->id), 'visible'=>!Yii::app()->user->isGuest),
-							array('label'=>'Выход ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+							array('label'=>$lang->Translate(10), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+							array('label'=>$lang->Translate(4), 'url'=>array('/profile/'.Yii::app()->user->id), 'visible'=>!Yii::app()->user->isGuest),
+							array('label'=>$lang->Translate(9).' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 						),
 					)); ?>
 					

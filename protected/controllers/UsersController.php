@@ -12,7 +12,7 @@ class UsersController extends Controller
 
 	public function actionProfile($id)
 	{
-		$this->render('Profile',array('user'=>Users::model()->with('wallRecords')->findByPk($id)));
+		$this->render('Profile',array('user'=>Users::model()->with('wallRecords', 'usersInfos')->findByPk($id)));
 	}
 
 	public function actionSearch()
