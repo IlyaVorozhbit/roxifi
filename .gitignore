@@ -1,4 +1,5 @@
 *.*~
 /framework/*
-.idea
+.idea/*
+/protected/runtime/application.log
 

@@ -15,6 +15,8 @@
 
 <?
 
+    if (isset($_GET['edit']) && $user->id != Yii::app()->user->id)
+      echo $lang->Translate(34);
     if (!isset($_GET['edit']))
     {
       $this->widget('CLinkPager',array(

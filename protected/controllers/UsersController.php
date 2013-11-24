@@ -37,7 +37,7 @@ class UsersController extends Controller
     if (isset($_GET['delete']) && isset($_GET['note_id']))
     {
       $model = Notes::model()->findByPk($_GET['note_id']);
-      if ($model !== NULL)
+      if ($model !== NULL && $model->creator == Yii::app()->user->id)
 		    $model->delete();
       header('Location: notes');
     }
