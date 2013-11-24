@@ -8,6 +8,9 @@
     <a href="/u<?php echo $record->user_from;?>"><?php echo $authors[$record->user_from]->login;?></a>, <!--сегодня в--> <?php echo $record->time;?>.
   </div>
   <div class="message">
-    <?php echo $record->text;?>
+    <?php echo $record->text;
+      echo ($record->user_to == Yii::app()->user->id || $record->user_from == Yii::app()->user->id) ?
+           '<a href="/u'.$record->user_to.'/wrec?record_id='.$record->id.'&delete"><img style="height: 30px; width: 30px;" src="/images/delete.png" align="right"/></a>' : '';
+    ?>
   </div>
 </div>

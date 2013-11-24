@@ -15,10 +15,17 @@ class UsersController extends Controller
             'user'=>Users::model()->with('usersInfos')->findByPk($id),));
   }
 
-  /*
-   * NOTES
-   */ 
-
+  public function actionWrec($id)
+  {
+    if (isset($_GET['delete']) && isset($_GET['record_id']))
+    {
+      $model = WallRecords::model()->findByPk($_GET['record_id']);
+      if ($model !== NULL && ($model->user_from == Yii::app()->user->id ||
+                              $model->user_to == Yii::app()->user->id))
+		    $model->delete();
+      header('Location: /u'.$id);
+    }
+  }
 
 	public function actionNotes($id)
 	{
