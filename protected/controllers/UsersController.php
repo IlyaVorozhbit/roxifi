@@ -16,20 +16,35 @@ class UsersController extends Controller
       if (isset($_GET['delete_image']))
       {
         $model = UsersImages::model()->find('user = :user', array(':user'=>Yii::app()->user->id));
-        $filename = 'avatars/u'.Yii::app()->user->id.'/'.$model->filename;
-        unlink($filename);
-        $model->delete();
-      }
-      if (isset($_POST['UsersImages']))
-      {
-        $model = UsersImages::model()->find('user = :user', array(':user'=>Yii::app()->user->id));
-        if ($model === NULL)
+        if ($model !== NULL)
         {
-          $model = new UsersImages;
-          $model->user = Yii::app()->user->id;
+          $filename = 'avatars/u'.Yii::app()->user->id.'/'.$model->filename;
+          unlink($filename);
+          $model->delete();
         }
-        $model->attributes = $_POST['UsersImages'];
-        $model->image = CUploadedFile::getInstance($model, 'filename');
+        header('Location: /u'.Yii::app()->user->id.'/edit');
+      }
+    }
+    else
+      header('Location: /');
+    if (isset($_POST['Users']))
+    {
+      $model = Users::model()->findByPk($id);
+      $model->language = $_POST['Users']['language'];
+      $model->save();
+    }
+    if (isset($_POST['UsersImages']))
+    {
+      $model = UsersImages::model()->find('user = :user', array(':user'=>Yii::app()->user->id));
+      if ($model === NULL)
+      {
+        $model = new UsersImages;
+        $model->user = Yii::app()->user->id;
+      }
+      $model->attributes = $_POST['UsersImages'];
+      $model->image = CUploadedFile::getInstance($model, 'filename');
+      if ($model->image !== NULL)
+      {
         $dirname = 'avatars/u'.Yii::app()->user->id.'/';
         if (!file_exists($dirname))
           mkdir($dirname);
@@ -45,11 +60,9 @@ class UsersController extends Controller
         $model->filename = $model->image->name;
         $model->save();
       }
-      $this->render('Edit', array(
-        'user'=>Users::model()->with('usersInfos')->findByPk($id),));
     }
-    else
-      header('Location: /');
+    $this->render('Edit', array(
+      'user'=>Users::model()->with('usersInfos')->findByPk($id),));
   }
 
   public function actionWrec($id)

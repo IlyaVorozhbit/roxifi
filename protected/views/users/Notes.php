@@ -16,7 +16,7 @@
 <?
 
     if (isset($_GET['edit']) && $user->id != Yii::app()->user->id)
-      echo $lang->Translate(34);
+      header('Location: notes');
     if (!isset($_GET['edit']))
     {
       $this->widget('CLinkPager',array(
@@ -47,12 +47,17 @@
       if (isset($_GET['note_id']) && isset($_GET['edit']))
       {
         $note = Notes::model()->findByPk($_GET['note_id']);
-        echo $form->textField(Notes::model(), 'name', array('style'=>'width:600px;', 'value'=>$note->name));
-        echo $form->hiddenField(Notes::model(), 'id', array('value'=>$note->id));
-        echo '</td></tr><tr><td>';
-        echo $form->textArea(Notes::model(), 'text', array('value'=>$note->text, 'style'=>'resize: none; width:600px; height:200px;'));
-        echo '</td></tr><tr><td>';
-        echo CHtml::submitButton($lang->Translate(33), array('style'=>'margin: 0px;'));
+        if ($note !== NULL)
+        {
+          echo $form->textField(Notes::model(), 'name', array('style'=>'width:600px;', 'value'=>$note->name));
+          echo $form->hiddenField(Notes::model(), 'id', array('value'=>$note->id));
+          echo '</td></tr><tr><td>';
+          echo $form->textArea(Notes::model(), 'text', array('value'=>$note->text, 'style'=>'resize: none; width:600px; height:200px;'));
+          echo '</td></tr><tr><td>';
+          echo CHtml::submitButton($lang->Translate(33), array('style'=>'margin: 0px;'));
+        }
+        else
+          header('Location: notes');        
       }
       else
       {

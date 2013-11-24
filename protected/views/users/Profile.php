@@ -7,9 +7,8 @@
     $lang->Translate(4),
   );
 ?>
-<h1><?php echo $user->login;?></h1>
+<h1><?php echo $lang->lang == 'en' ? $user->login.$lang->Translate(39) : $lang->Translate(39).$user->login;?></h1>
 <div class="user_profile">
-
     <div class="profile_buttons">
         <?php
             if(UsersFriends::canRegisterRequest(Yii::app()->user->id, $user->id))
@@ -24,7 +23,7 @@
 
   <?php
     $avatar = UsersImages::model()->find('user = :user', array('user'=>$user->id));
-    $profile_image =  $avatar !== NULL ? '/avatars/u'.$user->id.'/'.$avatar->filename : 'images/no_avatar.png;';
+    $profile_image =  $avatar !== NULL ? '/avatars/u'.$user->id.'/'.$avatar->filename : '/images/no_avatar.png';
   ?>
   <a href='<?php echo $profile_image;?>'><div class="avatar" style="background: url('<?php echo $profile_image;?>') no-repeat center;"></div></a>
   <div class="block_user_info">
