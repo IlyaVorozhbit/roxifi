@@ -47,6 +47,7 @@ return array(
 			'rules'=>array(
         'u<id:\d+>'=>'users/profile',
         'u<id:\d+>/notes'=>'users/notes',
+        'u<id:\d+>/edit'=>'users/edit',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',

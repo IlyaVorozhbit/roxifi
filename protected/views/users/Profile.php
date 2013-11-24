@@ -12,11 +12,11 @@
 
     <div class="profile_buttons">
         <?php
-            if(UsersFriends::canRegisterRequest(Yii::app()->user->id,$user->id))
+            if(UsersFriends::canRegisterRequest(Yii::app()->user->id, $user->id))
                 echo '<a class="btn" href="/friends/add/'.$user->id.'">'.$lang->Translate(20).'</a>';
             else
             {
-                if(UsersFriends::isFriends(Yii::app()->user->id,$user->id))
+                if(UsersFriends::isFriends(Yii::app()->user->id, $user->id))
                     echo '<a class="btn" href="/friends/delete/'.$user->id.'">'.$lang->Translate(21).'</a>';
             }
             ?>
@@ -28,7 +28,7 @@
 
   <div class="block_user_info">
     <div class="main_info">
-      <p><?php echo $lang->Translate(4);?><img class='icon' src="/images/edit.png" align='right'/><p/>
+      <p><?php echo $lang->Translate(4).($user->id == Yii::app()->user->id ? '<a href="/u'.$user->id.'/edit"><img class="icon" src="/images/edit.png" align="right"/></a>' : ''); ?></p>
       <?php echo $lang->Translate(2).': '.($user->language == 'ru' ? $lang->Translate(6) : $lang->Translate(3)); ?>
       <?php echo '<hr><a href="/u'.$user->id.'/notes">'.$lang->Translate(13).'</a>' ?>
     </div>
@@ -39,10 +39,6 @@
     <?php
         $form = $this->beginWidget('CActiveForm', array(
           'id'=>'wall-records-form',
-          // Please note: When you enable ajax validation, make sure the corresponding
-          // controller action is handling ajax validation correctly.
-          // There is a call to performAjaxValidation() commented in generated controller code.
-          // See class documentation of CActiveForm for details on this.
           'enableAjaxValidation'=>false,
         ));
         echo '<hr><table><tr><td>';

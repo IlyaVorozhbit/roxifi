@@ -14,44 +14,53 @@
 <h1><?php echo $lang->Translate(13)?></h1>
 
 <?
-    $this->widget('CLinkPager',array(
-        'pages'=>$pages,
-        'maxButtonCount' => 1,
-        'cssFile'=>'',
-        'header' =>$lang->Translate(13),
-    ));
 
+    if (!isset($_GET['edit']))
+    {
+      $this->widget('CLinkPager',array(
+          'pages'=>$pages,
+          'maxButtonCount' => 1,
+          'cssFile'=>'',
+          'header' =>$lang->Translate(13),
+      ));
+      foreach($notes as $key=>$note)
+       $this->renderPartial('profile/notes',array(
+           'creator'=>$creator,
+           'note'=>$note
+      ));
 
+      if (empty($notes))
+        echo $lang->Translate(16);
+    }
+    if ($user->id == Yii::app()->user->id)
+    {
+      $form = $this->beginWidget('CActiveForm', array(
+        'id'=>'notes-form',
+        'enableAjaxValidation'=>false,
+      ));
+      echo '<table><tr><td>';
+      echo $lang->Translate(32).':';
+      echo '</td></tr><tr><td>';
 
-  foreach($notes as $key=>$note)
-    $this->renderPartial('profile/notes',array(
-        'creator'=>$creator,
-        'note'=>$note
-    ));
-
-  if (empty($notes))
-    echo $lang->Translate(16);
-
-  if ($user->id == Yii::app()->user->id)
-  {
-    echo '<hr>';
-    $form = $this->beginWidget('CActiveForm', array(
-      'id'=>'notes-form',
-      // Please note: When you enable ajax validation, make sure the corresponding
-      // controller action is handling ajax validation correctly.
-      // There is a call to performAjaxValidation() commented in generated controller code.
-      // See class documentation of CActiveForm for details on this.
-      'enableAjaxValidation'=>false,
-    ));
-    echo '<table><tr><td>';
-    echo $lang->Translate(14).':';
-    echo '</td></tr><tr><td>';
-    echo $form->textField(Notes::model(), 'name', array('style'=>'width:600px;', 'placeholder'=>$lang->Translate(11)));
-    echo '</td></tr><tr><td>';
-    echo $form->textArea(Notes::model(), 'text', array('placeholder'=>$lang->Translate(12), 'style'=>'resize: none; width:600px; height:200px;'));
-    echo '</td></tr><tr><td>';
-    echo CHtml::submitButton($lang->Translate(7), array('style'=>'margin: 0px;'));
-    echo '</td></tr></table>';
-    $this->endWidget();
-  }
+      if (isset($_GET['note_id']) && isset($_GET['edit']))
+      {
+        $note = Notes::model()->findByPk($_GET['note_id']);
+        echo $form->textField(Notes::model(), 'name', array('style'=>'width:600px;', 'value'=>$note->name));
+        echo $form->hiddenField(Notes::model(), 'id', array('value'=>$note->id));
+        echo '</td></tr><tr><td>';
+        echo $form->textArea(Notes::model(), 'text', array('value'=>$note->text, 'style'=>'resize: none; width:600px; height:200px;'));
+        echo '</td></tr><tr><td>';
+        echo CHtml::submitButton($lang->Translate(33), array('style'=>'margin: 0px;'));
+      }
+      else
+      {
+        echo $form->textField(Notes::model(), 'name', array('style'=>'width:600px;', 'placeholder'=>$lang->Translate(11)));
+        echo '</td></tr><tr><td>';
+        echo $form->textArea(Notes::model(), 'text', array('placeholder'=>$lang->Translate(12), 'style'=>'resize: none; width:600px; height:200px;'));
+        echo '</td></tr><tr><td>';
+        echo CHtml::submitButton($lang->Translate(7), array('style'=>'margin: 0px;'));
+      }
+      echo '</td></tr></table>';
+      $this->endWidget();
+    }
 ?>
