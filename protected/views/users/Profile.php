@@ -22,10 +22,11 @@
             ?>
     </div>
 
-  <div class="avatar">
-    <img src="/images/no_avatar.png"/>
-  </div>
-
+  <?php
+    $avatar = UsersImages::model()->find('user = :user', array('user'=>$user->id));
+    $profile_image =  $avatar !== NULL ? '/avatars/u'.$user->id.'/'.$avatar->filename : 'images/no_avatar.png;';
+  ?>
+  <a href='<?php echo $profile_image;?>'><div class="avatar" style="background: url('<?php echo $profile_image;?>') no-repeat center;"></div></a>
   <div class="block_user_info">
     <div class="main_info">
       <p><?php echo $lang->Translate(4).($user->id == Yii::app()->user->id ? '<a href="/u'.$user->id.'/edit"><img class="icon" src="/images/edit.png" align="right"/></a>' : ''); ?></p>

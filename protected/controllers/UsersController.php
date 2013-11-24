@@ -11,8 +11,45 @@ class UsersController extends Controller
 
   public function actionEdit($id)
   {
-		$this->render('Edit', array(
-            'user'=>Users::model()->with('usersInfos')->findByPk($id),));
+    if ($id == Yii::app()->user->id)
+    {
+      if (isset($_GET['delete_image']))
+      {
+        $model = UsersImages::model()->find('user = :user', array(':user'=>Yii::app()->user->id));
+        $filename = 'avatars/u'.Yii::app()->user->id.'/'.$model->filename;
+        unlink($filename);
+        $model->delete();
+      }
+      if (isset($_POST['UsersImages']))
+      {
+        $model = UsersImages::model()->find('user = :user', array(':user'=>Yii::app()->user->id));
+        if ($model === NULL)
+        {
+          $model = new UsersImages;
+          $model->user = Yii::app()->user->id;
+        }
+        $model->attributes = $_POST['UsersImages'];
+        $model->image = CUploadedFile::getInstance($model, 'filename');
+        $dirname = 'avatars/u'.Yii::app()->user->id.'/';
+        if (!file_exists($dirname))
+          mkdir($dirname);
+        else
+        {
+          $op_dir = opendir($dirname);
+          while($file = readdir($op_dir))
+           if ($file != '.' && $file != '..') 
+             unlink($dirname.$file);
+          closedir($op_dir);
+        }
+        $model->image->saveAs('avatars/u'.Yii::app()->user->id.'/'.$model->image->name);
+        $model->filename = $model->image->name;
+        $model->save();
+      }
+      $this->render('Edit', array(
+        'user'=>Users::model()->with('usersInfos')->findByPk($id),));
+    }
+    else
+      header('Location: /');
   }
 
   public function actionWrec($id)

@@ -579,9 +579,9 @@ p.hint { float:left; display:block;}
 
 .user_profile .avatar{
     border: 1px solid #f3f3f3;
-    width:200px;
-    height:200px;
-    float:left;
+    width:300px;
+    height:300px;
+    float: left;
 }
 
 .user_profile .profile_buttons{
@@ -593,17 +593,16 @@ p.hint { float:left; display:block;}
   width: 15px;
   height: 15px;
   padding-bottom: 3px;
-  cursor: pointer;
 }
 
 .user_profile .block_user_info{
     padding: 10px;
     border: 1px solid #f3f3f3;
-    margin-left: 220px;
+    margin-left: 300px;
 }
 
 .user_profile .block_user_info .main_info p{
-    border-bottom: 1px solid #E9E9E9;;
+    border-bottom: 1px solid #E9E9E9;
 }
 
 .user_profile .wall{
