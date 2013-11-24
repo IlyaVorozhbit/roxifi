@@ -11,7 +11,7 @@
     echo $note->creator == Yii::app()->user->id ?
          '<a href="/u'.$note->creator.'/notes?note_id='.$note->id.'&delete"><img style="height: 30px; width: 30px;" src="/images/delete.png" align="right"/></a>'.
          '<a href="/u'.$note->creator.'/notes?note_id='.$note->id.'&edit"><img style="height: 30px; width: 30px;"  src="/images/edit.png" align="right"/></a>' : '';
-    echo $lang->Translate(15).': '.'<i>'.$note->time.'</i><br>'.$lang->Translate(11).': <i>'.$note->name.'</i><br>'.$lang->Translate(12).': <i>'.$note->text.'<i>';?>
+    echo $lang->Translate(15).': '.'<i>'.$note->time.'</i><br>'.$lang->Translate(11).': <i>'.$note->name.'</i><br>'.$lang->Translate(12).': <i>'.$note->text.'</i>';?>
   </div>
 </div>
 <hr/>
