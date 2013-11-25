@@ -30,7 +30,7 @@ class DialogsController extends Controller
         $model = new Messages();
 
         $dialog = Dialogs::model()->findByPk($id);
-        if($dialog->creator != Yii::app()->user->id or $dialog->creator != Yii::app()->user->id)
+        if($dialog->creator != Yii::app()->user->id && $dialog->invited != Yii::app()->user->id)
             throw new CHttpException('403','Access denied');
 
         $messagesAndPages = Dialogs::getDialogMessages($dialog->id);

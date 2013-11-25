@@ -59,7 +59,7 @@
                     }
 
 
-
+                    $dialogs_label = '';
                     $lang = new Language;
                     $this->widget('zii.widgets.CMenu',array(
 						'htmlOptions' => array( 'class' => 'nav' ),

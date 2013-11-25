@@ -9,11 +9,8 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1>Login</h1>
+<h1>Вход</h1>
 
-<p>Please fill out the following form with your login credentials:</p>
-
-<div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
 	'enableClientValidation'=>true,
@@ -22,22 +19,30 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
+  <table>
+    <tr>
+      <td>
+      Логин:
+      </td>
+      <td>
 		<?php echo $form->textField($model,'username'); ?>
+      </td>
+      <td>
 		<?php echo $form->error($model,'username'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password'); ?>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      Пароль:
+      </td>
+      <td>
+		<?php echo $form->textField($model,'password'); ?>
+      </td>
+      <td>
 		<?php echo $form->error($model,'password'); ?>
-		<p class="hint">
-			Hint: You may login with <kbd>demo</kbd>/<kbd>demo</kbd> or <kbd>admin</kbd>/<kbd>admin</kbd>.
-		</p>
-	</div>
+      </td>
+    </tr>
+  </table>
 
 	<div class="row rememberMe">
 		<?php echo $form->checkBox($model,'rememberMe'); ?>
@@ -50,4 +55,3 @@ $this->breadcrumbs=array(
 	</div>
 
 <?php $this->endWidget(); ?>
-</div><!-- form -->
