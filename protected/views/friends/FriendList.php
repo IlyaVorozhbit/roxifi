@@ -19,7 +19,8 @@ $this->breadcrumbs=array(
     foreach($requests as $key=>$friend)
     {
         $this->renderPartial('_friend_incomming',array(
-            'friend'=>$friend
+            'friend'=>$friend,
+            'lang'=>$lang
         ));
     }
 
@@ -32,8 +33,10 @@ $this->breadcrumbs=array(
         foreach($friends as $key=>$friend)
         {
             $this->renderPartial('_friend',array(
-                'friend'=>$friend
+                'friend'=>$friend,
+                'lang'=>$lang
             ));
+            echo '<hr/>';
         }
 
     ?>

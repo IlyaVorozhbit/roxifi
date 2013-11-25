@@ -1,14 +1,37 @@
 <?php
-/* @var $this DialogsController */
+/*
+ * @var $this DialogsController
+ * @var $lang Language
+ */
 
 $this->breadcrumbs=array(
-	'Dialogs'=>array('/dialogs'),
-	'DialogList',
+	$lang->Translate(43)=>array('/dialogs'),
 );
 ?>
-<h1><?php echo $this->id . '/' . $this->action->id; ?></h1>
+<h1><?php echo $lang->Translate(44)?></h1>
 
 <p>
-	You may change the content of this page by modifying
-	the file <tt><?php echo __FILE__; ?></tt>.
+    <?php
+        $this->widget('CLinkPager',array(
+            'pages'=>$pages,
+            'maxButtonCount' => 1,
+            'cssFile'=>'',
+        ));
+
+        foreach($dialogs as $key=>$dialog)
+        {
+            $user_friend = $dialog->invited;
+
+            if($user_friend == Yii::app()->user->id)
+                $user_friend = $dialog->creator;
+
+            $user = Users::model()->findByPk($user_friend);
+
+            $this->renderPartial('_user',array(
+                'user'=>$user,
+                'dialog'=>$dialog
+            ));
+        }
+
+    ?>
 </p>

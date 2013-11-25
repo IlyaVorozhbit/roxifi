@@ -18,6 +18,9 @@
                 if(UsersFriends::isFriends(Yii::app()->user->id, $user->id))
                     echo '<a class="btn" href="/friends/delete/'.$user->id.'">'.$lang->Translate(21).'</a>';
             }
+
+            echo '<a class="btn" href="/dialogs/sendmessage/'.$user->id.'">'.$lang->Translate(40).'</a>';
+
             ?>
     </div>
 

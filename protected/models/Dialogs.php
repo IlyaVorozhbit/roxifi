@@ -105,4 +105,76 @@ class Dialogs extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public static function getUserDialogs($user)
+    {
+        $criteria=new CDbCriteria;
+        $criteria->order = 'last_update desc';
+        $criteria->condition = '(creator =:user or invited=:user) and status = 1 and (SELECT count(*) from messages where dialog = t.id)>0';
+        $criteria->params = array(':user'=>$user);
+        $pages=new CPagination(Dialogs::model()->count($criteria));
+        $pages->pageSize=10;
+        $pages->applyLimit($criteria);
+
+        $ret['pages'] = $pages;
+        $ret['dialogs'] = Dialogs::model()->findAll($criteria);
+
+        return $ret;
+    }
+
+    public static function getDialogMessages($dialog)
+    {
+        $criteria=new CDbCriteria;
+        $criteria->condition = '((dialog =:dialog) and (status <> '.Messages::STATUS_DELETED_FROM_ALL.'))';
+        $criteria->order = 'time desc';
+        $criteria->params = array(
+            ':dialog'=>$dialog,
+            //':user'=>Yii::app()->user->id,
+        );
+        $pages=new CPagination(Messages::model()->count($criteria));
+        $pages->pageSize=10;
+        $pages->applyLimit($criteria);
+
+        $ret['pages'] = $pages;
+        $ret['messages'] = Messages::model()->findAll($criteria);
+
+        return $ret;
+    }
+
+    public static function getDialog($user1,$user2)
+    {
+        $dialog = Dialogs::model()->find('((creator=:user1 and invited=:user2) or (creator=:user2 and invited=:user1)) and status = 1',array(
+            ':user1'=>$user1,
+            ':user2'=>$user2,
+        ));
+
+        if(!is_null($dialog))
+            return $dialog;
+
+        $dialog = new Dialogs();
+        $dialog->creator = $user1;
+        $dialog->invited = $user2;
+        $dialog->status = 1;
+
+        if($dialog->save())
+            return $dialog;
+    }
+
+    public static function WriteMessage($sender,$recipient,$text)
+    {
+        $dialog = self::getDialog($sender,$recipient);
+
+        $message = new Messages();
+        $message->dialog = $dialog->id;
+        $message->sender = $sender;
+        $message->recipient = $recipient;
+        $message->text = $text;
+        $message->time = date('Y-m-d H:i:s',time());
+
+        $dialog->last_update = date('Y-m-d H:i:s',time());
+        if($message->save())
+            if($dialog->save())
+                return $dialog;
+    }
+
 }

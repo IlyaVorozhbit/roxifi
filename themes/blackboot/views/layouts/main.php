@@ -47,13 +47,21 @@
 				</a>
 				<a class="brand" href="/"><?php echo Yii::app()->name ?></a>
 				<div class="nav-collapse">
+
 					<?php
-            $lang = new Language;
-            $this->widget('zii.widgets.CMenu',array(
+
+                    $messages_count = Messages::model()->count('recipient='.Yii::app()->user->id.' and status = 0');
+
+                    if($messages_count>0)
+                        $dialogs_label = ' ('.$messages_count.')';
+
+                    $lang = new Language;
+                    $this->widget('zii.widgets.CMenu',array(
 						'htmlOptions' => array( 'class' => 'nav' ),
 						'activeCssClass'	=> 'active',
 						'items'=>array(
 							array('label'=>$lang->Translate(10), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+							array('label'=>$lang->Translate(43).$dialogs_label, 'url'=>array('/dialogs'), 'visible'=>!Yii::app()->user->isGuest),
 							array('label'=>$lang->Translate(19), 'url'=>array('/friends'), 'visible'=>!Yii::app()->user->isGuest),
 							array('label'=>$lang->Translate(4), 'url'=>array('/u'.Yii::app()->user->id), 'visible'=>!Yii::app()->user->isGuest),
 							array('label'=>$lang->Translate(9).' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)

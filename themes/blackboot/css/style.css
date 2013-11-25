@@ -627,3 +627,36 @@ p.hint { float:left; display:block;}
     padding: 10px;
 }
 
+.dialog {
+    padding: 10px;
+}
+
+.dialog textarea
+{
+    width:50%;
+}
+
+.dialog .message
+{
+    border: 1px solid #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.dialog .message .user
+{
+    line-height:30px;
+    background-color: #D0E9C6;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.dialog .message .friend
+{
+    background-color: #9bd2e9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dialog .message .friend a{
+    color:#fff;
+}

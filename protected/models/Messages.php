@@ -10,6 +10,7 @@
  * @property integer $recipient
  * @property string $text
  * @property string $time
+ * @property integer $status
  *
  * The followings are the available model relations:
  * @property Users $recipient0
@@ -18,6 +19,13 @@
  */
 class Messages extends CActiveRecord
 {
+
+    const STATUS_NEW = 0;
+    const STATUS_READED = 1;
+    const STATUS_DELETED_FROM_RECIPIENT = 2;
+    const STATUS_DELETED_FROM_SENDER = 3;
+    const STATUS_DELETED_FROM_ALL = 4;
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -111,4 +119,33 @@ class Messages extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public static function deleteMessage(Messages $message)
+    {
+
+        if(($message->recipient == Yii::app()->user->id) or ($message->recipient != Yii::app()->user->id))
+        {
+
+            if($message->status == self::STATUS_DELETED_FROM_SENDER or $message->status == self::STATUS_DELETED_FROM_RECIPIENT)
+                $message->status = self::STATUS_DELETED_FROM_ALL;
+
+            if($message->status == self::STATUS_READED or $message->status == self::STATUS_NEW)
+            {
+
+                if($message->sender == Yii::app()->user->id)
+                    $message->status = self::STATUS_DELETED_FROM_SENDER;
+
+                else
+                    $message->status = self::STATUS_DELETED_FROM_RECIPIENT;
+
+            }
+
+
+
+            $message->save();
+        }
+        else
+            throw new CHttpException('403','access denied');
+
+    }
 }

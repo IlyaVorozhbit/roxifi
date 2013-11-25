@@ -5,6 +5,21 @@ class FriendsController extends Controller
 
     public $defaultAction = 'FriendList';
 
+
+    public function accessRules()
+    {
+        return array(
+            array('allow', // allow authenticated user to perform 'create' and 'update' actions
+                'actions'=>array('accept','add','delete','friendlist','reject'),
+                'users'=>array('@'),
+            ),
+
+            array('deny',  // deny all users
+                'users'=>array('*'),
+            ),
+        );
+    }
+
 	public function actionAccept($id)
 	{
 
