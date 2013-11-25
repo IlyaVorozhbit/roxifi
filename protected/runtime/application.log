@@ -2475,3 +2475,69 @@ Stack trace:
 REQUEST_URI=/dialogs
 HTTP_REFERER=http://roxifi/u1
 ---
+2013/11/25 22:50:47 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchColumn(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and status = 0' at line 1. Выполнявшийся SQL-запрос: SELECT COUNT(*) FROM `messages` `t` WHERE recipient= and status = 0.
+in R:\home\roxifi\www\themes\blackboot\views\layouts\main.php (53)
+in R:\home\roxifi\www\themes\blackboot\views\layouts\column1.php (9)
+in R:\home\roxifi\www\protected\controllers\SiteController.php (32)
+2013/11/25 22:50:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and status = 0' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `messages` `t` WHERE recipient= and status = 0' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php:543
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 R:\home\roxifi\www\themes\blackboot\views\layouts\main.php(53): CActiveRecord->count('recipient= and ...')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('R:\home\roxifi\...')
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('R:\home\roxifi\...', Array, true)
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('R:\home\roxifi\...', Array, true)
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div class="row...')
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div class="row...')
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(206): COutputProcessor->run()
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#10 R:\home\roxifi\www\themes\blackboot\views\layouts\column1.php(9): CBaseController->endContent()
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('R:\home\roxifi\...')
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('R:\home\roxifi\...', Array, true)
+#13 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(784): CBaseController->renderFile('R:\home\roxifi\...', Array, true)
+#14 R:\home\roxifi\www\protected\controllers\SiteController.php(32): CController->render('index')
+#15 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#16 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#18 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('')
+#20 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#21 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 R:\home\roxifi\www\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/
+HTTP_REFERER=http://roxifi/dialogs
+---
+2013/11/25 22:50:49 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchColumn(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and status = 0' at line 1. Выполнявшийся SQL-запрос: SELECT COUNT(*) FROM `messages` `t` WHERE recipient= and status = 0.
+in R:\home\roxifi\www\themes\blackboot\views\layouts\main.php (53)
+in R:\home\roxifi\www\themes\blackboot\views\layouts\column1.php (9)
+in R:\home\roxifi\www\protected\controllers\SiteController.php (32)
+2013/11/25 22:50:49 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'and status = 0' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `messages` `t` WHERE recipient= and status = 0' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php:543
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 R:\home\roxifi\www\themes\blackboot\views\layouts\main.php(53): CActiveRecord->count('recipient= and ...')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('R:\home\roxifi\...')
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('R:\home\roxifi\...', Array, true)
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('R:\home\roxifi\...', Array, true)
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div class="row...')
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div class="row...')
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(206): COutputProcessor->run()
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#10 R:\home\roxifi\www\themes\blackboot\views\layouts\column1.php(9): CBaseController->endContent()
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('R:\home\roxifi\...')
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('R:\home\roxifi\...', Array, true)
+#13 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(784): CBaseController->renderFile('R:\home\roxifi\...', Array, true)
+#14 R:\home\roxifi\www\protected\controllers\SiteController.php(32): CController->render('index')
+#15 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#16 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#18 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('')
+#20 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#21 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 R:\home\roxifi\www\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/
+HTTP_REFERER=http://roxifi/dialogs
+---

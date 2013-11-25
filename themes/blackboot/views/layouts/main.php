@@ -50,10 +50,15 @@
 
 					<?php
 
-                    $messages_count = Messages::model()->count('recipient='.Yii::app()->user->id.' and status = 0');
+                    if(!Yii::app()->user->isGuest)
+                    {
+                        $messages_count = Messages::model()->count('recipient='.Yii::app()->user->id.' and status = 0');
 
-                    if($messages_count>0)
-                        $dialogs_label = ' ('.$messages_count.')';
+                        if($messages_count>0)
+                            $dialogs_label = ' ('.$messages_count.')';
+                    }
+
+
 
                     $lang = new Language;
                     $this->widget('zii.widgets.CMenu',array(
