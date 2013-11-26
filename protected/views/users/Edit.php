@@ -1,14 +1,5 @@
 <?php
 
-
-  $fields = UsersFields::model()->findAll();
-
-  foreach($fields as $key=>$field)
-  {
-      echo '<input placeholder="'.Yii::t('profile', $field->name).'"/><br/>';
-      //echo Yii::t('profile', $field->name).'<br/>';
-  }
-
   $lang = new Language;
   echo Yii::t('profile', 'Profile info').'<hr>';
   echo Yii::t('profile', 'Image').':'; ?>
@@ -39,6 +30,32 @@
   echo '<select name="Users[language]">'.($user->language == 'en' ? '<option selected value="en">English</option><option value="ru">Русский</option>' :
                                              '<option value="en">English</option><option selected value="ru">Русский</option>').'</select>';
   echo '</td></tr><tr><td>';
+  echo CHtml::submitButton(Yii::t('profile', 'Apply'), array('style'=>'margin: 0px;'));
+  echo '</td></tr></table>';
+  $this->endWidget();
+
+  $form = $this->beginWidget('CActiveForm', array(
+    'id'=>'users-info',
+    'enableAjaxValidation'=>false,
+    'htmlOptions'=>array('enctype'=>'multipart/form-data'),
+  ));
+
+  $fields = UsersFields::model()->findAll();
+  echo '<table>';
+  foreach($fields as $key=>$field)
+  {
+    $model = UsersInfo::model()->find('user = :user AND field = :field', array(':user'=>Yii::app()->user->id,
+                                                                               ':field'=>$field->id));
+    echo '<tr><td>';
+    echo Yii::t('profile', $field->name);
+    echo '</td></tr><tr><td>';
+    if ($field->name != 'about')
+      echo '<input type="text" style = "width:600px;" name="Infos['.$field->id.']" value="'.($model === NULL ? '' : $model->value).'">';
+    else
+      echo '<textarea style = "resize: none; width:600px; height:200px;" name="Infos['.$field->id.']">'.($model === NULL ? '' : $model->value).'</textarea>';
+    echo '</td></tr>';
+  }
+  echo '<tr><td>';
   echo CHtml::submitButton(Yii::t('profile', 'Apply'), array('style'=>'margin: 0px;'));
   echo '</td></tr></table>';
   $this->endWidget();

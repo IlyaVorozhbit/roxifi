@@ -29,14 +29,24 @@
   <a href='<?php echo $profile_image;?>'><div class="avatar" style="background: url('<?php echo $profile_image;?>') no-repeat center;"></div></a>
   <div class="block_user_info">
     <div class="main_info">
-      <p><?php echo Yii::t('profile', 'Profile').($user->id == Yii::app()->user->id ? '<a href="/u'.$user->id.'/edit"><img class="icon" src="/images/edit.png" align="right"/></a>' : ''); ?></p>
-      <?php echo Yii::t('profile', 'Language').': '.($user->language == 'ru' ? Yii::t('language', 'Russian') : Yii::t('language', 'English')); ?>
-      <?php echo '<hr><a href="/u'.$user->id.'/notes">'.Yii::t('profile', 'Notes').'</a>' ?>
+      <p><?php echo '<h3>'.Yii::t('profile', 'Profile info').'</h3>'.($user->id == Yii::app()->user->id ? '<a href="/u'.$user->id.'/edit"><img class="icon" src="/images/edit.png" align="right"/></a>' : ''); ?></p>
+      <?php echo Yii::t('profile', 'Language').': '.'<i>'.($user->language == 'ru' ? Yii::t('languages', 'Russian') : Yii::t('languages', 'English')).'</i>'; ?>
+      <?php
+        $users_info = UsersInfo::model()->findAll('user = :user', array(':user' => $user->id));
+        foreach($users_info as $field)
+        {
+          echo '<hr>';
+          $users_fields = UsersFields::model()->findByPk($field->field);
+          echo Yii::t('profile', $users_fields->name).': ';
+          echo '<i>'.$field->value.'</i>';
+        }
+        echo '<hr><a href="/u'.$user->id.'/notes">'.Yii::t('profile', 'Notes').'</a>';
+       ?>
     </div>
   </div>
 
   <div class="wall">
-    <p><?php echo Yii::t('profile', 'Wall');?><p/>
+    <p><?php echo '<h3>'.Yii::t('profile', 'Wall').'</h3>';?><p/>
     <?php
         $form = $this->beginWidget('CActiveForm', array(
           'id'=>'wall-records-form',

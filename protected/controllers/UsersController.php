@@ -27,6 +27,25 @@ class UsersController extends Controller
     }
     else
       header('Location: /');
+    if (isset($_POST['Infos']))
+    {
+      foreach($_POST['Infos'] as $key => $field)
+      {
+        if ($field != '')
+        {
+          $model = UsersInfo::model()->find('user = :user AND field = :field', array(':user'=>Yii::app()->user->id,
+                                                                                     ':field'=>$key));
+          if ($model === NULL)
+          {
+            $model = new UsersInfo;
+            $model->user = Yii::app()->user->id;
+          }
+          $model->value = $field;
+          $model->field = $key;
+          $model->save();
+        }
+      }
+    }
     if (isset($_POST['Users']))
     {
       $model = Users::model()->findByPk($id);
