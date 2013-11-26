@@ -1,4 +1,14 @@
 <?php
+
+
+  $fields = UsersFields::model()->findAll();
+
+  foreach($fields as $key=>$field)
+  {
+      echo '<input placeholder="'.Yii::t('profile', $field->name).'"/><br/>';
+      //echo Yii::t('profile', $field->name).'<br/>';
+  }
+
   $lang = new Language;
   echo Yii::t('profile', 'Profile info').'<hr>';
   echo Yii::t('profile', 'Image').':'; ?>
