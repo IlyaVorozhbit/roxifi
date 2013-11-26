@@ -33,4 +33,22 @@ class Controller extends CController
 
     }
 
+    public function init()
+    {
+
+        try
+        {
+            if (Yii::app()->user->id !== NULL)
+                Yii::app()->language = Users::model()->findbyPk(Yii::app()->user->id)->language;
+            else
+                Yii::app()->language= 'ru';
+        }
+        catch(Exception $e)
+        {
+            Yii::app()->language = 'ru';
+        }
+
+        parent::init();
+    }
+
 }

@@ -5,6 +5,14 @@ class DialogsController extends Controller
 
     public $defaultAction = 'DialogList';
 
+    public function filters()
+    {
+        return array(
+            'accessControl', // perform access control for CRUD operations
+            'postOnly + delete', // we only allow deletion via POST request
+        );
+    }
+
     public function accessRules()
     {
         return array(
@@ -30,43 +38,27 @@ class DialogsController extends Controller
         $model = new Messages();
 
         $dialog = Dialogs::model()->findByPk($id);
-        if($dialog->creator != Yii::app()->user->id && $dialog->invited != Yii::app()->user->id)
-            throw new CHttpException('403','Access denied');
 
         $messagesAndPages = Dialogs::getDialogMessages($dialog->id);
         $messages = $messagesAndPages['messages'];
         $pages = $messagesAndPages['pages'];
 
-        $user_friend = $dialog->invited;
-
-        if($user_friend == Yii::app()->user->id)
-            $user_friend = $dialog->creator;
-
         if (isset($_POST['Messages']))
         {
-            if(Dialogs::WriteMessage(Yii::app()->user->id,$user_friend,$_POST['Messages']['text']))
-                Yii::app()->user->setFlash('success', $this->lang->Translate(41));
+            if(Dialogs::WriteMessage(Yii::app()->user->id,Dialogs::recognizeUserFriend($dialog),$_POST['Messages']['text']))
+                Yii::app()->user->setFlash('success', Yii::t('dialogs', 'Message was sent'));
             $this->redirect('/dialogs/view/'.$id);
         }
 
-
-        $user_friend = Users::model()->findByPk($user_friend);
-
-
         $this->render('View',array(
-            'lang'=>$this->lang,
             'messages'=>$messages,
             'pages'=>$pages,
             'user'=>Users::model()->findByPk(Yii::app()->user->id),
-            'user_friend'=>$user_friend,
+            'user_friend'=>Users::model()->findByPk(Dialogs::recognizeUserFriend($dialog)),
             'model'=>$model
         ));
 
-        foreach($messages as $key => $message)
-        {
-            $message->status = 1;
-            $message->save();
-        }
+        Messages::makeMessagesReaded($messages);
 
 	}
 
@@ -77,7 +69,6 @@ class DialogsController extends Controller
         $pages = $dialogsAndPages['pages'];
 
 		$this->render('DialogList',array(
-            'lang'=>$this->lang,
             'dialogs'=>$dialogs,
             'pages'=>$pages,
         ));
@@ -91,14 +82,13 @@ class DialogsController extends Controller
         if (isset($_POST['Messages']))
         {
             if(is_object($dialog = Dialogs::WriteMessage(Yii::app()->user->id,$id,$_POST['Messages']['text'])))
-                Yii::app()->user->setFlash('success', $this->lang->Translate(41));
+                Yii::app()->user->setFlash('success', Yii::t('dialogs', 'Message was sent'));
                 $this->redirect('/dialogs/view/'.$dialog->id);
             die();
         }
 
         $this->render('sendmessage',array(
             'model'=>$model,
-            'lang'=>$this->lang,
             'user'=>Users::model()->findByPk($id)
         ));
     }
@@ -106,9 +96,6 @@ class DialogsController extends Controller
     public function actionDeleteMessage($id)
     {
         $message = Messages::model()->findByPk($id);
-
-        if(is_null($message))
-            throw new CHttpException('404','not found');
 
         Messages::deleteMessage($message);
         $this->redirect('/dialogs/view/'.$message->dialog);

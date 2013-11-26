@@ -4,22 +4,23 @@
   $lang = new Language;
 
   $this->breadcrumbs=array(
-    $lang->Translate(4),
+      Yii::t('profile', 'Profile')
   );
 ?>
-<h1><?php echo $lang->lang == 'en' ? $user->login.$lang->Translate(39) : $lang->Translate(39).$user->login;?></h1>
+<h1><?php echo Yii::app()->language == 'en' ? $user->login.Yii::t('profile', '\'s profile') : Yii::t('profile', '\'s profile').$user->login;?></h1>
 <div class="user_profile">
     <div class="profile_buttons">
         <?php
             if(UsersFriends::canRegisterRequest(Yii::app()->user->id, $user->id))
-                echo '<a class="btn" href="/friends/add/'.$user->id.'">'.$lang->Translate(20).'</a>';
+                echo '<a class="btn" href="/friends/add/'.$user->id.'">'.Yii::t('profile', 'Add to friends').'</a>';
             else
             {
                 if(UsersFriends::isFriends(Yii::app()->user->id, $user->id))
-                    echo '<a class="btn" href="/friends/delete/'.$user->id.'">'.$lang->Translate(21).'</a>';
+                    echo '<a class="btn" href="/friends/delete/'.$user->id.'">'.Yii::t('profile', 'Remove from friends').'</a>';
             }
 
-            echo '<a class="btn" href="/dialogs/sendmessage/'.$user->id.'">'.$lang->Translate(40).'</a>';
+            if(!Yii::app()->user->isGuest)
+                echo '<a class="btn" href="/dialogs/sendmessage/'.$user->id.'">'.Yii::t('profile', 'Send message').'</a>';
 
             ?>
     </div>
@@ -31,25 +32,25 @@
   <a href='<?php echo $profile_image;?>'><div class="avatar" style="background: url('<?php echo $profile_image;?>') no-repeat center;"></div></a>
   <div class="block_user_info">
     <div class="main_info">
-      <p><?php echo $lang->Translate(4).($user->id == Yii::app()->user->id ? '<a href="/u'.$user->id.'/edit"><img class="icon" src="/images/edit.png" align="right"/></a>' : ''); ?></p>
-      <?php echo $lang->Translate(2).': '.($user->language == 'ru' ? $lang->Translate(6) : $lang->Translate(3)); ?>
-      <?php echo '<hr><a href="/u'.$user->id.'/notes">'.$lang->Translate(13).'</a>' ?>
+      <p><?php echo Yii::t('profile', 'Profile').($user->id == Yii::app()->user->id ? '<a href="/u'.$user->id.'/edit"><img class="icon" src="/images/edit.png" align="right"/></a>' : ''); ?></p>
+      <?php echo Yii::t('profile', 'Language').': '.($user->language == 'ru' ? Yii::t('language', 'Russian') : Yii::t('language', 'English')); ?>
+      <?php echo '<hr><a href="/u'.$user->id.'/notes">'.Yii::t('profile', 'Notes').'</a>' ?>
     </div>
   </div>
 
   <div class="wall">
-    <p><?php echo $lang->Translate(5);?><p/>
+    <p><?php echo Yii::t('profile', 'Wall');?><p/>
     <?php
         $form = $this->beginWidget('CActiveForm', array(
           'id'=>'wall-records-form',
           'enableAjaxValidation'=>false,
         ));
         echo '<hr><table><tr><td>';
-        echo $lang->Translate(17).':';
+        echo Yii::t('profile', 'Write on the wall').':';
         echo '</td></tr><tr><td>';
-        echo $form->textArea(WallRecords::model(), 'text', array('placeholder'=>$lang->Translate(12), 'style'=>'resize: none; width:600px; height:200px;'));
+        echo $form->textArea(WallRecords::model(), 'text', array('placeholder'=>Yii::t('profile', 'Content'), 'style'=>'resize: none; width:600px; height:200px;'));
         echo '</td></tr><tr><td>';
-        echo CHtml::submitButton($lang->Translate(18), array('style'=>'margin: 0px;'));
+        echo CHtml::submitButton(Yii::t('profile', 'Write'), array('style'=>'margin: 0px;'));
         echo '</td></tr></table>';
         $this->endWidget();
         $authors = array();
@@ -72,7 +73,7 @@
           ));
 
         if (empty($wallRecords))
-          echo $lang->Translate(8);
+          echo Yii::t('profile', 'You have no records yet.');
     ?>
   </div>
 </div>

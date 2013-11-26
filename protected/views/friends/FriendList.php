@@ -4,23 +4,22 @@
 $lang = new Language;
 
 $this->breadcrumbs=array(
-    $lang->Translate(19)=>array('/friends'),
+    Yii::t('friends', 'Friends')=>array('/friends'),
 );
 ?>
-<h1><?php echo $lang->Translate(19)?></h1>
+<h1><?php echo Yii::t('friends', 'Friends')?></h1>
 
 <p>
 
     <?php
 
     if(!empty($requests))
-        echo '<h5>'.$lang->Translate(30).'</h5>';
+        echo '<h5>'.Yii::t('friends', 'Incomming requests').'</h5>';
 
     foreach($requests as $key=>$friend)
     {
         $this->renderPartial('_friend_incomming',array(
             'friend'=>$friend,
-            'lang'=>$lang
         ));
     }
 
@@ -34,7 +33,6 @@ $this->breadcrumbs=array(
         {
             $this->renderPartial('_friend',array(
                 'friend'=>$friend,
-                'lang'=>$lang
             ));
             echo '<hr/>';
         }

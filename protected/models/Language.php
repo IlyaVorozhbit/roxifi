@@ -26,7 +26,7 @@
       if (file_exists($file))
       {
         $arr = parse_ini_file($file);
-        return isset($arr[$str]) ? $arr[$str] : $str;
+        return isset($arr[$str]) ? '@'.$arr[$str] : '@'.$str;
       }
       return $res;
     }

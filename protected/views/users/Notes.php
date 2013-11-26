@@ -3,15 +3,13 @@
 
     $creator = Users::model()->findByPk($_GET['id']);
 
-    $lang = new Language;
-
     $this->breadcrumbs=array(
-        $lang->Translate(4). ' '. $creator->login=>array('/u'.$creator->id),
-        $lang->Translate(13),
+        Yii::t('profile', 'Profile'). ' '. $creator->login=>array('/u'.$creator->id),
+        Yii::t('notes', 'Notes'),
     );
 ?>
 
-<h1><?php echo $lang->Translate(13)?></h1>
+<h1><?php echo Yii::t('notes', 'Notes')?></h1>
 
 <?
 
@@ -23,7 +21,7 @@
           'pages'=>$pages,
           'maxButtonCount' => 1,
           'cssFile'=>'',
-          'header' =>$lang->Translate(13),
+          'header' =>Yii::t('notes', 'Notes'),
       ));
       foreach($notes as $key=>$note)
        $this->renderPartial('profile/notes',array(
@@ -32,7 +30,7 @@
       ));
 
       if (empty($notes))
-        echo $lang->Translate(16);
+        echo Yii::t('notes', 'Nothing found.');
     }
     if ($user->id == Yii::app()->user->id)
     {
@@ -41,7 +39,7 @@
         'enableAjaxValidation'=>false,
       ));
       echo '<table><tr><td>';
-      echo $lang->Translate(32).':';
+      echo Yii::t('notes', 'Edit note').':';
       echo '</td></tr><tr><td>';
 
       if (isset($_GET['note_id']) && isset($_GET['edit']))
@@ -54,18 +52,18 @@
           echo '</td></tr><tr><td>';
           echo $form->textArea(Notes::model(), 'text', array('value'=>$note->text, 'style'=>'resize: none; width:600px; height:200px;'));
           echo '</td></tr><tr><td>';
-          echo CHtml::submitButton($lang->Translate(33), array('style'=>'margin: 0px;'));
+          echo CHtml::submitButton(Yii::t('notes', 'Edit'), array('style'=>'margin: 0px;'));
         }
         else
           header('Location: notes');        
       }
       else
       {
-        echo $form->textField(Notes::model(), 'name', array('style'=>'width:600px;', 'placeholder'=>$lang->Translate(11)));
+        echo $form->textField(Notes::model(), 'name', array('style'=>'width:600px;', 'placeholder'=>Yii::t('notes', 'Name')));
         echo '</td></tr><tr><td>';
-        echo $form->textArea(Notes::model(), 'text', array('placeholder'=>$lang->Translate(12), 'style'=>'resize: none; width:600px; height:200px;'));
+        echo $form->textArea(Notes::model(), 'text', array('placeholder'=>Yii::t('notes', 'Content'), 'style'=>'resize: none; width:600px; height:200px;'));
         echo '</td></tr><tr><td>';
-        echo CHtml::submitButton($lang->Translate(7), array('style'=>'margin: 0px;'));
+        echo CHtml::submitButton(Yii::t('notes', 'Add'), array('style'=>'margin: 0px;'));
       }
       echo '</td></tr></table>';
       $this->endWidget();

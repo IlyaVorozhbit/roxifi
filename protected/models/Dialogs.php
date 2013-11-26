@@ -177,4 +177,29 @@ class Dialogs extends CActiveRecord
                 return $dialog;
     }
 
+    public function findByPk($pk,$condition='',$params=array())
+    {
+        Yii::trace(get_class($this).'.findByPk()','system.db.ar.CActiveRecord');
+        $prefix=$this->getTableAlias(true).'.';
+        $criteria=$this->getCommandBuilder()->createPkCriteria($this->getTableSchema(),$pk,$condition,$params,$prefix);
+
+        $result = $this->query($criteria);
+
+        if($result->creator != Yii::app()->user->id && $result->invited != Yii::app()->user->id)
+            throw new CHttpException('403','Access denied');
+
+        return $result;
+    }
+
+
+    public static function recognizeUserFriend(&$dialog)
+    {
+        $user_friend = $dialog->invited;
+
+        if($user_friend == Yii::app()->user->id)
+            $user_friend = $dialog->creator;
+
+        return $user_friend;
+    }
+
 }

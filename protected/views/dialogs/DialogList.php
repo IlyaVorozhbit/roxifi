@@ -5,10 +5,10 @@
  */
 
 $this->breadcrumbs=array(
-	$lang->Translate(43)=>array('/dialogs'),
+    Yii::t('dialogs', 'Dialogs')=>array('/dialogs'),
 );
 ?>
-<h1><?php echo $lang->Translate(44)?></h1>
+<h1><?php echo Yii::t('dialogs', 'Dialog list')?></h1>
 
 <p>
     <?php

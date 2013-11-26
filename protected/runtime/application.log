@@ -2541,3 +2541,45 @@ Stack trace:
 REQUEST_URI=/
 HTTP_REFERER=http://roxifi/dialogs
 ---
+2013/11/26 19:57:11 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Access denied' in R:\home\roxifi\www\protected\controllers\DialogsController.php:42
+Stack trace:
+#0 [internal function]: DialogsController->actionView('10')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DialogsController), Array)
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DialogsController), Object(ReflectionMethod), Array)
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('view')
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('dialogs/view')
+#13 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 R:\home\roxifi\www\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/dialogs/view/10
+HTTP_REFERER=http://roxifi/dialogs
+---
+2013/11/26 19:57:23 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Access denied' in R:\home\roxifi\www\protected\controllers\DialogsController.php:42
+Stack trace:
+#0 [internal function]: DialogsController->actionView('10')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(DialogsController), Array)
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DialogsController), Object(ReflectionMethod), Array)
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('view')
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('dialogs/view')
+#13 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 R:\home\roxifi\www\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/dialogs/view/10
+HTTP_REFERER=http://roxifi/dialogs
+---

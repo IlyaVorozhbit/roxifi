@@ -148,4 +148,30 @@ class Messages extends CActiveRecord
             throw new CHttpException('403','access denied');
 
     }
+
+    public static function makeMessagesReaded($messages)
+    {
+        foreach($messages as $key => $message)
+        {
+            if($message->recipient == Yii::app()->user->id)
+            {
+                $message->status = 1;
+                $message->save();
+            }
+        }
+    }
+
+    public function findByPk($pk,$condition='',$params=array())
+    {
+        Yii::trace(get_class($this).'.findByPk()','system.db.ar.CActiveRecord');
+        $prefix=$this->getTableAlias(true).'.';
+        $criteria=$this->getCommandBuilder()->createPkCriteria($this->getTableSchema(),$pk,$condition,$params,$prefix);
+        $result = $this->query($criteria);
+
+        if(is_null($result))
+            throw new CHttpException('404','not found');
+
+        return $result;
+    }
+
 }

@@ -131,6 +131,9 @@ class UsersFriends extends CActiveRecord
     public static function canRegisterRequest($from,$to)
     {
 
+        if(Yii::app()->user->isGuest)
+            return 0;
+
         if($from==$to)
             return 0;
 
@@ -252,6 +255,23 @@ class UsersFriends extends CActiveRecord
         $friends = array();
 
         foreach($fiends_requests as $key=>$friend)
+        {
+
+            $friend_id = $friend->user_from;
+
+            if($friend_id == Yii::app()->user->id)
+                $friend_id = $friend->user_to;
+
+            $friends[$key] = Users::model()->findByPk($friend_id);
+
+        }
+
+        return $friends;
+    }
+
+    public static function getUsersAccountsByRequests($requests)
+    {
+        foreach($requests as $key=>$friend)
         {
 
             $friend_id = $friend->user_from;

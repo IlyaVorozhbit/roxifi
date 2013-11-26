@@ -2,16 +2,15 @@
 /* @var $this DialogsController */
 /* @var $model Messages */
 /* @var $user Users */
-/* @var $lang Language */
 /* @var $form CActiveForm */
 
 $this->breadcrumbs=array(
-    $lang->Translate(43)=>array('/dialogs'),
-    $lang->Translate(44),
+    Yii::t('dialogs', 'Dialogs')=>array('/dialogs'),
+    Yii::t('dialogs', 'Writing message'),
 );
 ?>
 
-<h1><?php echo $lang->Translate(42);?> <a href="/u<?php echo $user->id;?>"><?php echo $user->login;?></a></h1>
+<h1><?php echo Yii::t('dialogs', 'Message for user ')?> <a href="/u<?php echo $user->id;?>"><?php echo $user->login;?></a></h1>
 
 <div class="form dialog">
 
@@ -25,12 +24,12 @@ $this->breadcrumbs=array(
 )); ?>
 
     <div class="row">
-        <?php echo $form->textArea($model,'text',array('size'=>60,'maxlength'=>255,'placeholder'=>$lang->Translate(12))); ?>
+        <?php echo $form->textArea($model,'text',array('size'=>60,'maxlength'=>255,'placeholder'=>Yii::t('dialogs', 'Message'))); ?>
         <?php echo $form->error($model,'text'); ?>
     </div>
 
     <div class="row">
-        <?php echo CHtml::submitButton($lang->Translate(40));?>
+        <?php echo CHtml::submitButton(Yii::t('dialogs', 'Send message'));?>
     </div>
 
     <?php $this->endWidget(); ?>
