@@ -15,6 +15,9 @@
  */
 class UsersInfo extends CActiveRecord
 {
+
+    public $label;
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -103,4 +106,9 @@ class UsersInfo extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public static function getUserFilledFields($user)
+    {
+        return UsersInfo::model()->findAll('user = :user', array(':user' => $user));
+    }
 }

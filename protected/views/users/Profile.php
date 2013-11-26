@@ -1,25 +1,21 @@
 <?php
-  /* @var $this UsersController */
-  $this->breadcrumbs=array(
+
+    $this->breadcrumbs=array(
       Yii::t('profile', 'Profile')
-  );
+    );
+
+    $user->user_info = HUsers::getUserInfo($user->id);
+
 ?>
-<h1><?php echo Yii::app()->language == 'en' ? $user->login.Yii::t('profile', '\'s profile') : Yii::t('profile', '\'s profile').$user->login;?></h1>
+<h1><?php HUsers::getProfileName($user);?></h1>
+
 <div class="user_profile">
+
     <div class="profile_buttons">
         <?php
-            if(UsersFriends::canRegisterRequest(Yii::app()->user->id, $user->id))
-                echo '<a class="btn" href="/friends/add/'.$user->id.'">'.Yii::t('profile', 'Add to friends').'</a>';
-            else
-            {
-                if(UsersFriends::isFriends(Yii::app()->user->id, $user->id))
-                    echo '<a class="btn" href="/friends/delete/'.$user->id.'">'.Yii::t('profile', 'Remove from friends').'</a>';
-            }
-
-            if(!Yii::app()->user->isGuest)
-                echo '<a class="btn" href="/dialogs/sendmessage/'.$user->id.'">'.Yii::t('profile', 'Send message').'</a>';
-
-            ?>
+            HProfile::renderFriendsButtons($user);
+            HProfile::renderSendMessageButton($user);
+        ?>
     </div>
 
   <?php
@@ -32,13 +28,15 @@
       <p><?php echo '<h3>'.Yii::t('profile', 'Profile info').'</h3>'.($user->id == Yii::app()->user->id ? '<a href="/u'.$user->id.'/edit"><img class="icon" src="/images/edit.png" align="right"/></a>' : ''); ?></p>
       <?php echo Yii::t('profile', 'Language').': '.'<i>'.($user->language == 'ru' ? Yii::t('languages', 'Russian') : Yii::t('languages', 'English')).'</i>'; ?>
       <?php
-        $users_info = UsersInfo::model()->findAll('user = :user', array(':user' => $user->id));
-        foreach($users_info as $field)
+
+        foreach($user->user_info as $field)
         {
-          echo '<hr>';
-          $users_fields = UsersFields::model()->findByPk($field->field);
-          echo Yii::t('profile', $users_fields->name).': ';
-          echo '<i>'.$field->value.'</i>';
+          if($field->field <> 2 and $field->field<>3)
+          {
+              echo '<hr>';
+              echo $field->label.': ';
+              echo '<i>'.$field->value.'</i>';
+          }
         }
         echo '<hr><a href="/u'.$user->id.'/notes">'.Yii::t('profile', 'Notes').'</a>';
        ?>
@@ -55,7 +53,7 @@
         echo '<hr><table><tr><td>';
         echo Yii::t('profile', 'Write on the wall').':';
         echo '</td></tr><tr><td>';
-        echo $form->textArea(WallRecords::model(), 'text', array('placeholder'=>Yii::t('profile', 'Content'), 'style'=>'resize: none; width:600px; height:200px;'));
+        echo $form->textArea(WallRecords::model(), 'text', array('placeholder'=>Yii::t('profile', 'Content'), 'style'=>'resize: none; width:600px; height:70px;'));
         echo '</td></tr><tr><td>';
         echo CHtml::submitButton(Yii::t('profile', 'Write'), array('style'=>'margin: 0px;'));
         echo '</td></tr></table>';

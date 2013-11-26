@@ -36,12 +36,8 @@ class DialogsController extends Controller
 	{
 
         $model = new Messages();
-
         $dialog = Dialogs::model()->findByPk($id);
-
         $messagesAndPages = Dialogs::getDialogMessages($dialog->id);
-        $messages = $messagesAndPages['messages'];
-        $pages = $messagesAndPages['pages'];
 
         if (isset($_POST['Messages']))
         {
@@ -51,14 +47,14 @@ class DialogsController extends Controller
         }
 
         $this->render('View',array(
-            'messages'=>$messages,
-            'pages'=>$pages,
+            'messages'=>$messagesAndPages['messages'],
+            'pages'=>$messagesAndPages['pages'],
             'user'=>Users::model()->findByPk(Yii::app()->user->id),
             'user_friend'=>Users::model()->findByPk(Dialogs::recognizeUserFriend($dialog)),
             'model'=>$model
         ));
 
-        Messages::makeMessagesReaded($messages);
+        Messages::makeMessagesReaded($messagesAndPages['messages']);
 
 	}
 

@@ -27,6 +27,9 @@
  */
 class Users extends CActiveRecord
 {
+
+    public $user_info;
+
 	/**
 	 * @return string the associated database table name
 	 */

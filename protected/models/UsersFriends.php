@@ -271,6 +271,8 @@ class UsersFriends extends CActiveRecord
 
     public static function getUsersAccountsByRequests($requests)
     {
+
+
         foreach($requests as $key=>$friend)
         {
 
@@ -282,6 +284,9 @@ class UsersFriends extends CActiveRecord
             $friends[$key] = Users::model()->findByPk($friend_id);
 
         }
+
+        if(is_null($friends))
+            $friends = array();
 
         return $friends;
     }
