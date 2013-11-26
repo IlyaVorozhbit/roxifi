@@ -1,14 +1,17 @@
 <?php
 /* @var $this UsersController */
 
-$lang = new Language;
+    $lang = new Language;
 
-$this->breadcrumbs=array(
-    $lang->Translate(19)=>'/friends',
-    $lang->Translate(25),
-);
+    $this->breadcrumbs=array(
+        Yii::t('friends', 'Friends')=>'/friends',
+        Yii::t('friends', 'Request has been approved'),
+    );
+
+    $this->pageTitle .= Yii::t('friends', 'Request has been approved');
+
 ?>
-<h1><?php echo $lang->Translate(25)?></h1>
+<h1><?php echo Yii::t('friends', 'Request has been approved');?></h1>
 
 <p>
 

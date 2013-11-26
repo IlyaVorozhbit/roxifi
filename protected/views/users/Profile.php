@@ -1,8 +1,5 @@
 <?php
   /* @var $this UsersController */
-
-  $lang = new Language;
-
   $this->breadcrumbs=array(
       Yii::t('profile', 'Profile')
   );

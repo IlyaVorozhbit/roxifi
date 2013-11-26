@@ -19,6 +19,9 @@
         'Request has been approved' => "Заявка подтверждена",
         'Request has been rejected' => "Заявка отклонена",
         'Request is not exist' => "Заявка не существует",
+        'You don\'t have friends yet'=>'У Вас еще нет друзей',
+
+
     );
 
 ?>

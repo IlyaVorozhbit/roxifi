@@ -6,6 +6,8 @@
 class Controller extends CController
 {
 
+    public $pageTitle;
+
     public $lang;
 
 	/**
@@ -35,6 +37,8 @@ class Controller extends CController
 
     public function init()
     {
+
+        $this->pageTitle = Yii::app()->name.' - ';
 
         try
         {

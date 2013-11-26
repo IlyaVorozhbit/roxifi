@@ -1,11 +1,12 @@
 <?php
 /* @var $this FriendsController */
 
-$lang = new Language;
+    $this->breadcrumbs=array(
+        Yii::t('friends', 'Friends')=>array('/friends'),
+    );
 
-$this->breadcrumbs=array(
-    Yii::t('friends', 'Friends')=>array('/friends'),
-);
+    $this->pageTitle .= Yii::t('friends', 'Friends');
+
 ?>
 <h1><?php echo Yii::t('friends', 'Friends')?></h1>
 
@@ -16,12 +17,13 @@ $this->breadcrumbs=array(
     if(!empty($requests))
         echo '<h5>'.Yii::t('friends', 'Incomming requests').'</h5>';
 
-    foreach($requests as $key=>$friend)
-    {
-        $this->renderPartial('_friend_incomming',array(
-            'friend'=>$friend,
-        ));
-    }
+    if(!empty($requests))
+        foreach($requests as $key=>$friend)
+        {
+            $this->renderPartial('_friend_incomming',array(
+                'friend'=>$friend,
+            ));
+        }
 
     if(!empty($requests))
         echo '<hr/>';
@@ -29,13 +31,16 @@ $this->breadcrumbs=array(
     ?>
     <?php
 
-        foreach($friends as $key=>$friend)
-        {
-            $this->renderPartial('_friend',array(
-                'friend'=>$friend,
-            ));
-            echo '<hr/>';
-        }
+        if(!empty($friends))
+            foreach($friends as $key=>$friend)
+            {
+                $this->renderPartial('_friend',array(
+                    'friend'=>$friend,
+                ));
+                echo '<hr/>';
+            }
+        else
+            echo Yii::t('friends', 'You don\'t have friends yet');
 
     ?>
 </p>

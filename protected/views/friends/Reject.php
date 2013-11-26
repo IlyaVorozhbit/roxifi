@@ -4,11 +4,11 @@
 $lang = new Language;
 
 $this->breadcrumbs=array(
-    $lang->Translate(19)=>'/friends',
-    $lang->Translate(26),
+    Yii::t('friends', 'Adding to friends')=>'/friends',
+    Yii::t('friends', 'Request has been rejected'),
 );
 ?>
-<h1><?php echo $lang->Translate(26)?></h1>
+<h1><?php echo Yii::t('friends', 'Request has been rejected');?></h1>
 
 <p>
 

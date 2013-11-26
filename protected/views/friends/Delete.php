@@ -1,14 +1,12 @@
 <?php
 /* @var $this UsersController */
 
-$lang = new Language;
-
-$this->breadcrumbs=array(
-    $lang->Translate(19)=>'/friends',
-    $lang->Translate(23),
-);
+    $this->breadcrumbs=array(
+        Yii::t('friends', 'Friends')=>'/friends',
+        Yii::t('friends', 'Removing from friends'),
+    );
 ?>
-<h1><?php echo $lang->Translate(23)?></h1>
+<h1><?php echo Yii::t('friends', 'Removing from friends');?></h1>
 
 <p>
 

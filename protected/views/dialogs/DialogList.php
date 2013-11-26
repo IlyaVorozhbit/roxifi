@@ -4,9 +4,12 @@
  * @var $lang Language
  */
 
-$this->breadcrumbs=array(
-    Yii::t('dialogs', 'Dialogs')=>array('/dialogs'),
-);
+    $this->breadcrumbs=array(
+        Yii::t('dialogs', 'Dialogs')=>array('/dialogs'),
+    );
+
+    $this->pageTitle .= Yii::t('dialogs', 'Dialogs');
+    
 ?>
 <h1><?php echo Yii::t('dialogs', 'Dialog list')?></h1>
 
