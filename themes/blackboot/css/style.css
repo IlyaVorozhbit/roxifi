@@ -13,11 +13,10 @@
 
 body {
 	padding-top: 40px;
-
   }
 
 div.cont {
-	#background:url(../img/tiny_grid.png) repeat 0 0;
+	background:url(../img/tiny_grid.png) repeat 0 0;
 	height:100%;
 	min-height:500px;
 	padding-top:30px;
@@ -126,6 +125,13 @@ textarea {
 label {
   display: block;
   margin-bottom: 5px;
+}
+
+hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #E4E4E4;
+    border-bottom: 1px solid #ffffff;
 }
 
 div.row {
@@ -582,6 +588,7 @@ p.hint { float:left; display:block;}
     width:300px;
     height:300px;
     float: left;
+    position: absolute;
 }
 
 .user_profile .profile_buttons{
@@ -597,8 +604,8 @@ p.hint { float:left; display:block;}
 
 .user_profile .block_user_info{
     padding: 10px;
-    border: 1px solid #f3f3f3;
-    margin-left: 300px;
+    border: 1px solid #EEEEEE;
+    margin-left: 310px;
 }
 
 .user_profile .block_user_info .main_info p{
@@ -607,15 +614,17 @@ p.hint { float:left; display:block;}
 
 .user_profile .wall{
     padding: 10px;
-    border: 1px solid #f3f3f3;
-    margin-top: 10px;
+    border: 1px solid #EEEEEE;
+    margin-top: 20px;
+    margin-left: 310px;
     float: none;
     clear: both;
 }
 
 .user_profile .wall .record{
     padding: 10px;
-    border: 1px solid #f3f3f3;
+    border: 1px solid #E2DFDF;
+    border-radius: 4px;
     margin-top: 10px;
 }
 
@@ -627,6 +636,10 @@ p.hint { float:left; display:block;}
     padding: 10px;
 }
 
+#wall-records-form textarea{
+    height:100px;
+}
+
 .dialog {
     padding: 10px;
 }
@@ -634,29 +647,39 @@ p.hint { float:left; display:block;}
 .dialog textarea
 {
     width:50%;
+    border: 1px solid #8f8f8f;
+    margin-left: 20px;
 }
 
 .dialog .message
 {
-    border: 1px solid #FFFFFF;
+    border: 1px solid #DADADA;
+    border-radius: 5px;
     margin-bottom: 10px;
 }
 
 .dialog .message .user
 {
-    line-height:30px;
-    background-color: #D0E9C6;
-    padding: 5px;
+    line-height: 20px;
+    background-color: #FFFFFF;
+    padding: 10px;
+    color: #000;
     border-radius: 5px;
+}
+
+.dialog .message .user a{
+    text-decoration: underline;
 }
 
 .dialog .message .friend
 {
-    background-color: #9bd2e9;
+    background-color: #7C98C9;
     padding: 10px;
     border-radius: 5px;
+    color: #fff;
 }
 
 .dialog .message .friend a{
     color:#fff;
+    text-decoration: underline;
 }
