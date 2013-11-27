@@ -98,39 +98,44 @@ class UsersController extends Controller
 
 	public function actionNotes($id)
 	{
-    $model = new Notes();
-
-    if (isset($_POST['Notes']))
+    if ($id == Yii::app()->user->id)
     {
-      if (isset($_POST['Notes']['id']))
-        $model = Notes::model()->findByPk($_POST['Notes']['id']);
-      $model->attributes = $_POST['Notes'];
-      $model->creator = Yii::app()->user->id;
-      $model->time = date('Y-m-d H:i:s',time());
-      $model->save() or die(print_r($model->getErrors()));
-      header('Location: notes');
-    }
-    if (isset($_GET['delete']) && isset($_GET['note_id']))
-    {
-      $model = Notes::model()->findByPk($_GET['note_id']);
-      if ($model !== NULL && $model->creator == Yii::app()->user->id)
-		    $model->delete();
-      header('Location: notes');
-    }
- 
-    $criteria=new CDbCriteria;
-    $criteria->condition = 'creator =:user';
-    $criteria->order = 'time desc';
-    $criteria->params = array(':user'=>$id);
-    $pages=new CPagination(Notes::model()->count($criteria));
-    $pages->pageSize = 10;
-    $pages->applyLimit($criteria);
+      $model = new Notes();
 
-    $notes = Notes::model()->findAll($criteria);
-		$this->render('Notes', array(
-            'user'=>Users::model()->with('usersInfos')->findByPk($id),
-            'notes'=>$notes,
-            'pages'=>$pages,));
+      if (isset($_POST['Notes']))
+      {
+        if (isset($_POST['Notes']['id']))
+          $model = Notes::model()->findByPk($_POST['Notes']['id']);
+        $model->attributes = $_POST['Notes'];
+        $model->creator = Yii::app()->user->id;
+        $model->time = date('Y-m-d H:i:s',time());
+        $model->save() or die(print_r($model->getErrors()));
+        header('Location: notes');
+      }
+      if (isset($_GET['delete']) && isset($_GET['note_id']))
+      {
+        $model = Notes::model()->findByPk($_GET['note_id']);
+        if ($model !== NULL && $model->creator == Yii::app()->user->id)
+          $model->delete();
+        header('Location: notes');
+      }
+   
+      $criteria=new CDbCriteria;
+      $criteria->condition = 'creator =:user';
+      $criteria->order = 'time desc';
+      $criteria->params = array(':user'=>$id);
+      $pages=new CPagination(Notes::model()->count($criteria));
+      $pages->pageSize = 10;
+      $pages->applyLimit($criteria);
+
+      $notes = Notes::model()->findAll($criteria);
+      $this->render('Notes', array(
+              'user'=>Users::model()->with('usersInfos')->findByPk($id),
+              'notes'=>$notes,
+              'pages'=>$pages,));
+    }
+    else
+      header('Location: /u'.$id); 
 	}
 
 	public function actionProfile($id)

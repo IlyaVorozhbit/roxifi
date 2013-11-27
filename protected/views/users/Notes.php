@@ -24,9 +24,9 @@
           'header' =>Yii::t('notes', 'Notes'),
       ));
       foreach($notes as $key=>$note)
-       $this->renderPartial('profile/notes',array(
-           'creator'=>$creator,
-           'note'=>$note
+        $this->renderPartial('profile/notes',array(
+            'creator'=>$creator,
+            'note'=>$note
       ));
 
       if (empty($notes))

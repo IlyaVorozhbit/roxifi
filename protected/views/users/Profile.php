@@ -14,6 +14,7 @@
     <div class="profile_buttons">
         <?php
             HProfile::renderFriendsButtons($user);
+            echo ' ';
             HProfile::renderSendMessageButton($user);
         ?>
     </div>
