@@ -9,7 +9,13 @@
 ?>
 <h1><?php HUsers::getProfileName($user);?></h1>
 
+
 <div class="user_profile">
+
+    <?php
+        if(time()-strtotime($user->last_update)<120)
+            echo '<div class="status_online">'.Yii::t('profile', 'Online').'</div>';
+    ?>
 
     <div class="profile_buttons">
         <?php
@@ -24,6 +30,19 @@
     $profile_image =  $avatar !== NULL ? '/avatars/u'.$user->id.'/'.$avatar->filename : '/images/no_avatar.png';
   ?>
   <a href='<?php echo $profile_image;?>'><div class="avatar" style="background: url('<?php echo $profile_image;?>') no-repeat center;"></div></a>
+
+    <div class="user_friends">
+        <?php
+            foreach($friends as $friend)
+            {
+                if($friend->id == $_GET['id'])
+                    $friend = Users::model()->findByPk(Yii::app()->user->id);
+
+                $this->renderPartial('profile/_friend',array('friend'=>$friend));
+            }
+        ?>
+    </div>
+
   <div class="block_user_info">
     <div class="main_info">
       <p><?php echo '<h3>'.Yii::t('profile', 'Profile info').'</h3>'.($user->id == Yii::app()->user->id ? '<a href="/u'.$user->id.'/edit"><img class="icon" src="/images/edit.png" align="right"/></a>' : ''); ?></p>

@@ -33,7 +33,7 @@ div.cont {
     -webkit-border-radius:3px;
     -moz-border-radius:3px;
     margin-bottom: 10px ;
-    min-height:300px;
+    min-height: 720px;
 }
 
 
@@ -595,6 +595,7 @@ p.hint { float:left; display:block;}
 
 .user_profile .profile_buttons{
     padding:10px;
+    margin-top: -30px;
 }
 
 .icon
@@ -636,6 +637,43 @@ p.hint { float:left; display:block;}
 
 .user_profile .wall .record .message{
     padding: 10px;
+}
+
+.user_profile .status_online{
+    background-color: #32C04E;
+    width: 60px;
+    padding: 5px;
+    color: #FFF;
+    border: 1px solid #0D6D15;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 5px;
+    float: right;
+    position: static;
+    margin-top: 10px;
+}
+
+.user_profile .user_friends
+{
+    border: 1px solid #E7E7E7;
+    width:300px;
+    height: 300px;
+    margin-top: 320px;
+    position: absolute;
+}
+
+.user_profile .user_friends .friend
+{
+    margin-left: 12px;
+    margin-top: 10px;
+    width: 80px;
+    display: inline-block;
+
+}
+
+.user_profile .user_friends .friend .name{
+    font-size: 10px;
+    text-align: center;
 }
 
 #wall-records-form textarea{

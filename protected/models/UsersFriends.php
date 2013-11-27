@@ -209,9 +209,56 @@ class UsersFriends extends CActiveRecord
 
     public static function getUserFriends($user)
     {
-        return UsersFriends::model()->findAll('((user_from=:from) or (user_to=:from)) and status = '.self::STATUS_FRIEND.'',array(
+        $requests =  UsersFriends::model()->findAll('((user_from=:user) or (user_to=:user)) and status = '.self::STATUS_FRIEND.'',array(
             ':user'=>$user,
         ));
+
+        if(!empty($requests))
+        {
+            foreach($requests as $key=>$request)
+            {
+                $requests[$key] = Users::model()->findByPk(self::recognizeUserFriend($request));
+            }
+        }
+
+        return $requests;
+
+    }
+
+    public static function getUserFriendsForProfile($user)
+    {
+
+        $criteria = new CDbCriteria();
+        $criteria->limit = 6;
+        $criteria->condition = '((user_from=:user) or (user_to=:user)) and status = '.self::STATUS_FRIEND.'';
+        $criteria->params = array(
+            ':user'=>$user,
+            ':me'=>Yii::app()->user->id,
+        );
+
+        $requests = UsersFriends::model()->findAll($criteria);
+
+        if(!empty($requests))
+        {
+            foreach($requests as $key=>$request)
+            {
+                $requests[$key] = Users::model()->findByPk(self::recognizeUserFriend($request));
+            }
+        }
+
+        return $requests;
+
+    }
+
+    public static function recognizeUserFriend(&$request)
+    {
+
+        $user_friend = $request->user_from;
+
+        if($user_friend == Yii::app()->user->id)
+            $user_friend = $request->user_to;
+
+        return $user_friend;
     }
 
     public static function getRequest($from,$to)

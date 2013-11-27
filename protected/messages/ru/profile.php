@@ -7,6 +7,7 @@
         'Notes' => 'Заметки',
         'Wall' => 'Стена',
         'Content' => 'Содержание',
+        'Online' => 'На сайте',
 
         'Add to friends'=> 'Добавить в друзья',
         'Remove from friends'=> 'Удалить из друзей',
