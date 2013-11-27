@@ -38,7 +38,7 @@
               echo '<i>'.$field->value.'</i>';
           }
         }
-        echo '<hr><a href="/u'.$user->id.'/notes">'.Yii::t('profile', 'Notes').'</a>';
+        echo $user->id == Yii::app()->user->id ? '<hr><a href="/u'.$user->id.'/notes">'.Yii::t('profile', 'Notes').'</a>' : '';
        ?>
     </div>
   </div>
