@@ -16,7 +16,7 @@
         {
             return array(
                 array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                    'actions'=>array('eventslist','view','create','delete','edit','invite','accept','reject','join','leave'),
+                    'actions'=>array('eventslist','members','myevents','view','create','del','edit','invite','accept','reject','join','leave'),
                     'users'=>array('@'),
                 ),
 
@@ -35,6 +35,31 @@
             ));
         }
 
+        public function actionMyEvents()
+        {
+            $events = Events::getUserEventsAndPages();
+            $this->render('MyEvents',array(
+                'events'=>$events['events'],
+                'pages'=>$events['pages'],
+            ));
+        }
+
+        public function actionMembers($id)
+        {
+            $event = Events::model()->findByPk($id);
+
+            if(is_null($event))
+                throw new CHttpException(404,Yii::t('events', 'Nothing found.'));
+
+            $members = Events::getEventMembersAndPages($id);
+
+            $this->render('EventMembers',array(
+                'event'=>$event,
+                'members'=>$members['members'],
+                'pages'=>$members['pages'],
+            ));
+        }
+
         public function actionCreate()
         {
 
@@ -50,6 +75,13 @@
                     $event_right->event = $event->id;
                     $event_right->user = Yii::app()->user->id;
                     $event_right->rights = 1;
+
+                    $event_member = new EventsMembers();
+                    $event_member->event = $event->id;
+                    $event_member->status = Events::USER_JOINED;
+                    $event_member->user = Yii::app()->user->id;
+                    $event_member->save();
+
                     if($event_right->save())
                         $this->redirect('/events/'.$event->id);
                 }
@@ -95,6 +127,39 @@
             }
 
             $this->render('Edit',array('event'=>$event));
+
+        }
+
+        public function actionJoin($id)
+        {
+            if(!Events::isMember(Yii::app()->user->id,$id))
+                if(Events::joinUserToEvent(Yii::app()->user->id,$id))
+                    $this->redirect('/events/'.$id);
+
+        }
+
+        public function actionLeave($id)
+        {
+            if(Events::isMember(Yii::app()->user->id,$id))
+                if(Events::leaveEvent(Yii::app()->user->id,$id))
+                    $this->redirect('/events/'.$id);
+        }
+
+        public function actionDel($id)
+        {
+
+            $event = Events::model()->findByPk($id);
+
+            if(is_null($event))
+                throw new CHttpException(404,Yii::t('events', 'Nothing found.'));
+
+            $owner = EventsRights::model()->findByEvent($event->id)->user;
+
+            if($owner != Yii::app()->user->id)
+                throw new CHttpException(403,Yii::t('events', 'Access denied.'));
+
+            if($event->delete())
+                $this->redirect('/events');
 
         }
     }

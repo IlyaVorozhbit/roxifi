@@ -1,1 +1,1 @@
-<a href="/events/<?php echo $event->id;?>"><?php echo $event->name;?></php></a><hr>
+<a href="/events/<?php echo $event->id;?>"><?php echo $event->name;?></a>. <i class="icon-time"></i><?php echo date('d/m/y',strtotime($event->time)) ?><hr>

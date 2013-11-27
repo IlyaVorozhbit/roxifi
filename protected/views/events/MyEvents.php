@@ -5,24 +5,22 @@
     */
 
     $this->breadcrumbs=array(
-        Yii::t('events', 'Events')
+        Yii::t('events', 'Events')=>array('/events'),
+        Yii::t('events', 'My Events')
     );
 
-    $this->pageTitle .= Yii::t('events', 'Events');
+    $this->pageTitle .= Yii::t('events', 'My Events');
 
 ?>
 
-<h1><?php echo Yii::t('events', 'Events')?></h1>
-<a href="/events/myevents"><?php echo Yii::t('events', 'My Events')?></a> |
-<a href="/events/create"><?php echo Yii::t('events', 'Create event')?></a>
-<hr>
+<h1><?php echo Yii::t('events', 'My Events')?></h1>
 <?php
 
     if(!empty($events))
         foreach($events as $event)
         {
             $this->renderPartial('_event',array(
-                'event'=>$event
+                'event'=>$event->event0
             ));
         }
     else
