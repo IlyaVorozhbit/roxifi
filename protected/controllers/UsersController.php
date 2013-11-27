@@ -159,6 +159,7 @@ class UsersController extends Controller
 
 		$this->render('Profile',array(
             'user'=>Users::model()->with('usersInfos')->findByPk($id),
+            'friends'=>UsersFriends::getUserFriendsForProfile($id),
             'wallRecords'=>$wallRecords,
             'pages'=>$pages,
             'model'=>$model

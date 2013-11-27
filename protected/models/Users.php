@@ -8,6 +8,7 @@
  * @property string $login
  * @property string $email
  * @property string $password
+ * @property string $last_update
  *
  * The followings are the available model relations:
  * @property Dialogs[] $dialogs
@@ -90,6 +91,7 @@ class Users extends CActiveRecord
 			'login' => 'Login',
 			'email' => 'Email',
 			'password' => 'Password',
+			'last_update' => 'last_update',
       'language' => 'Language',
 		);
 	}
@@ -117,6 +119,7 @@ class Users extends CActiveRecord
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('language',$this->language,true);
+		$criteria->compare('last_update',$this->last_update,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

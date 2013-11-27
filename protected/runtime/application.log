@@ -3954,3 +3954,108 @@ Stack trace:
 #11 {main}
 REQUEST_URI=/events/del/4
 ---
+2013/11/27 21:41:25 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchAll(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. Выполнявшийся SQL-запрос: SELECT * FROM `users_friends` `t` WHERE ((user_from=:from) or (user_to=:from)) and status = 1.
+in R:\home\roxifi\www\protected\models\UsersFriends.php (214)
+in R:\home\roxifi\www\protected\controllers\UsersController.php (162)
+in R:\home\roxifi\www\index.php (13)
+2013/11/27 21:41:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT * FROM `users_friends` `t` WHERE ((user_from=:from) or (user_to=:from)) and status = 1' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php:543
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 R:\home\roxifi\www\protected\models\UsersFriends.php(214): CActiveRecord->findAll('((user_from=:fr...', Array)
+#4 R:\home\roxifi\www\protected\controllers\UsersController.php(162): UsersFriends::getUserFriends('7')
+#5 [internal function]: UsersController->actionProfile('7')
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UsersController), Object(ReflectionMethod), Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('profile')
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/profile')
+#13 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 R:\home\roxifi\www\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/u7
+HTTP_REFERER=http://roxifi/u7/notes
+---
+2013/11/27 21:53:27 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Users.user_to".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CComponent.php:130
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(145): CComponent->__get('user_to')
+#1 R:\home\roxifi\www\protected\models\UsersFriends.php(257): CActiveRecord->__get('user_to')
+#2 R:\home\roxifi\www\protected\models\UsersFriends.php(247): UsersFriends::recognizeUserFriend(Object(Users))
+#3 R:\home\roxifi\www\protected\controllers\UsersController.php(162): UsersFriends::getUserFriendsForProfile('7')
+#4 [internal function]: UsersController->actionProfile('7')
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UsersController), Object(ReflectionMethod), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('profile')
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/profile')
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 R:\home\roxifi\www\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/u7
+HTTP_REFERER=http://roxifi/u7/notes
+---
+2013/11/27 22:10:19 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "UsersFriends.0".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CComponent.php:130
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 R:\home\roxifi\www\protected\models\UsersFriends.php(245): CModel->offsetGet(0)
+#3 R:\home\roxifi\www\protected\controllers\UsersController.php(162): UsersFriends::getUserFriendsForProfile('7')
+#4 [internal function]: UsersController->actionProfile('7')
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UsersController), Object(ReflectionMethod), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('profile')
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/profile')
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 R:\home\roxifi\www\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/u7
+HTTP_REFERER=http://roxifi/u7/notes
+---
+2013/11/27 22:10:34 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "UsersFriends.0".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CComponent.php:130
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 R:\home\roxifi\www\protected\models\UsersFriends.php(245): CModel->offsetGet(0)
+#3 R:\home\roxifi\www\protected\controllers\UsersController.php(162): UsersFriends::getUserFriendsForProfile('7')
+#4 [internal function]: UsersController->actionProfile('7')
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UsersController), Object(ReflectionMethod), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('profile')
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/profile')
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 R:\home\roxifi\www\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/u7
+HTTP_REFERER=http://roxifi/u7/notes
+---
+2013/11/27 22:10:45 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "Users.".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CComponent.php:173
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(161): CComponent->__set('', Array)
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CModel.php(607): CActiveRecord->__set('', Array)
+#2 R:\home\roxifi\www\protected\models\UsersFriends.php(245): CModel->offsetSet(NULL, Array)
+#3 R:\home\roxifi\www\protected\controllers\UsersController.php(162): UsersFriends::getUserFriendsForProfile('7')
+#4 [internal function]: UsersController->actionProfile('7')
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UsersController), Object(ReflectionMethod), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('profile')
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/profile')
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 R:\home\roxifi\www\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/u7
+HTTP_REFERER=http://roxifi/u7/notes
+---
