@@ -242,7 +242,7 @@ class UsersFriends extends CActiveRecord
         {
             foreach($requests as $key=>$request)
             {
-                $requests[$key] = Users::model()->findByPk(self::recognizeUserFriend($request));
+                $requests[$key] = Users::model()->findByPk(self::recognizeUserFriend($request, $user));
             }
         }
 
@@ -250,12 +250,12 @@ class UsersFriends extends CActiveRecord
 
     }
 
-    public static function recognizeUserFriend(&$request)
+    public static function recognizeUserFriend(&$request, $user_id)
     {
 
         $user_friend = $request->user_from;
 
-        if($user_friend == Yii::app()->user->id)
+        if($user_friend == $user_id)
             $user_friend = $request->user_to;
 
         return $user_friend;

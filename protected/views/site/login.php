@@ -19,39 +19,41 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
-  <table>
-    <tr>
-      <td>
-      Логин:
-      </td>
-      <td>
-		<?php echo $form->textField($model,'username'); ?>
-      </td>
-      <td>
-		<?php echo $form->error($model,'username'); ?>
-      </td>
-    </tr>
-    <tr>
-      <td>
-      Пароль:
-      </td>
-      <td>
-		<?php echo $form->textField($model,'password'); ?>
-      </td>
-      <td>
-		<?php echo $form->error($model,'password'); ?>
-      </td>
-    </tr>
-  </table>
-
-	<div class="row rememberMe">
-		<?php echo $form->checkBox($model,'rememberMe'); ?>
-		<?php echo $form->label($model,'rememberMe'); ?>
-		<?php echo $form->error($model,'rememberMe'); ?>
-	</div>
-
-	<div class="row buttons">
+<table>
+  <tr>
+    <td>
+    Логин:
+    </td>
+    <td>
+      <?php echo $form->textField($model,'username'); ?>
+    </td>
+    <td>
+      <?php echo $form->error($model,'username'); ?>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    Пароль:
+    </td>
+    <td>
+      <?php echo $form->textField($model,'password'); ?>
+    </td>
+    <td>
+      <?php echo $form->error($model,'password'); ?>
+    </td>
+  </tr>
+  <tr>
+    <td>
+  		<?php echo $form->checkBox($model,'rememberMe'); ?>
+    </td>
+    <td>
+      Запомнить
+    </td>
+    <td>
+      <?php echo $form->error($model,'rememberMe'); ?>
+    </td>
+  </tr>
+</table>
 		<?php echo CHtml::submitButton('Login'); ?>
-	</div>
 
 <?php $this->endWidget(); ?>

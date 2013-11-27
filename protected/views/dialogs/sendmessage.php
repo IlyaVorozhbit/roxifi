@@ -8,11 +8,10 @@ $this->breadcrumbs=array(
     Yii::t('dialogs', 'Dialogs')=>array('/dialogs'),
     Yii::t('dialogs', 'Writing message'),
 );
+$fullname = UsersInfo::model()->getFullName($user->id);
 ?>
 
-<h1><?php echo Yii::t('dialogs', 'Message for user ')?> <a href="/u<?php echo $user->id;?>"><?php echo $user->login;?></a></h1>
-
-<div class="form dialog">
+<h1><?php echo Yii::t('dialogs', 'Message for user ')?><a href="/u<?php echo $user->id;?>"><?php echo $fullname['name'].' '.$fullname['surname'];?></a></h1>
 
     <?php $form=$this->beginWidget('CActiveForm', array(
     'id'=>'messages-form',
@@ -23,12 +22,12 @@ $this->breadcrumbs=array(
     'enableAjaxValidation'=>false,
 )); ?>
 
-    <div class="row">
-        <?php echo $form->textArea($model,'text',array('size'=>60,'maxlength'=>255,'placeholder'=>Yii::t('dialogs', 'Message'))); ?>
+    <div class="row" style="padding: 0px;">
+        <?php echo $form->textArea($model,'text', array('placeholder'=>Yii::t('dialogs', 'Message'), 'style'=>'resize: none; width:600px; height:200px;')); ?>
         <?php echo $form->error($model,'text'); ?>
     </div>
 
-    <div class="row">
+    <div class="row" style="padding: 0px;">
         <?php echo CHtml::submitButton(Yii::t('dialogs', 'Send message'));?>
     </div>
 

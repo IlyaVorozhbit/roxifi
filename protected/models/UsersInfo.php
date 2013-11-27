@@ -107,8 +107,19 @@ class UsersInfo extends CActiveRecord
 		return parent::model($className);
 	}
 
-    public static function getUserFilledFields($user)
-    {
-        return UsersInfo::model()->findAll('user = :user', array(':user' => $user));
-    }
+  public static function getUserFilledFields($user)
+  {
+    return UsersInfo::model()->findAll('user = :user', array(':user' => $user));
+  }
+
+  public static function getFullName($user)
+  {
+    $info = self::model()->findAll('user = :user AND field IN (2, 3)', array('user'=>$user));
+    foreach($info AS $field)
+      if ($field->field == 2)
+        $name = $field->value;
+      else
+        $surname = $field->value;
+    return array('name'=>$name, 'surname'=>$surname);
+  }
 }

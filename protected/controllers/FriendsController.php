@@ -80,10 +80,10 @@ class FriendsController extends Controller
 
         $friends = UsersFriends::getUsersAccountsByRequests($friends);
 
-		$this->render('FriendList',array(
-            'friends'=>$friends,
-            'requests'=>$requests,
-            'pages'=>$pages
+        $this->render('FriendList',array(
+                'friends'=>$friends,
+                'requests'=>$requests,
+                'pages'=>$pages
         ));
 
 	}

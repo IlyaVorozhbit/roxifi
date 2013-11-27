@@ -35,10 +35,9 @@
         <?php
             foreach($friends as $friend)
             {
-                if($friend->id == $_GET['id'])
-                    $friend = Users::model()->findByPk(Yii::app()->user->id);
-
-                $this->renderPartial('profile/_friend',array('friend'=>$friend));
+              if ($friend->id == $_GET['id'])
+                $friend = Users::model()->findByPk(Yii::app()->user->id);
+              $this->renderPartial('profile/_friend',array('friend'=>$friend));
             }
         ?>
     </div>
