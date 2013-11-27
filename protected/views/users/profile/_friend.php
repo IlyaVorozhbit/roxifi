@@ -5,5 +5,5 @@
     ?>
     <a href='/u<?php echo $friend->id;?>'><img src="<?php echo $profile_image;?>"/></a>
 
-    <div class="name">Вася Пупкин</div>
+    <div class="name"><?php echo $friend->login;?></div>
 </div>

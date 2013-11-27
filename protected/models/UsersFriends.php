@@ -233,6 +233,7 @@ class UsersFriends extends CActiveRecord
         $criteria->condition = '((user_from=:user) or (user_to=:user)) and status = '.self::STATUS_FRIEND.'';
         $criteria->params = array(
             ':user'=>$user,
+            ':me'=>Yii::app()->user->id,
         );
 
         $requests = UsersFriends::model()->findAll($criteria);
@@ -251,10 +252,11 @@ class UsersFriends extends CActiveRecord
 
     public static function recognizeUserFriend(&$request)
     {
-        $user_friend = $request->user_to;
+
+        $user_friend = $request->user_from;
 
         if($user_friend == Yii::app()->user->id)
-            $user_friend = $request->user_from;
+            $user_friend = $request->user_to;
 
         return $user_friend;
     }
