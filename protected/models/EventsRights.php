@@ -103,4 +103,9 @@ class EventsRights extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public function findByEvent($event)
+    {
+        return EventsRights::model()->find('event=:event',array(':event'=>$event));
+    }
 }

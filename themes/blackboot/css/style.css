@@ -7,10 +7,6 @@
  * Designed by Nachi
  */
 
-
-
-@import url(http://fonts.googleapis.com/css?family=Marmelad&subset=latin,cyrillic);
-
 body {
 	padding-top: 40px;
   }
@@ -28,23 +24,23 @@ div.cont {
   }
 
 .main {
-padding-left:20px;
-padding-right:20px;
-padding-bottom:20px;
-background-color: #fff;
-border: 1px solid #DEDEDE;
-border-radius:3px;
--webkit-border-radius:3px;
--moz-border-radius:3px;
-margin-bottom: 10px ;
-min-height:300px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:20px;
+    background-color: #fff;
+    border: 1px solid #DEDEDE;
+    border-radius:3px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    margin-bottom: 10px ;
+    min-height:300px;
 }
 
 
  
 p, div {
   font-size:16px;
-  font-family: 'Marmelad', sans-serif;
+  font-family: 'Tahoma', sans-serif;
 }
 
 div.portlet-decoration {
@@ -76,6 +72,7 @@ border: 1px solid #dddddd;
 /* Forms */
 form {
   margin: 0 0 18px;
+  padding-left: 20px;
 }
 fieldset {
   padding: 0;
@@ -557,6 +554,11 @@ p.hint { float:left; display:block;}
     height:30px;
     text-align: center;
     padding-top: 10px;
+}
+
+.btn, input[type="button"], input[type="submit"]
+{
+    margin: 0;
 }
 
 .navbar-inverse .navbar-inner {

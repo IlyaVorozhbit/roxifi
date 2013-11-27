@@ -102,4 +102,18 @@ class Events extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public static function getEventsAndPages()
+    {
+        $criteria=new CDbCriteria;
+        $criteria->order = 'time desc';
+        $pages=new CPagination(Events::model()->count($criteria));
+        $pages->pageSize=10;
+        $pages->applyLimit($criteria);
+
+        $ret['pages'] = $pages;
+        $ret['events'] = Events::model()->findAll($criteria);
+
+        return $ret;
+    }
 }
