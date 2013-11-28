@@ -109,4 +109,33 @@ class WallRecords extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public static function sendRecordTo($model,$user)
+    {
+        $model->attributes = $_POST['WallRecords'];
+        $model->user_from = Yii::app()->user->id;
+        $model->user_to = $user;
+        $model->time = date('Y-m-d H:i:s',time());
+        $model->status = 1;
+        $model->save() or die(print_r($model->getErrors()));
+    }
+
+    public static function getUserRecords($user)
+    {
+        $criteria=new CDbCriteria;
+        $criteria->condition = 'user_to =:user and status = 1';
+        $criteria->order = 'time desc';
+        $criteria->params = array(':user'=>$user);
+        $pages=new CPagination(WallRecords::model()->count($criteria));
+        $pages->pageSize=10;
+        $pages->applyLimit($criteria);
+
+        $records = WallRecords::model()->findAll($criteria);
+
+        $ret = array();
+        $ret['pages'] = $pages;
+        $ret['records'] = $records;
+
+        return $ret;
+    }
 }
