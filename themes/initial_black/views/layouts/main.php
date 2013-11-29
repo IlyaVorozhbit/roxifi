@@ -9,6 +9,7 @@
 
 <div class="header">
     <?php
+        $dialogs_label = '';
         $this->widget('zii.widgets.CMenu',
         array(
             'htmlOptions' => array( 'class' => 'menu' ),
