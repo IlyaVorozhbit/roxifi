@@ -1,21 +1,16 @@
 <?php
 
-    $this->breadcrumbs=array(
-      Yii::t('profile', 'Profile')
-    );
-
     $user->user_info = HUsers::getUserInfo($user->id);
 
 ?>
-<h1><?php HUsers::getProfileName($user);?></h1>
-
-
 <div class="user_profile">
+<?php
+  if(time()-strtotime($user->last_update)<120)
+    echo '<div class="status_online">'.Yii::t('profile', 'Online').'</div>';
+?>
 
-    <?php
-        if(time()-strtotime($user->last_update)<120)
-            echo '<div class="status_online">'.Yii::t('profile', 'Online').'</div>';
-    ?>
+
+<h1><?php HUsers::getProfileName($user);?></h1>
 
     <div class="profile_buttons">
         <?php

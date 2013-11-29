@@ -595,6 +595,7 @@ p.hint { float:left; display:block;}
 
 .user_profile .profile_buttons{
     padding:10px;
+    padding-left:0px;
     margin-top: -30px;
 }
 
@@ -650,7 +651,6 @@ p.hint { float:left; display:block;}
     border-radius: 5px;
     float: right;
     position: static;
-    margin-top: 10px;
 }
 
 .user_profile .user_friends
@@ -723,4 +723,18 @@ p.hint { float:left; display:block;}
 .dialog .message .friend a{
     color:#fff;
     text-decoration: underline;
+}
+
+.member
+{
+    margin: 15px;
+    margin-top: 25px;
+    width: 100px;
+    display: inline-block;
+}
+
+.member .name
+{
+    font-size: 10px;
+    text-align: center;
 }
