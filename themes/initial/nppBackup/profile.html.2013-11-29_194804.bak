@@ -1,0 +1,99 @@
+<html>
+
+	<head>
+		<title>test</title>
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+	</head>
+
+    <body>
+
+        <div class="header">
+            <ul class="menu">
+                <li>
+                    <a href="">Login</a>
+                </li>
+                <div class="divider"></div>
+                <li>
+                    <a href="">Register</a>
+                </li>
+                <div class="divider"></div>
+                <li>
+                    <a href="">About</a>
+                </li>
+                <div class="divider"></div>
+                <li>
+                    <a href="">Authors</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content">
+
+            <div class="user_profile">
+
+
+                <div class="left_block">
+
+                    <div class="avatar">
+                        <img src="images/ava222x222.png"/>
+                    </div>
+
+                    <div class="friends">
+
+                        <div class="friends_label">
+                            Friends
+                        </div>
+
+                        <div class="friend">
+                            <div class="friend_avatar">
+
+                            </div>
+                            <div class="name">
+                                Test User
+                            </div>
+                        </div>
+                        <div class="friend">
+                            <div class="friend_avatar">
+
+                            </div>
+                            <div class="name">
+                                Test User
+                            </div>
+                        </div>
+
+                        <div class="friend">
+                            <div class="friend_avatar">
+
+                            </div>
+                            <div class="name">
+                                Test User
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="right_block">
+                    <div class="user_info">
+                        <div class="user_name">
+                            Ilya Vorozhbit.
+                        </div>
+                        <div class="about">
+                            Описание профиля пользователя.<br>
+                            Может уложиться в две строки.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            footer
+        </div>
+
+    </body>
+
+</html>

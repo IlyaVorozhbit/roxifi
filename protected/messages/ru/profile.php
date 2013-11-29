@@ -8,6 +8,8 @@
         'Wall' => 'Стена',
         'Content' => 'Содержание',
         'Online' => 'На сайте',
+        'Login' => 'Логин',
+        'Password' => 'Пароль',
 
         'Add to friends'=> 'Добавить в друзья',
         'Remove from friends'=> 'Удалить из друзей',
