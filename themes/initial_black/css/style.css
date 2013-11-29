@@ -3,15 +3,20 @@ body
     padding: 10px;
     font-family: "Tahoma";
     font-size: 13px;
-    background-image: url('../images/bg.png');
+    background-image: url('../images/bg.jpg');
     height: 100%;
     color:#fff;
 }
 
 a
 {
-    color:#fff;
+    color:#000;
     text-decoration: none;
+}
+
+tr
+{
+    color:#000;
 }
 
 .btn
@@ -32,7 +37,7 @@ input[type="submit"]
 
 .header
 {
-    border: 1px solid #7C7C7C;
+    #border: 1px solid #7C7C7C;
     border-radius: 4px;
 }
 
@@ -75,18 +80,18 @@ input[type="submit"]
 
 .footer
 {
-    padding:10px;
+    padding: 10px;
     border-radius: 4px;
     text-align: center;
-    color: #fff;
-    border: 1px solid #575757;
+    color: #000;
+    background-color: #fff;
 }
 
 .content
 {
     margin-top: 10px;
     margin-bottom: 10px;
-    border:1px solid #7C7C7C;
+    #border:1px solid #7C7C7C;
     padding: 10px;
     color: #fff;
 }
@@ -195,7 +200,7 @@ input[type="submit"]
     border: 1px solid #7A7A7A;
     padding: 5px;
     border-radius: 5px;
-    background-color: #000;
+    background-color: #fff;
 }
 
 .user_profile .right_block .user_info .user_name
@@ -238,10 +243,11 @@ input[type="submit"]
 
 .wall
 {
-    color: #fff;
-    border: 1px solid #b0b0b0;
+    color: #000;
+    #border: 1px solid #b0b0b0;
     padding: 10px;
     margin-top: 5px;
+    background-color: #fff;
 }
 
 .wall .record
