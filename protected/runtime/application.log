@@ -4400,3 +4400,154 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/favicon.ico
 ---
+2013/11/30 01:26:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Ничего не найдено.' in R:\home\roxifi\www\protected\controllers\EventsController.php:52
+Stack trace:
+#0 [internal function]: EventsController->actionMembers('30')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(EventsController), Array)
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(EventsController), Object(ReflectionMethod), Array)
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('members')
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('events/members')
+#13 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 R:\home\roxifi\www\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/events/members/30
+---
+2013/11/30 01:27:11 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Некорректный запрос.' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:1118
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('delete')
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('friends/delete')
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 R:\home\roxifi\www\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/friends/delete/8
+HTTP_REFERER=http://roxifi/friends
+---
+2013/11/30 01:27:17 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Некорректный запрос.' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:1118
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('delete')
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('friends/delete')
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 R:\home\roxifi\www\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/friends/delete/8
+HTTP_REFERER=http://roxifi/friends
+---
+2013/11/30 01:27:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "del".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('del')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('del')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('friends/del')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/friends/del/8
+---
+2013/11/30 01:27:26 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Некорректный запрос.' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:1118
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('delete')
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('friends/delete')
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 R:\home\roxifi\www\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/friends/delete/8
+HTTP_REFERER=http://roxifi/friends
+---
+2013/11/30 01:28:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "delete".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('delete')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('delete')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('friends/delete')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/friends/delete/8
+HTTP_REFERER=http://roxifi/friends
+---
+2013/11/30 01:28:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), '?? ?????? ?????...')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('del')
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('friends/del')
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 R:\home\roxifi\www\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/friends/del/8
+HTTP_REFERER=http://roxifi/friends
+---
+2013/11/30 01:44:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "verify/5299098f9ff85".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php:286
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('verify/5299098f...')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 R:\home\roxifi\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/verify/5299098f9ff85
+---
+2013/11/30 01:44:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "verify".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('verify')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('verify')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('site/verify')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/verify/5299098f9ff85
+---
+2013/11/30 01:52:55 [error] [exception.CException] exception 'CException' with message 'В классе UserIdentity и его поведениях не найден метод или замыкание с именем "addError".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CComponent.php:266
+Stack trace:
+#0 [internal function]: CComponent->__call('addError', Array)
+#1 R:\home\roxifi\www\protected\components\UserIdentity.php(41): UserIdentity->addError('password', 's username or p...')
+#2 R:\home\roxifi\www\protected\models\LoginForm.php(54): UserIdentity->authenticate()
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 R:\home\roxifi\www\protected\controllers\SiteController.php(94): CModel->validate()
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('login')
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 R:\home\roxifi\www\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/site/login
+HTTP_REFERER=http://roxifi/site/login
+---

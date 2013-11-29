@@ -118,7 +118,7 @@ class SiteController extends Controller
 
             if($model->save())
             {
-                $model->generateRegisterHash();
+                $model->sendRegisterMessage($model->email,$model->generateRegisterHash());
                 $this->render('register_success');
                 die();
             }
@@ -133,9 +133,16 @@ class SiteController extends Controller
 
     }
 
-    public function actionChange_Info()
+    public function actionVerify($hash)
     {
+        $hash = UsersRegistryHash::model()->find('hash=:hash',array(
+            ':hash'=>$hash
+        ));
 
+        if(!is_null($hash))
+        {
+            $hash->delete();
+        }
     }
 
 }

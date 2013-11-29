@@ -24,8 +24,20 @@ class UserIdentity extends CUserIdentity
 			$this->errorCode = self::ERROR_PASSWORD_INVALID;
         else
         {
-            $this->errorCode = self::ERROR_NONE;
-            $this->setState('id', $user->id);
+
+            $hash = UsersRegistryHash::model()->find('user=:user',array(
+                ':user'=>$user->id
+            ));
+
+            if(is_null($hash))
+            {
+                $this->errorCode = self::ERROR_NONE;
+                $this->setState('id', $user->id);
+            }
+
+            else
+                return 8;
+
         }
 
 		return !$this->errorCode;

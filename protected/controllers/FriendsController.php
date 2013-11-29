@@ -17,7 +17,7 @@ class FriendsController extends Controller
     {
         return array(
             array('allow',
-                'actions'=>array('accept','add','delete','friendlist','reject'),
+                'actions'=>array('accept','add','del','friendlist','reject'),
                 'users'=>array('@'),
             ),
 
@@ -52,7 +52,7 @@ class FriendsController extends Controller
 
 	}
 
-	public function actionDelete($id)
+	public function actionDel($id)
 	{
 
         if(UsersFriends::deleteFromFriends(Yii::app()->user->id,$id))

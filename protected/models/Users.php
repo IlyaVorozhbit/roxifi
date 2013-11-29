@@ -93,6 +93,8 @@ class Users extends CActiveRecord
 			'password' => Yii::t('profile', 'Password'),
 			'last_update' => 'last_update',
             'language' => Yii::t('profile', 'Language'),
+            'name' => Yii::t('profile', 'name'),
+            'surname' => Yii::t('profile', 'surname'),
 		);
 	}
 
@@ -164,6 +166,7 @@ class Users extends CActiveRecord
         $hash->user = $this->id;
         $hash->hash = uniqid();
         $hash->save();
+        return $hash->hash;
     }
 
     public function validatePassword($password)
@@ -187,5 +190,18 @@ class Users extends CActiveRecord
     {
       $user = self::model()->findByPk($id);
       return array('name'=>$user->name, 'surname'=>$user->surname);
+    }
+
+    public function sendRegisterMessage($email,$hash)
+    {
+        $message = 'Благодарим Вас за регистрацию на сайте. Для того чтобы подтвердить аккаунт, перейдите по ссылке: http://roxifi.ru/verify/'.$hash;
+        $mailer = Yii::createComponent('application.extensions.mailer.EMailer');
+        $mailer->From = 'no-reply@roxifi.ru';
+        $mailer->AddAddress($email);
+        $mailer->FromName = 'Roxifi Team';
+        $mailer->CharSet = 'UTF-8';
+        $mailer->Subject = 'Регистрация на Roxifi.';
+        $mailer->Body = $message;
+        $mailer->Send();
     }
 }

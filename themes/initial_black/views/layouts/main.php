@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>test</title>
+    <title><?php echo CHtml::encode($this->pageTitle); ?></title>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css" />
 </head>
 

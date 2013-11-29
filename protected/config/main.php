@@ -50,6 +50,7 @@
                     'u<id:\d+>/notes'=>'users/notes',
                     'u<id:\d+>/edit'=>'users/edit',
                     'u<id:\d+>/wrec'=>'users/wrec',
+                    'verify/<hash:\w+>'=>'site/verify',
                     '<controller:\w+>/<id:\d+>'=>'<controller>/view',
                     '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
                     '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',

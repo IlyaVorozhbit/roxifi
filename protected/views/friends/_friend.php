@@ -13,7 +13,7 @@
       </a>
     </td>
     <td style='text-align: right;'>
-      <a class="btn" href="/friends/delete/<?php echo $friend->id?>"><?php echo Yii::t('friends', 'Delete friend')?></a>
+      <a class="btn" href="/friends/del/<?php echo $friend->id?>"><?php echo Yii::t('friends', 'Delete friend')?></a>
       <a class="btn" href="/dialogs/sendmessage/<?php echo $friend->id?>"><?php echo Yii::t('dialogs', 'Write message')?></a>
     </td>
   </tr>
