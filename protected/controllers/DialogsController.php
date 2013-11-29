@@ -35,7 +35,6 @@ class DialogsController extends Controller
 	public function actionView($id)
 	{
 
-        $model = new Messages();
         $dialog = Dialogs::model()->findByPk($id);
         $messagesAndPages = Dialogs::getDialogMessages($dialog->id);
 
@@ -51,7 +50,7 @@ class DialogsController extends Controller
             'pages'=>$messagesAndPages['pages'],
             'user'=>Users::model()->findByPk(Yii::app()->user->id),
             'user_friend'=>Users::model()->findByPk(Dialogs::recognizeUserFriend($dialog)),
-            'model'=>$model
+            'model'=>new Messages()
         ));
 
         Messages::makeMessagesReaded($messagesAndPages['messages']);
@@ -61,19 +60,15 @@ class DialogsController extends Controller
 	public function actionDialogList()
 	{
         $dialogsAndPages = Dialogs::getUserDialogs(Yii::app()->user->id);
-        $dialogs = $dialogsAndPages['dialogs'];
-        $pages = $dialogsAndPages['pages'];
 
 		$this->render('DialogList',array(
-            'dialogs'=>$dialogs,
-            'pages'=>$pages,
+            'dialogs'=>$dialogsAndPages['dialogs'],
+            'pages'=>$dialogsAndPages['pages'],
         ));
 	}
 
     public function actionSendMessage($id)
     {
-
-        $model = new Messages();
 
         if (isset($_POST['Messages']))
         {
@@ -84,7 +79,7 @@ class DialogsController extends Controller
         }
 
         $this->render('sendmessage',array(
-            'model'=>$model,
+            'model'=>new Messages(),
             'user'=>Users::model()->findByPk($id)
         ));
     }
@@ -97,30 +92,4 @@ class DialogsController extends Controller
         $this->redirect('/dialogs/view/'.$message->dialog);
     }
 
-	// Uncomment the following methods and override them if needed
-	/*
-	public function filters()
-	{
-		// return the filter configuration for this controller, e.g.:
-		return array(
-			'inlineFilterName',
-			array(
-				'class'=>'path.to.FilterClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-
-	public function actions()
-	{
-		// return external action classes, e.g.:
-		return array(
-			'action1'=>'path.to.ActionClass',
-			'action2'=>array(
-				'class'=>'path.to.AnotherActionClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-	*/
 }
