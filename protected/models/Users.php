@@ -88,11 +88,11 @@ class Users extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'login' => 'Login',
+			'login' => Yii::t('profile', 'Login'),
 			'email' => 'Email',
-			'password' => 'Password',
+			'password' => Yii::t('profile', 'Password'),
 			'last_update' => 'last_update',
-      'language' => 'Language',
+            'language' => Yii::t('profile', 'Language'),
 		);
 	}
 
@@ -141,6 +141,9 @@ class Users extends CActiveRecord
     {
         if($this->isNewRecord == 1)
         {
+
+            if(empty($_POST['Users']['name']))
+                $this->addError('name','Логин уже используется.');
 
             if(Users::model()->exists('login=:login',array(':login'=>$this->login)))
                 $this->addError('login','Логин '.$this->login .' уже используется.');

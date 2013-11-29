@@ -8,7 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Roxifi',
-    'theme'=>'blackboot',
+    'theme'=>'initial',
     'language'=>'ru',
 
 	// preloading 'log' component
