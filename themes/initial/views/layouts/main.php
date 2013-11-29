@@ -9,10 +9,7 @@
 
 <div class="header">
     <?php
-<<<<<<< HEAD
         $dialogs_label = '';
-=======
->>>>>>> 4a03daea0cacae7eaf43d5586ebf90c4bc0a263c
         $this->widget('zii.widgets.CMenu',
         array(
             'htmlOptions' => array( 'class' => 'menu' ),
@@ -40,8 +37,5 @@
 
 </body>
 
-<<<<<<< HEAD
 </html>
-=======
 </html>
->>>>>>> 4a03daea0cacae7eaf43d5586ebf90c4bc0a263c
