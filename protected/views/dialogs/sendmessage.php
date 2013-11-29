@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
     Yii::t('dialogs', 'Dialogs')=>array('/dialogs'),
     Yii::t('dialogs', 'Writing message'),
 );
-$fullname = UsersInfo::model()->getFullName($user->id);
+$fullname = Users::model()->getFullName($user->id);
 ?>
 
 <h1><?php echo Yii::t('dialogs', 'Message for user ')?><a href="/u<?php echo $user->id;?>"><?php echo $fullname['name'].' '.$fullname['surname'];?></a></h1>

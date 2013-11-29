@@ -2,8 +2,6 @@
 
 
     class HUsers {
-
-
         public static function getUserInfo($user)
         {
 
@@ -22,14 +20,6 @@
 
             return $new_user_info;
 
-        }
-
-        public static function getProfileName(Users $user)
-        {
-            if(!empty($user->user_info[2]) && !empty($user->user_info[3]))
-                echo $user->user_info[2]->value.' '.$user->user_info[3]->value;
-            else
-                echo Yii::app()->language == 'en' ? $user->login.Yii::t('profile', '\'s profile') : Yii::t('profile', '\'s profile').$user->login;
         }
 
     }

@@ -3,7 +3,7 @@
     $dialogs_label = $messages_count > 0 ? ' +'.$messages_count.'' : '';
     $avatar = UsersImages::model()->find('user = :user', array('user'=>$user->id));
     $profile_image =  $avatar !== NULL ? '/avatars/u'.$user->id.'/'.$avatar->filename : '/images/no_avatar.png';
-    $fullname = UsersInfo::model()->getFullName($user->id);
+    $fullname = Users::model()->getFullName($user->id);
 ?>
 
 <a style='padding: 20px; width: 220px;' href="/dialogs/view/<?php echo $dialog->id;?>">

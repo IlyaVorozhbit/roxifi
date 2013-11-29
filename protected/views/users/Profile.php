@@ -10,7 +10,7 @@
 ?>
 
 
-<h1><?php HUsers::getProfileName($user);?></h1>
+<h1><?php echo $user->name.' '.$user->surname;?></h1>
 
     <div class="profile_buttons">
         <?php

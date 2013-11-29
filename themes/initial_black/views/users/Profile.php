@@ -39,7 +39,7 @@
         <div class="user_info">
 
             <div class="user_name">
-                <?php HUsers::getProfileName($user);?>
+                <?php echo $user->name.' '.$user->surname;?>
             </div>
 
             <?php

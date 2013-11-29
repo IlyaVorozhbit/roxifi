@@ -47,12 +47,12 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('login, email, password, language', 'required'),
-			array('login, email, password, language', 'length', 'max'=>255),
+			array('login, email, password, language, name, surname', 'required'),
+			array('login, email, password, language, name, surname', 'length', 'max'=>255),
             array('email','email'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, login, email, password, language', 'safe', 'on'=>'search'),
+			array('id, login, email, password, language, name, surname', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -119,6 +119,8 @@ class Users extends CActiveRecord
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('language',$this->language,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('surname',$this->surname,true);
 		$criteria->compare('last_update',$this->last_update,true);
 
 		return new CActiveDataProvider($this, array(
@@ -179,5 +181,11 @@ class Users extends CActiveRecord
       if(is_null($result))
         throw new CHttpException(404,'Профиль не найден');
       return $result;
+    }
+
+    public static function getFullName($id)
+    {
+      $user = self::model()->findByPk($id);
+      return array('name'=>$user->name, 'surname'=>$user->surname);
     }
 }

@@ -1,7 +1,7 @@
 <?
     $avatar = UsersImages::model()->find('user = :user', array('user'=>$friend->id));
     $profile_image =  $avatar !== NULL ? '/avatars/u'.$friend->id.'/'.$avatar->filename : '/images/no_avatar.png';
-    $fullname = UsersInfo::model()->getFullName($friend->id);
+    $fullname = Users::model()->getFullName($friend->id);
 ?>
 
 <table class="friend">
