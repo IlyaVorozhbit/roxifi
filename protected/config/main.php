@@ -58,33 +58,41 @@
             ),
 
             'db'=>array(
-                'connectionString' => 'mysql:host=178.32.53.111;dbname=roxifi_roxifi',
-                //'connectionString' => 'mysql:host=localhost;dbname=roxifi',
-                'emulatePrepare' => true,
-                'username' => 'roxifi_roxifi',
-                //'username' => 'root',
-                'password' => '12345678',
-                //'password' => '',
-                'charset' => 'utf8',
-            ),
 
-            'errorHandler'=>array(
-                // use 'site/error' action to display errors
-                'errorAction'=>'site/error',
-            ),
-            'log'=>array(
-                'class'=>'CLogRouter',
-                'routes'=>array(
-                    array(
-                        'class'=>'CFileLogRoute',
-                        'levels'=>'error, warning',
-                    ),
-                    // uncomment the following to show log messages on web pages
-                    /*
-                     array(
-                         'class'=>'CWebLogRoute',
-                     ),
-                     */
+                'emulatePrepare' => true,
+                'charset' => 'utf8',
+
+
+                    'connectionString' => 'mysql:host=178.32.53.111;dbname=roxifi_roxifi',
+                    'username' => 'roxifi_roxifi',
+                    'password' => '12345678',
+
+
+                /*
+                   'connectionString' => 'mysql:host=localhost;dbname=roxifi',
+                   'username' => 'root',
+                   'password' => '',
+                /*/
+
+       ),
+
+       'errorHandler'=>array(
+           // use 'site/error' action to display errors
+           'errorAction'=>'site/error',
+       ),
+       'log'=>array(
+           'class'=>'CLogRouter',
+           'routes'=>array(
+               array(
+                   'class'=>'CFileLogRoute',
+                   'levels'=>'error, warning',
+               ),
+               // uncomment the following to show log messages on web pages
+               /*
+                array(
+                    'class'=>'CWebLogRoute',
+                ),
+                */
                 ),
             ),
         ),

@@ -54,17 +54,6 @@
             }
             ?>
 
-            <div class="label">Связь</div>
-            <div class="about">
-                ICQ: 1228424<br>
-                Skype: mazahaka-7<br>
-            </div>
-
-            <div class="label">Интересы</div>
-            <div class="about">
-                Игра на гитаре<br>
-            </div>
-
         </div>
 
         <div class="wall">

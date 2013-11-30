@@ -145,4 +145,10 @@ class SiteController extends Controller
         }
     }
 
+    public function actionFeedback()
+    {
+        $this->render('feedback');
+    }
+
+
 }

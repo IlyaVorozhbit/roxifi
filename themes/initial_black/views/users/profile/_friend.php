@@ -7,7 +7,7 @@
     <div class="friend_avatar">
 
     </div>
-    <a href='/u<?php echo $friend->id;?>'><img style="width: 90px; height: 90px; border: 1px solid #E7E7E7;" src='<?php echo $profile_image;?>'></a>
+    <a href='/u<?php echo $friend->id;?>'><img style="width: 70px; height: 70px; border: 1px solid #E7E7E7;" src='<?php echo $profile_image;?>'></a>
     <div class="name">
         <?php echo $friend->login;?>
     </div>
