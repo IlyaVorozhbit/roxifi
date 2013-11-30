@@ -15,6 +15,8 @@
 
         public static function renderSendMessageButton(Users $user)
         {
+            if($user->id == Yii::app()->user->id)
+                return 0;
 
             if(!Yii::app()->user->isGuest)
                 echo '<a class="btn" href="/dialogs/sendmessage/'.$user->id.'">'.Yii::t('profile', 'Send message').'</a>';

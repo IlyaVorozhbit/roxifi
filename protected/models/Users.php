@@ -204,4 +204,18 @@ class Users extends CActiveRecord
         $mailer->Body = $message;
         $mailer->Send();
     }
+
+    public static function getUsersAndPages()
+    {
+        $criteria=new CDbCriteria;
+        $criteria->order = 'id desc';
+        $pages=new CPagination(Users::model()->count($criteria));
+        $pages->pageSize=10;
+        $pages->applyLimit($criteria);
+
+        $ret['pages'] = $pages;
+        $ret['users'] = Users::model()->findAll($criteria);
+
+        return $ret;
+    }
 }

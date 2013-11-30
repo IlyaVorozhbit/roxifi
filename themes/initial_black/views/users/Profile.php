@@ -1,5 +1,6 @@
 <?php
 
+    $this->pageTitle .= $user->name.' '.$user->surname;
 
     $user->user_info = HUsers::getUserInfo($user->id);
 
@@ -14,6 +15,12 @@
 
         <div class="avatar">
             <img style="width: 222px; height: 222px; border: 1px solid #E7E7E7;" src="<?php echo $profile_image;?>"/>
+        </div>
+
+        <div class="profile_buttons">
+            <?php if($user->id == Yii::app()->user->id) echo '<a class="btn" href="u'.$user->id.'/edit">Редактировать профиль</a>';?>
+            <?php HProfile::renderSendMessageButton($user);?>
+            <a class="btn" href="/blog/<?php echo $user->id;?>"><?php echo Yii::t('blog', 'Blog');?></a>
         </div>
 
         <div class="friends">
@@ -90,6 +97,9 @@
                         'authors'=>$authors,
                         'record'=>$record
                     ));
+
+                if (empty($wallRecords))
+                    echo Yii::t('profile', 'You have no records yet.');
                 ?>
 
         </div>

@@ -20,6 +20,7 @@
             array('label'=>Yii::t('dialogs', 'Dialogs').$dialogs_label, 'url'=>array('/dialogs'), 'visible'=>!Yii::app()->user->isGuest),
             array('label'=>Yii::t('friends', 'Friends'), 'url'=>array('/friends'), 'visible'=>!Yii::app()->user->isGuest),
             array('label'=>Yii::t('nav_buttons', 'Profile'), 'url'=>array('/u'.Yii::app()->user->id), 'visible'=>!Yii::app()->user->isGuest),
+            array('label'=>Yii::t('nav_buttons', 'Users'), 'url'=>array('/users'), 'visible'=>!Yii::app()->user->isGuest),
             array('label'=>Yii::t('events', 'Events'), 'url'=>array('/events'), 'visible'=>!Yii::app()->user->isGuest),
             array('label'=>Yii::t('nav_buttons', 'Logout').' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
             array('label'=>Yii::t('nav_buttons', 'Feedback'), 'url'=>array('/site/feedback'))

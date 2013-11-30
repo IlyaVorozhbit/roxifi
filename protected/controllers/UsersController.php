@@ -2,15 +2,24 @@
 
 class UsersController extends Controller
 {
-  public $defaultAction = 'Profile';
+  public $defaultAction = 'Users';
+
+    public function actionUsers()
+    {
+        $users = Users::getUsersAndPages();
+        $this->render('users',array(
+            'users'=>$users['users'],
+            'pages'=>$users['pages'],
+        ));
+    }
 
 	public function actionFriends()
 	{
 		$this->render('Friends');
 	}
 
-  public function actionEdit($id)
-  {
+    public function actionEdit($id)
+    {
     if ($id == Yii::app()->user->id)
     {
       if (isset($_GET['delete_image']))
@@ -84,8 +93,8 @@ class UsersController extends Controller
       'user'=>Users::model()->with('usersInfos')->findByPk($id),));
   }
 
-  public function actionWrec($id)
-  {
+    public function actionWrec($id)
+    {
     if (isset($_GET['delete']) && isset($_GET['record_id']))
     {
       $model = WallRecords::model()->findByPk($_GET['record_id']);
@@ -158,5 +167,85 @@ class UsersController extends Controller
 	{
 		$this->render('Search');
 	}
+
+    public function actionBlog($id)
+    {
+
+        if (isset($_POST['BlogsMessages']))
+        {
+            BlogsMessages::addMessage(new BlogsMessages(),$id);
+            $this->redirect('/blog/'.$id);
+        }
+
+
+        $blog = BlogsMessages::getMessagesAndPages($id);
+
+        $this->render('Blog',array(
+            'messages'=>$blog['messages'],
+            'pages'=>$blog['pages'],
+            'model'=>new BlogsMessages()
+        ));
+
+    }
+
+    public function actionBlogMessage($id)
+    {
+        $record = BlogsMessages::model()->findByPk($id);
+
+        if(is_null($record))
+            throw new CHttpException(404,'Not found.');
+
+        $author = Users::model()->findByPk($record->user);
+
+        $this->render('blog/_message',array(
+            'message'=>$record,
+            'author'=>$author
+        ));
+
+    }
+
+    public function actionBlogDelMessage($id)
+    {
+        $record = BlogsMessages::model()->findByPk($id);
+
+        if(!is_null($record))
+        {
+            $user = $record->user;
+
+            if(Yii::app()->user->id == $record->user)
+                $record->delete();
+
+            $this->redirect('/blog/'.$user);
+        }
+    }
+
+    public function actionBlogEditMessage($id)
+    {
+        $record = BlogsMessages::model()->findByPk($id);
+
+        if(is_null($record))
+            throw new CHttpException(404,'Not found.');
+
+
+        if(Yii::app()->user->id == $record->user)
+
+        {
+
+            if (isset($_POST['BlogsMessages']))
+            {
+                BlogsMessages::editMessage($record);
+                $this->redirect('/blog/'.$record->user);
+            }
+
+            $record->text = str_replace('<br />','',$record->text);
+
+            $this->render('blog/edit',array(
+                'model'=>$record
+            ));
+
+        }
+
+    }
+
 
 }
