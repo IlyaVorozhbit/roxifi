@@ -293,6 +293,27 @@ select
     background-color: #fff;
 }
 
+.user_profile .right_block .user_info .user_status
+{
+    float:right;
+}
+
+.user_profile .right_block .user_info .user_status .online
+{
+    min-height: 28px;
+    min-width: 15px;
+    background-color: #2BD34C;
+    border: 1px solid #3DBB1E;
+}
+
+.user_profile .right_block .user_info .user_status .offline
+{
+    min-height: 28px;
+    min-width: 15px;
+    background-color: #D32B2B;
+    border: 1px solid #BB1E1E;
+}
+
 .user_profile .right_block .user_info .user_name
 {
     font-size: 18px;
@@ -345,6 +366,30 @@ select
     margin-bottom: 10px;
 }
 
+.wall .record .user_status
+{
+    float:left;
+    position: absolute;
+    margin-left: 105px;
+    margin-right: 10px;
+}
+
+.wall .record .user_status .online
+{
+    min-height: 21px;
+    min-width: 7px;
+    background-color: #2BD34C;
+    border: 1px solid #3DBB1E;
+}
+
+.wall .record .user_status .offline
+{
+    min-height: 21px;
+    min-width: 7px;
+    background-color: #D32B2B;
+    border: 1px solid #BB1E1E;
+}
+
 .wall .input_form
 {
     resize: none;
@@ -376,7 +421,7 @@ select
 .wall .record .wall_record_username
 {
     border-bottom: 1px solid #E7E7E7;
-    margin-left: 110px;
+    margin-left: 120px;
     padding-bottom: 10px;
     color: #CCC;
 }

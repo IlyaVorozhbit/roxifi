@@ -43,7 +43,17 @@
     </div>
 
     <div class="right_block">
+
         <div class="user_info">
+
+            <div class="user_status">
+                <?php
+                    if(time()-strtotime($user->last_update)<120)
+                        echo '<div class="online"></div>';
+                    else
+                        echo '<div class="offline"></div>';
+                ?>
+            </div>
 
             <div class="user_name">
                 <?php echo $user->name.' '.$user->surname;?>

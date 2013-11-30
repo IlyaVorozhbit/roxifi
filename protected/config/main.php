@@ -66,16 +66,16 @@
                 'emulatePrepare' => true,
                 'charset' => 'utf8',
 
-                /*
+
                     'connectionString' => 'mysql:host=178.32.53.111;dbname=roxifi_roxifi',
                     'username' => 'roxifi_roxifi',
                     'password' => '12345678',
-                */
 
 
-                   'connectionString' => 'mysql:host=localhost;dbname=roxifi',
+
+                   /*'connectionString' => 'mysql:host=localhost;dbname=roxifi',
                    'username' => 'root',
-                   'password' => '',
+                   'password' => '',*/
 
 
        ),
