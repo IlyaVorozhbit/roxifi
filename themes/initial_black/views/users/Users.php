@@ -12,11 +12,9 @@
 
         if(!empty($users))
             foreach($users as $user)
-            {
                 $this->renderPartial('_user',array(
                     'user'=>$user
                 ));
-            }
 
     ?>
 

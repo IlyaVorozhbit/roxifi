@@ -389,12 +389,13 @@ select
     border: 1px solid #BB1E1E;
 }
 
-.wall .input_form
+.input_form
 {
     resize: none;
     width: 600px;
     height: 70px;
     border: 1px solid #D6D6D6;
+    resize: none;
 }
 
 .wall form
@@ -414,7 +415,6 @@ select
 
 .wall .record .wall_record_right_block
 {
-
 }
 
 .wall .record .wall_record_username
@@ -434,7 +434,6 @@ select
 
 .friend_list
 {
-
 }
 
 .friend_list .friend
@@ -513,16 +512,48 @@ select
     border-bottom: 1px solid #E0E0E0;
 }
 
-
 .blog .blog_record .record_post_time_preview
 {
     padding: 10px;
     padding-bottom: 3px;
 }
 
-
-
 .blog .blog_record .record_text
 {
     padding: 10px;
+}
+
+.comment
+{
+    border: 1px solid #DBDBDB;
+    padding: 10px;
+    min-height: 105px;
+    margin-bottom: 10px;
+}
+
+.comment .comment_avatar
+{
+    border: 1px solid #b0b0b0;
+    width: 100px;
+    height: 100px;
+    float:left;
+    margin-right: 10px;
+}
+
+.comment .comment_right_block
+{
+}
+
+.comment .comment_username
+{
+    border-bottom: 1px solid #E7E7E7;
+    margin-left: 120px;
+    padding-bottom: 10px;
+    color: #CCC;
+}
+
+.comment .text
+{
+    margin-top: 30px;
+    font-size: 12px;
 }

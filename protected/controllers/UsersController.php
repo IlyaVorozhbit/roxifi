@@ -7,7 +7,7 @@ class UsersController extends Controller
   public function actionUsers()
   {
     $users = Users::getUsersAndPages();
-    $this->render('users', array(
+    $this->render('Users', array(
         'users'=>$users['users'],
         'pages'=>$users['pages'],
     ));

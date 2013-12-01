@@ -6,7 +6,7 @@
   $avatar = UsersImages::model()->find('user = :user', array('user'=>$comment->user));
   $profile_image =  $avatar !== NULL ? '/avatars/u'.$comment->user.'/'.$avatar->filename : '/images/no_avatar.png';
 ?>
-<div class="record">
+<div class="comment">
   <div class="user_status">
     <?php
     if (time()-strtotime($user->last_update) < 120)
@@ -15,11 +15,11 @@
         echo '<div class="offline"></div>';
     ?>
   </div>
-  <div class="wall_record_avatar">
+  <div class="comment_avatar">
     <a href='/u<?php echo $comment->user;?>'><img style="width: 100px; height: 100px; border: 1px solid #E7E7E7;" src='<?php echo $profile_image;?>'></a>
   </div>
-  <div class="wall_record_right_block">
-    <div class="wall_record_username">
+  <div class="comment_right_block">
+    <div class="comment_username">
         <a href="/u<?php echo $comment->user;?>"><?php echo $user->name.' '.$user->surname;?></a>, <!--сегодня в--> <?php echo $time;?>.
     </div>
     <div class="text">
