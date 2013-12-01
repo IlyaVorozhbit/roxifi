@@ -1,28 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "wall_records".
+ * This is the model class for table "blogs_comments".
  *
- * The followings are the available columns in table 'wall_records':
+ * The followings are the available columns in table 'blogs_comments':
  * @property integer $id
- * @property integer $user_from
- * @property integer $user_to
- * @property integer $text
+ * @property integer $user
+ * @property string $text
  * @property string $time
- * @property integer $status
  *
  * The followings are the available model relations:
- * @property Users $userTo
- * @property Users $userFrom
+ * @property Users $user0
  */
-class WallRecords extends CActiveRecord
+class BlogsComments extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'wall_records';
+		return 'blogs_comments';
 	}
 
 	/**
@@ -33,11 +30,11 @@ class WallRecords extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_from, user_to, text, time, status', 'required'),
-			array('user_from, user_to, status', 'numerical', 'integerOnly'=>true),
+			array('user, text, time, blog_message', 'required'),
+			array('user, blog_message', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, user_from, user_to, text, time, status', 'safe', 'on'=>'search'),
+			array('id, user, text, time, blog_message', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -49,8 +46,7 @@ class WallRecords extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'userTo' => array(self::BELONGS_TO, 'Users', 'user_to'),
-			'userFrom' => array(self::BELONGS_TO, 'Users', 'user_from'),
+			'user0' => array(self::BELONGS_TO, 'Users', 'user'),
 		);
 	}
 
@@ -61,11 +57,9 @@ class WallRecords extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'user_from' => 'User From',
-			'user_to' => 'User To',
+			'user' => 'User',
 			'text' => 'Text',
 			'time' => 'Time',
-			'status' => 'Status',
 		);
 	}
 
@@ -88,11 +82,10 @@ class WallRecords extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('user_from',$this->user_from);
-		$criteria->compare('user_to',$this->user_to);
-		$criteria->compare('text',$this->text);
+		$criteria->compare('user',$this->user);
+		$criteria->compare('text',$this->text,true);
 		$criteria->compare('time',$this->time,true);
-		$criteria->compare('status',$this->status);
+		$criteria->compare('blog_message',$this->blog_message,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -103,39 +96,27 @@ class WallRecords extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return WallRecords the static model class
+	 * @return BlogsComments the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
 
-    public static function sendRecordTo($model,$user)
-    {
-        $model->attributes = $_POST['WallRecords'];
-        $model->user_from = Yii::app()->user->id;
-        $model->user_to = $user;
-        $model->time = date('Y-m-d H:i:s',time());
-        $model->status = 1;
-        $model->save() or die(print_r($model->getErrors()));
-    }
+  public static function getBlogComments($blog)
+  {
+    $criteria = new CDbCriteria;
+    $criteria->condition = 'blog_message =:blog';
+    $criteria->order = 'time desc';
+    $criteria->params = array(':blog'=>$blog);
+    $pages = new CPagination(self::model()->count($criteria));
+    $pages->pageSize = 10;
+    $pages->applyLimit($criteria);
+    $comments = self::model()->findAll($criteria);
+    $ret = array();
+    $ret['pages'] = $pages;
+    $ret['comments'] = $comments;
 
-    public static function getUserRecords($user)
-    {
-        $criteria = new CDbCriteria;
-        $criteria->condition = 'user_to =:user and status = 1';
-        $criteria->order = 'time desc';
-        $criteria->params = array(':user'=>$user);
-        $pages=new CPagination(WallRecords::model()->count($criteria));
-        $pages->pageSize = 10;
-        $pages->applyLimit($criteria);
-
-        $records = self::model()->findAll($criteria);
-
-        $ret = array();
-        $ret['pages'] = $pages;
-        $ret['records'] = $records;
-
-        return $ret;
-    }
+    return $ret;
+  }
 }

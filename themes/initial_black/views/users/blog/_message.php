@@ -13,9 +13,6 @@
                 echo ' <a href="/blog/delete/message/'.$message->id.'" class="btn">'.Yii::t('blog', 'Delete').'</a>';
                 echo '</div>';
             }
-        ?>
-
-        <?php
             if(Yii::app()->user->id == $_GET['id'])
             {
                 echo '<div class="delete_btn">';
@@ -29,18 +26,15 @@
             <?php echo $message->name;?>
         </div>
 
-
-            <?php
-                if($message->privacy)
+        <?php
+            if($message->privacy)
+                if(Yii::app()->user->id == $_GET['id'])
                 {
-                    if(Yii::app()->user->id == $_GET['id'])
-                    {
-                        echo '<div class="record_privacy">';
-                        echo 'private';
-                        echo '</div>';
-                    }
+                    echo '<div class="record_privacy">';
+                    echo 'private';
+                    echo '</div>';
                 }
-            ?>
+        ?>
 
 
         <div class="record_post_time">
@@ -51,8 +45,35 @@
             <?php echo $message->text;?>
         </div>
 
+        <?php
 
+            echo '<h2>'.Yii::t('blog', 'Comments').':</h2>';
 
+            $this->widget('CLinkPager',array(
+                'pages'=>$pages,
+                'maxButtonCount' => 1,
+                'cssFile'=>'',
+                'header' => '',
+            ));
+
+            foreach($comments as $key=>$comment)
+                $this->renderPartial('blog/_comment',array(
+                    'comment'=>$comment
+                ));
+
+            $form = $this->beginWidget('CActiveForm', array(
+                'id'=>'wall-records-form',
+                'enableAjaxValidation'=>false,
+            ));
+            echo '<table><tr><td>';
+            echo Yii::t('blog', 'Comment').':';
+            echo '</td></tr><tr><td>';
+            echo $form->textArea(BlogsComments::model(), 'text', array('placeholder'=>Yii::t('profile', 'Content'), 'class'=>'input_form'));
+            echo '</td></tr><tr><td>';
+            echo CHtml::submitButton(Yii::t('profile', 'Write'), array('style'=>'margin: 0px;'));
+            echo '</td></tr></table>';
+            $this->endWidget();
+         ?>
     </div>
 
 </div>

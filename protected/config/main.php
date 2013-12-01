@@ -51,6 +51,7 @@
                     'blog/message/<id:\d+>'=>'users/BlogMessage',
                     'blog/delete/message/<id:\d+>'=>'users/BlogDelMessage',
                     'blog/edit/message/<id:\d+>'=>'users/BlogEditMessage',
+                    'blog/comment/message/<id:\d+>'=>'users/BlogCommentMessage',
                     'u<id:\d+>/notes'=>'users/notes',
                     'u<id:\d+>/edit'=>'users/edit',
                     'u<id:\d+>/wrec'=>'users/wrec',

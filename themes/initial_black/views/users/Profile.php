@@ -18,9 +18,10 @@
         </div>
 
         <div class="profile_buttons">
-            <?php if($user->id == Yii::app()->user->id) echo '<a class="btn" href="u'.$user->id.'/edit">Редактировать профиль</a>';?>
+            <?php echo $user->id == Yii::app()->user->id ? '<a class="btn" href="u'.$user->id.'/edit">Редактировать профиль</a>' : '';?>
             <?php HProfile::renderSendMessageButton($user);?>
             <a class="btn" href="/blog/<?php echo $user->id;?>"><?php echo Yii::t('blog', 'Blog');?></a>
+            <?php echo $user->id == Yii::app()->user->id ? '<a class="btn" href="u'.$user->id.'/notes">Заметки</a>' : '';?>
         </div>
 
         <div class="friends">

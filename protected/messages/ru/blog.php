@@ -15,8 +15,8 @@
 
         'For friends only' => 'Только для друзей',
         'For everyone' => 'Для всех пользователей',
-
-
+        'Comment' => 'Комментировать',
+        'Comments' => 'Комментарии',
 
         'User don\'t have messages yet' => 'Пользователь не имеет сообщений',
     );
