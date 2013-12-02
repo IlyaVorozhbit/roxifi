@@ -53,6 +53,10 @@ $this->breadcrumbs=array(
         <?php
             foreach($messages as $key=>$message)
             {
+              if (($message->sender == Yii::app()->user->id && $message->show_sender != 1) ||
+                  ($message->recipient == Yii::app()->user->id && $message->show_recipient != 1))
+                continue;
+              else
                 $this->renderPartial('_message',array(
                     'message'=>$message,
                     'friend'=>$user_friend,

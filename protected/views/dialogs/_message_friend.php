@@ -1,4 +1,4 @@
-<div class="friend">
+<div class="friend_message">
     <?php
       if ($message->status == 0)
         echo '<span class="label">new</span>';

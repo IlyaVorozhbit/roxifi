@@ -86,10 +86,9 @@ class DialogsController extends Controller
 
     public function actionDeleteMessage($id)
     {
-        $message = Messages::model()->findByPk($id);
-
-        Messages::deleteMessage($message);
-        $this->redirect('/dialogs/view/'.$message->dialog);
+      $message = Messages::model()->findByPk($id);
+      Messages::deleteMessage($message);
+      $this->redirect('/dialogs/view/'.$message->dialog);
     }
 
 }
