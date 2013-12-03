@@ -52,5 +52,4 @@
                 echo Yii::t('materials', 'Nothing found. <a href="/materials/upload">Upload a file</a>?');
         ?>
     </div>
-
 </div>

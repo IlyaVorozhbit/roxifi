@@ -1,11 +1,8 @@
 <?php
-
-    $this->pageTitle .= $user->name.' '.$user->surname;
-
-    $user->user_info = HUsers::getUserInfo($user->id);
-
-    $avatar = UsersImages::model()->find('user = :user', array('user'=>$user->id));
-    $profile_image =  $avatar !== NULL ? '/avatars/u'.$user->id.'/'.$avatar->filename : '/images/no_avatar.png';
+  $this->pageTitle .= $user->name.' '.$user->surname;
+  $user->user_info = HUsers::getUserInfo($user->id);
+  $avatar = UsersImages::model()->find('user = :user', array('user'=>$user->id));
+  $profile_image =  $avatar !== NULL ? '/avatars/u'.$user->id.'/'.$avatar->filename : '/images/no_avatar.png';
 ?>
 
 <div class="user_profile">
@@ -22,6 +19,7 @@
             <?php HProfile::renderSendMessageButton($user);?>
             <a class="btn" href="/blog/<?php echo $user->id;?>"><?php echo Yii::t('blog', 'Blog');?></a>
             <?php echo $user->id == Yii::app()->user->id ? '<a class="btn" href="u'.$user->id.'/notes">Заметки</a>' : '';?>
+            <a class="btn" href="/u<?php echo $user->id;?>/materials"><?php echo Yii::t('materials', 'Materials');?></a>
         </div>
 
         <div class="friends">

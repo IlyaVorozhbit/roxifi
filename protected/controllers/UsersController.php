@@ -28,6 +28,11 @@ class UsersController extends Controller
 		$this->render('Friends');
 	}
 
+	public function actionMaterials($id)
+	{
+		$this->render('Materials', array('id'=>$id));
+	}
+
   public function actionEdit($id)
   {
     if ($id == Yii::app()->user->id)

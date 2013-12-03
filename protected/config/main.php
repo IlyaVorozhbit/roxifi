@@ -53,6 +53,7 @@
                     'blog/edit/message/<id:\d+>'=>'users/BlogEditMessage',
                     'blog/comment/message/<id:\d+>'=>'users/BlogCommentMessage',
                     'u<id:\d+>/notes'=>'users/notes',
+                    'u<id:\d+>/materials'=>'users/materials',
                     'u<id:\d+>/edit'=>'users/edit',
                     'u<id:\d+>/wrec'=>'users/wrec',
                     'verify/<hash:\w+>'=>'site/verify',
