@@ -151,6 +151,7 @@ class UsersController extends Controller
       $this->render('Notes', array(
               'user'=>Users::model()->with('usersInfos')->findByPk($id),
               'notes'=>$notes,
+              'creator'=>Users::model()->findByPk($_GET['id']),
               'pages'=>$pages,));
     }
     else
