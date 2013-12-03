@@ -1,0 +1,1 @@
+<a href="/materials/folder/<?php echo $folder->id;?>"><?php echo $folder->name;?></a><br><br>
