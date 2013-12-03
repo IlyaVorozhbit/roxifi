@@ -6,7 +6,7 @@
 
 <table class="friend">
     <tr>
-        <td style='width: 78%;'>
+        <td style='width: 83%;'>
             <a style='padding: 20px; width: 190px;' href="/u<?php echo $friend->id;?>">
                 <img style='margin-right: 10px; width: 50px; height: 50px;' src='<?php echo $profile_image;?>'>
                 <?php echo $fullname['name'].' '.$fullname['surname']?>

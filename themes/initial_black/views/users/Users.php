@@ -1,4 +1,4 @@
-<h1><?php echo Yii::t('nav_buttons', 'Users')?></h1>
+<h1><?php echo Yii::t('nav_buttons', 'People')?></h1>
 <div class='form'>
   <?php
       $form = $this->beginWidget('CActiveForm', array(

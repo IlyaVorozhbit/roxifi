@@ -15,8 +15,7 @@
 <div class="form">
 
     <?php echo Yii::t('materials', 'about')?><br><br>
-
-    <h2>Your folders</h2>
+    <h2><?php echo Yii::t('materials', 'Folders')?></h2>
 
     <?php
 

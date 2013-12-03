@@ -5,6 +5,8 @@
         'about' => 'Материалы - модуль, позволяющий обмениваться файлами между пользователями PolytechConnection.',
         'Materials' => 'Материалы',
         'Latest files' => 'Последние файлы',
+        'Folders' => 'Папки',
+        'No materials found.' => 'Материалы отсутствуют.',
         'Upload a file' => 'Загрузить файл',
         'Create folder' => 'Создать папку',
         '<br><br><a class="btn" href="/materials/createfolder">Create a new folder</a><br><br>' => '<br><br><a class="btn" href="/materials/createfolder">Создать новую папку</a><br><br>',

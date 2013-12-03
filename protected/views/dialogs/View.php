@@ -38,7 +38,7 @@ $this->breadcrumbs=array(
     )); ?>
 
         <div class="row">
-            <?php echo $form->textArea($model,'text',array('size'=>60,'maxlength'=>255,'placeholder'=>Yii::t('dialogs', 'Message'))); ?>
+            <?php echo $form->textArea($model,'text',array('rows'=>5, 'placeholder'=>Yii::t('dialogs', 'Message'), 'style'=>'resize: none; width: 600px;')); ?>
             <?php echo $form->error($model,'text'); ?>
         </div>
 

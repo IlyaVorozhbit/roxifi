@@ -295,9 +295,8 @@ select
 
 .user_profile .left_block .friends .friend
 {
-    #border: 1px solid #968D8F;
     float:left;
-    margin-right: 15px;
+    margin-left: 28px;
     text-align: center;
 }
 
