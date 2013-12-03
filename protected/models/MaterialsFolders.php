@@ -106,7 +106,8 @@ class MaterialsFolders extends CActiveRecord
 		return parent::model($className);
 	}
 
-    public function getFolders(){
-        return CHtml::listData(MaterialsFolders::model()->findAll('user=:user',array(':user'=>Yii::app()->user->id)),'id','name');
+    public function getFolders()
+    {
+      return CHtml::listData(MaterialsFolders::model()->findAll('user=:user',array(':user'=>Yii::app()->user->id)),'id','name');
     }
 }

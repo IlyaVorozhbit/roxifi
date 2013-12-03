@@ -16,11 +16,11 @@
             $file = new MaterialsFiles;
             if(isset($_POST['MaterialsFiles']))
             {
-                $file->attributes=$_POST['MaterialsFiles'];
-                $file->F=CUploadedFile::getInstance($file,'image');
+                $file->attributes = $_POST['MaterialsFiles'];
+                $file->F = CUploadedFile::getInstance($file,'image');
                 $file->user = Yii::app()->user->id;
-                $file->name = $file->F->name;
-                $file->description = 'description';
+                $file->name = $file->name == '' ? $file->F->name : $file->name;
+                $file->description = $file->description == '' ? 'description' : $file->description;
                 $file->file = md5(time().$file->F->name).strstr($file->name,'.');
                 $file->time = date('Y-m-d H:i:s',time());
 

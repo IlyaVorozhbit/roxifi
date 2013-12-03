@@ -38,8 +38,6 @@
 
     <div class="files">
 
-        <br><br><a class="btn" href="/materials/upload"><?php echo Yii::t('materials', 'Upload a file')?></a><br><br>
-
         <?php
             if(!empty($materials))
             {

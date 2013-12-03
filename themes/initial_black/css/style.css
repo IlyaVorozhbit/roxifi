@@ -619,11 +619,12 @@ select
     display: inline-block;
     margin-bottom: 40px;
     margin-right: 10px;
+    float: none;
 }
 
 .folder .file:hover
 {
-    background-color: #F8F8F8;
+  background-color: #F8F8F8;
 }
 
 .folder .file .name

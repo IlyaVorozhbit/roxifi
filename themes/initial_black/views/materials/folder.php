@@ -28,10 +28,8 @@
 
         foreach($files as $file)
             $this->renderPartial('_file',array('file'=>$file));
-
-
         ?>
     </div>
-
-
+    <hr>
+    <br><a class="btn" href="/materials/upload?folder=<?php echo $folder->id ?>"><?php echo Yii::t('materials', 'Upload a file')?></a><br><br>
 </div>

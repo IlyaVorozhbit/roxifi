@@ -14,8 +14,7 @@
  */
 class MaterialsFiles extends CActiveRecord
 {
-
-    public $F;
+  public $F;
 
 	/**
 	 * @return string the associated database table name
