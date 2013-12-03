@@ -9,6 +9,6 @@
     <a href="/u<?php echo $author->id;?>"><?php echo $fullname['name']?></a>, <?php echo $time;?> <br>
     <?php echo $message->text;?>
     <div align="right">
-        <a href="/dialogs/deletemessage/<?php echo $message->id;?>"><img style='height: 30px; width: 30px;' src='/images/delete.png' align='right'/></a>
+        <a class="btn" href="/dialogs/deletemessage/<?php echo $message->id;?>"><?php echo Yii::t('profile', 'Delete')?></a>
     </div>
 </div>
