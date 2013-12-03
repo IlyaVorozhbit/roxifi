@@ -10,6 +10,20 @@
 <div class="header">
     <?php
         $dialogs_label = '';
+
+        if(!Yii::app()->user->isGuest)
+        {
+
+            $dialogs_label = Messages::model()->count('recipient=:user and status = 0',array(
+                ':user'=>Yii::app()->user->id
+            ));
+
+            if($dialogs_label>0)
+                $dialogs_label = ' (+'.$dialogs_label.')';
+            else
+                $dialogs_label = '';
+        }
+
         $this->widget('zii.widgets.CMenu',
         array(
             'htmlOptions' => array( 'class' => 'menu' ),

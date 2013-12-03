@@ -110,7 +110,7 @@ class Dialogs extends CActiveRecord
     {
         $criteria=new CDbCriteria;
         $criteria->order = 'last_update desc';
-        $criteria->condition = '(creator =:user or invited=:user) and status = 1 and (SELECT count(*) from messages where dialog = t.id)>0';
+        $criteria->condition = '(creator =:user or invited=:user) and status = 1 and (SELECT count(*) from messages where (dialog = t.id)>0 and ((show_sender = 1 and sender='.Yii::app()->user->id.') or (show_recipient = 1 and recipient='.Yii::app()->user->id.')))';
         $criteria->params = array(':user'=>$user);
         $pages=new CPagination(Dialogs::model()->count($criteria));
         $pages->pageSize=10;
