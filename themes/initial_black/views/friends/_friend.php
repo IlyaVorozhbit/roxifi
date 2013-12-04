@@ -4,17 +4,20 @@
     $fullname = Users::model()->getFullName($friend->id);
 ?>
 
-<table class="friend">
-    <tr>
-        <td style='width: 83%;'>
-            <a style='padding: 20px; width: 190px;' href="/u<?php echo $friend->id;?>">
-                <img style='margin-right: 10px; width: 50px; height: 50px;' src='<?php echo $profile_image;?>'>
-                <?php echo $fullname['name'].' '.$fullname['surname']?>
-            </a>
-        </td>
-        <td style='text-align: right;'>
-            <a class="btn" href="/friends/del/<?php echo $friend->id?>"><?php echo Yii::t('friends', 'Delete friend')?></a>
-            <a class="btn" href="/dialogs/sendmessage/<?php echo $friend->id?>"><?php echo Yii::t('dialogs', 'Write message')?></a>
-        </td>
-    </tr>
-</table>
+<div class="friend" onclick="location.href='/u<?php echo $friend->id;?>'">
+
+    <div class="user_name">
+        <?php echo $fullname['name'].' '.$fullname['surname']?>
+    </div>
+
+    <a style='padding: 20px; width: 190px;' href="/u<?php echo $friend->id;?>">
+        <img style='margin-right: 10px; width: 50px; height: 50px;' src='<?php echo $profile_image;?>'>
+
+    </a>
+
+    <div class="right_block">
+        <a class="btn" href="/friends/del/<?php echo $friend->id?>"><?php echo Yii::t('friends', 'Delete friend')?></a>
+        <a class="btn" href="/dialogs/sendmessage/<?php echo $friend->id?>"><?php echo Yii::t('dialogs', 'Write message')?></a>
+    </div>
+
+</div>
