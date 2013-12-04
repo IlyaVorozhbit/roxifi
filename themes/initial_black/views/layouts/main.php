@@ -62,7 +62,14 @@
 
 <div class="content">
     <?php echo $content;?>
+
+    <div class="footer">
+        Created by 0Medvedkoo and Ma Null.
+    </div>
+
+
 </div>
+
 
 </body>
 

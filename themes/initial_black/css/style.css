@@ -175,11 +175,10 @@ select
 
 .footer
 {
-    padding: 10px;
+    padding-top: 30px;
     border-radius: 4px;
     text-align: center;
     color: #000;
-    background-color: #fff;
 }
 
 .content
@@ -323,18 +322,28 @@ select
 
 .user_profile .right_block .user_info .user_status .online
 {
-    min-height: 28px;
-    min-width: 15px;
-    background-color: #2BD34C;
+    margin-right: 5px;
+    margin-top: 5px;
+    width: 15px;
+    height: 15px;
+    background: #7dff65;
     border: 1px solid #3DBB1E;
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
 }
 
 .user_profile .right_block .user_info .user_status .offline
 {
-    min-height: 28px;
-    min-width: 15px;
+    margin-right: 5px;
+    margin-top: 5px;
+    width: 15px;
+    height: 15px;
     background-color: #D32B2B;
     border: 1px solid #BB1E1E;
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
 }
 
 .user_profile .right_block .user_info .user_name
@@ -399,16 +408,24 @@ select
 
 .wall .record .user_status .online
 {
-    min-height: 21px;
-    min-width: 7px;
+    margin-top: 2px;
+    height: 10px;
+    width: 10px;
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
     background-color: #2BD34C;
     border: 1px solid #3DBB1E;
 }
 
 .wall .record .user_status .offline
 {
-    min-height: 21px;
-    min-width: 7px;
+    margin-top: 2px;
+    height: 10px;
+    width: 10px;
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
     background-color: #D32B2B;
     border: 1px solid #BB1E1E;
 }

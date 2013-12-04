@@ -4,6 +4,15 @@ class UsersController extends Controller
 {
   public $defaultAction = 'Users';
 
+  public function actionSearch()
+  {
+      $users = Search::model()->searchByString($_REQUEST['username']);
+      foreach($users['users'] as $user)
+          $this->renderPartial('_user', array(
+              'user'=>$user
+          ));
+  }
+
   public function actionUsers()
   {
     if (isset($_POST['Search']))
@@ -177,11 +186,6 @@ class UsersController extends Controller
             'pages'=>$wallRecords['pages'],
             'model'=>new WallRecords()
         ));
-	}
-
-	public function actionSearch()
-	{
-		$this->render('Search');
 	}
 
   public function actionBlog($id)
