@@ -110,7 +110,7 @@ class Dialogs extends CActiveRecord
     {
         $criteria=new CDbCriteria;
         $criteria->order = 'last_update desc';
-        $criteria->condition = '(creator =:user or invited=:user) and status = 1 and (SELECT count(*) from messages where (dialog = t.id)>0 and ((show_sender = 1 and sender='.Yii::app()->user->id.') or (show_recipient = 1 and recipient='.Yii::app()->user->id.')))';
+        $criteria->condition = '(creator =:user or invited=:user) and (status = 1 or status = 5) and (SELECT count(*) from messages where (dialog =t.id and status <> '.Messages::STATUS_DELETED_FROM_ALL.') and ((sender=:user and status<>3) or (recipient=:user and status<>2)))';
         $criteria->params = array(':user'=>$user);
         $pages=new CPagination(Dialogs::model()->count($criteria));
         $pages->pageSize=10;
@@ -125,11 +125,11 @@ class Dialogs extends CActiveRecord
     public static function getDialogMessages($dialog)
     {
         $criteria=new CDbCriteria;
-        $criteria->condition = '((dialog =:dialog) and (status <> '.Messages::STATUS_DELETED_FROM_ALL.'))';
+        $criteria->condition = '(dialog =:dialog and status <> '.Messages::STATUS_DELETED_FROM_ALL.') and ((sender=:user and status<>3) or (recipient=:user and status<>2))';
         $criteria->order = 'time desc';
         $criteria->params = array(
             ':dialog'=>$dialog,
-            //':user'=>Yii::app()->user->id,
+            ':user'=>Yii::app()->user->id,
         );
         $pages=new CPagination(Messages::model()->count($criteria));
         $pages->pageSize=10;

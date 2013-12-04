@@ -46,6 +46,7 @@ class DialogsController extends Controller
         }
 
         $this->render('View',array(
+            'dialog'=>$dialog,
             'messages'=>$messagesAndPages['messages'],
             'pages'=>$messagesAndPages['pages'],
             'user'=>Users::model()->findByPk(Yii::app()->user->id),
@@ -87,6 +88,8 @@ class DialogsController extends Controller
     public function actionDeleteMessage($id)
     {
       $message = Messages::model()->findByPk($id);
+        //var_dump($message);
+        //die();
       Messages::deleteMessage($message);
       $this->redirect('/dialogs/view/'.$message->dialog);
     }

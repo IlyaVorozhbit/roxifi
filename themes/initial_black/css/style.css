@@ -607,6 +607,18 @@ select
     #height: 300px;
 }
 
+.folder .comments
+{
+}
+
+.folder .comments .folder_comment
+{
+    #todo Border-radius, please;
+    border: 1px solid #cacaca;
+    padding: 10px;
+    margin-top: 3px;
+}
+
 .folder .folder_name
 {
     font-size: 28px;

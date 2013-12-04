@@ -21,12 +21,14 @@ $this->breadcrumbs=array(
 
         <?php
 
-        $this->widget('CLinkPager',array(
-            'pages'=>$pages,
-            'maxButtonCount' => 1,
-            'cssFile'=>'',
-        ));
-
+        if(!Messages::model()->count('(dialog = '.$dialog->id.')>0  and ((show_sender = 1 and sender='.Yii::app()->user->id.') or (show_recipient = 1 and recipient='.Yii::app()->user->id.'))')==0)
+            $this->widget('CLinkPager',array(
+                'pages'=>$pages,
+                'maxButtonCount' => 1,
+                'cssFile'=>'',
+            ));
+        else
+            echo Messages::model()->count('(dialog = '.$dialog->id.')>0  and ((show_sender = 1 and sender='.Yii::app()->user->id.') or (show_recipient = 1 and recipient='.Yii::app()->user->id.'))');
 
         $form=$this->beginWidget('CActiveForm', array(
         'id'=>'messages-form',

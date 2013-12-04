@@ -3,6 +3,28 @@
     class MaterialsController extends Controller
     {
 
+        public function filters()
+        {
+            return array(
+                'accessControl', // perform access control for CRUD operations
+                'postOnly + delete', // we only allow deletion via POST request
+            );
+        }
+
+        public function accessRules()
+        {
+            return array(
+                array('allow',
+                    'actions'=>array('index','upload','createfolder','folder','deletefile'),
+                    'users'=>array('@'),
+                ),
+
+                array('deny',
+                    'users'=>array('*'),
+                ),
+            );
+        }
+
         public function ActionIndex()
         {
             $this->render('index',array(
@@ -84,13 +106,19 @@
                     $pages->applyLimit($criteria);
                     $files =  MaterialsFiles::model()->findAll($criteria);
 
+                    $comments = MaterialsComments::getComments($id);
+
                     $this->render('folder',array(
                         'folder'=>$folder,
                         'pages'=>$pages,
-                        'files'=>$files
+                        'files'=>$files,
+                        'comments'=>$comments['comments'],
+                        'pages'=>$comments['pages'],
                     ));
 
             }
+            else
+                throw new CHttpException(404,'Nothing found.');
         }
 
         public function actionDeleteFile($id)

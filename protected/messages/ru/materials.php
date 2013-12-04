@@ -6,6 +6,8 @@
         'Materials' => 'Материалы',
         'Latest files' => 'Последние файлы',
         'Folders' => 'Папки',
+        'Show comments' => 'Показать комментарии',
+        'Hide comments' => 'Скрыть комментарии',
         'No materials found.' => 'Материалы отсутствуют.',
         'Upload a file' => 'Загрузить файл',
         'Create folder' => 'Создать папку',

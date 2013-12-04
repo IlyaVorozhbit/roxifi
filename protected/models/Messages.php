@@ -122,11 +122,25 @@ class Messages extends CActiveRecord
 
     public static function deleteMessage($message)
     {
-      if ($message->sender == Yii::app()->user->id)
-        $message->show_sender = 0;
-      elseif ($message->recipient == Yii::app()->user->id)
-        $message->show_recipient = 0;
-      $message->save();
+
+        if($message->status == 2 or $message->status == 3)
+            $message->status = 4;
+        else
+        {
+            if($message->status==0)
+                $message->status = 5;
+            else
+            {
+                if ($message->sender == Yii::app()->user->id)
+                    $message->status = 3;
+                elseif ($message->recipient == Yii::app()->user->id)
+                    $message->status = 2;
+            }
+
+        }
+
+        $message->save();
+
     }
 
     public static function makeMessagesReaded($messages)
@@ -135,8 +149,11 @@ class Messages extends CActiveRecord
         {
             if($message->recipient == Yii::app()->user->id)
             {
-                $message->status = 1;
-                $message->save();
+                if($message->status != 3)
+                {
+                    $message->status = 1;
+                    $message->save();
+                }
             }
         }
     }
