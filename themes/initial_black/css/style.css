@@ -315,12 +315,12 @@ select
     background-color: #fff;
 }
 
-.user_profile .right_block .user_info .user_status
+.user_status
 {
     float:right;
 }
 
-.user_profile .right_block .user_info .user_status .online
+.user_status .online
 {
     margin-right: 5px;
     margin-top: 5px;
@@ -333,7 +333,7 @@ select
     border-radius: 999px;
 }
 
-.user_profile .right_block .user_info .user_status .offline
+.user_status  .offline
 {
     margin-right: 5px;
     margin-top: 5px;
@@ -355,6 +355,8 @@ select
     border-bottom: 1px solid #D5D5D5;
     margin-bottom: 5px;
     border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
 }
 
 .user_profile .right_block .user_info .about
@@ -488,7 +490,7 @@ select
 .friend_list .friend .user_name
 {
     position: absolute;
-    margin-left: 80px;
+    margin-left: 100px;
     margin-top: 15px;
     font-size: 16px;
 }
@@ -503,6 +505,8 @@ select
 .form
 {
     border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     padding: 10px;
     background-color: #fff;
     color:#000;
@@ -530,6 +534,8 @@ select
     border: 1px solid rgb(213, 213, 213);
     padding: 5px;
     border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
     margin-bottom: 5px;
     background-color: #fff;
 }
@@ -620,6 +626,8 @@ select
     border: 1px solid #CACACA;
     padding: 10px;
     border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
 }
 
 .files
@@ -632,6 +640,8 @@ select
     border: 1px solid #CACACA;
     padding: 10px;
     border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     margin-bottom: 5px;
 }
 
@@ -646,7 +656,9 @@ select
 
 .folder .comments .folder_comment
 {
-    #todo Border-radius, please;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
     border: 1px solid #cacaca;
     padding: 10px;
     margin-top: 3px;
@@ -701,7 +713,9 @@ select
 {
     background-color: #fff;
     padding: 10px;
-    border-radius:4px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
 }
 
 .notes hr
@@ -729,6 +743,8 @@ select
     background-color: #fff;
     padding: 10px;
     border-radius:4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
 }
 
 .dialogs
@@ -736,6 +752,8 @@ select
     background-color: #fff;
     padding: 10px;
     border-radius:4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
 }
 
 .dialog
@@ -748,6 +766,8 @@ select
     background-color: #fff;
     border: 1px solid #cacaca;
     border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     margin-top: 5px;
 }
 
@@ -761,6 +781,8 @@ select
 .dialog .message .user_message
 {
     border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     padding: 20px;
 }
 

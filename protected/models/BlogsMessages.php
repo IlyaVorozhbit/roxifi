@@ -130,18 +130,28 @@ class BlogsMessages extends CActiveRecord
         return $ret;
     }
 
-    public static function addMessage($model,$user)
+    public static function addMessage($model, $user)
     {
+      if(Yii::app()->user->id == $_GET['id'])
+      {
+        $model->attributes = $_POST['BlogsMessages'];
+        $model->text = nl2br($model->text);
+        $model->user = Yii::app()->user->id;
+        $model->time = date('Y-m-d H:i:s',time());
+        $model->save() or die(print_r($model->getErrors()));
 
-        if(Yii::app()->user->id == $_GET['id'])
+        if (isset($_POST['BlogsImages']))
         {
-            $model->attributes = $_POST['BlogsMessages'];
-            $model->text = nl2br($model->text);
-            $model->user = Yii::app()->user->id;
-            $model->time = date('Y-m-d H:i:s',time());
-            $model->save() or die(print_r($model->getErrors()));
+          $image = new BlogsImages;
+          $image->attributes = $_POST['BlogsImages'];
+          $image->image = CUploadedFile::getInstance($image, 'filename');
+          $name = md5(time().$image->image->name).strstr($image->image->name,'.');
+          $image->image->saveAs('bimages/'.$name);
+          $image->filename = $image->image->name;
+          $image->blog_message = $model->getPrimaryKey();
+          $image->save();
         }
-
+      }
     }
 
     public static function editMessage($record)

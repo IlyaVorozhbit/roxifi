@@ -48,8 +48,6 @@
             array('label'=>Yii::t('nav_buttons', 'Register'), 'url'=>array('/site/register'), 'visible'=>Yii::app()->user->isGuest),
             array('label'=>Yii::t('dialogs', 'Dialogs').$dialogs_label, 'url'=>array('/dialogs'), 'visible'=>!Yii::app()->user->isGuest),
             array('label'=>Yii::t('friends', 'Friends'), 'url'=>array('/friends'), 'visible'=>!Yii::app()->user->isGuest),
-
-
             array('label'=>Yii::t('materials', 'Materials'), 'url'=>array('/materials'), 'visible'=>!Yii::app()->user->isGuest),
             array('label'=>Yii::t('events', 'Events'), 'url'=>array('/events'), 'visible'=>!Yii::app()->user->isGuest),
             array('label'=>Yii::t('nav_buttons', 'Logout').' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest, 'itemOptions' => array('class' => 'logout_btn')),
@@ -64,7 +62,7 @@
     <?php echo $content;?>
 
     <div class="footer">
-        Created by 0Medvedkoo and Ma Null.
+        Created by <i>0Medvedkoo</i> and <i>Porto</i>.
     </div>
 
 

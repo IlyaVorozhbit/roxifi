@@ -108,7 +108,7 @@
                     ));
 
                 if (empty($wallRecords))
-                    echo Yii::t('profile', 'You have no records yet.');
+                  echo Yii::t('profile', ($user->id == Yii::app()->user->id ? 'You' : 'User').' have no records yet.');
                 ?>
 
         </div>

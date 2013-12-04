@@ -5,10 +5,14 @@
 
     public static function searchByString($string)
     {
+      $ex_string = explode(' ', $string);
       $command = new CDbCriteria;
       $command->alias = 'users';
       $command->join = 'LEFT JOIN users_info ON users.id = users_info.user';
-      $command->condition = 'users.name LIKE "%'.$string.'%" OR users.surname LIKE "%'.$string.'%"';
+      $command->condition = 'users.name LIKE "%'.$string.'%" OR users.surname LIKE "%'.$string.'%" OR
+                             users.login LIKE "%'.$string.'%"'.(count($ex_string) > 1 ?
+                               'OR (users.name LIKE "%'.$ex_string[0].'%" AND users.surname LIKE "%'.$ex_string[1].'%") OR
+                                (users.name LIKE "%'.$ex_string[1].'%" AND users.surname LIKE "%'.$ex_string[0].'%")' : '');
       $command->distinct = true;
       $pages = new CPagination(Users::model()->count($command));
       $pages->pageSize = 10;

@@ -8,12 +8,10 @@
 ?>
 
 <script>
-    function showComments(){
-        //if($("#comments").attributes)
-            $("#comments").css("display", "block");
-        //else
-          //  $("#comments").css("display", "none");
-    }
+  function showComments()
+  {
+    $("#comments").css("display", $("#comments").css("display") == "none" ? "block" : "none");
+  }
 </script>
 
 <h1><?php echo Yii::t('materials', 'Materials')?></h1>
@@ -36,9 +34,10 @@
         ));
         ?>
 
+        <br><a class="btn" href="#" onclick="showComments();"><?php echo Yii::t('materials','Show comments');?></a><br><br>
+
         <div class="comments" id="comments" style="display: none;">
             <?php
-
             $authors = array();
 
             foreach($comments as $key=>$comment)
@@ -52,8 +51,7 @@
                 ));
             ?>
         </div>
-
-        <br><a class="btn" href="#" onclick="showComments();"><?php echo Yii::t('materials','Show comments');?></a><br><br>
+        <br><br>
 
         <?php
         foreach($files as $file)

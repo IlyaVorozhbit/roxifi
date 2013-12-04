@@ -17,6 +17,7 @@
         'Write on the wall' => 'Написать на стене',
         'Write'=>'Отправить',
         'You have no records yet.'=>'У Вас еще нет записей',
+        'User have no records yet.'=>'У пользователя еще нет записей',
 
         'Profile info'=>'Информация профиля',
         'Image' => 'Изображение',
