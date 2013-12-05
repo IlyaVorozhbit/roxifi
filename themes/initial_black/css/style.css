@@ -1,7 +1,7 @@
 body
 {
     padding: 10px;
-    font-family: "Tahoma";
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-size: 12px;
     #background-image: url('../images/bg.jpg');
     background-color: #E6E6E6;
@@ -524,9 +524,8 @@ select
 
 .blog .blog_form
 {
-    min-width: 400px;
-    min-height: 100px;
-    resize: none;
+  min-width: 600px;
+  resize: none;
 }
 
 .blog .blog_record
@@ -566,6 +565,7 @@ select
     background-color: rgb(247, 247, 247);
     padding: 5px;
     border-left: 2px solid #A3A3A3;
+    font-size: 15pt;
 }
 
 .blog .blog_record .record_post_time
@@ -618,12 +618,14 @@ select
     margin-left: 120px;
     padding-bottom: 10px;
     color: #CCC;
+    font-size: 12pt;
 }
 
 .comment .text
 {
     margin-top: 30px;
     font-size: 12px;
+    margin-left: 120px;
 }
 
 .folders
@@ -801,5 +803,11 @@ select
 {
     background-color: #ECECEC;
     padding: 3px;
+    font-style: italic; 
+}
+
+label
+{
+    font-style: italic; 
 }
 

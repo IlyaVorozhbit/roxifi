@@ -11,15 +11,16 @@
         'Image' => 'Изображение',
 
         'Name' => 'Название',
-        'Text' => 'Текст',
+        'Content' => 'Содержание',
         'Privacy' => 'Приватность',
 
         'For friends only' => 'Только для друзей',
         'For everyone' => 'Для всех пользователей',
         'Comment' => 'Комментировать',
         'Comments' => 'Комментарии',
+        'No comments found' => 'Комментарии отсутствуют',
 
-        'User don\'t have messages yet' => 'Пользователь не имеет сообщений',
+        'User don\'t have any messages yet' => 'Пользователь не имеет сообщений',
     );
 
 ?>

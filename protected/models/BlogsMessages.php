@@ -30,7 +30,7 @@ class BlogsMessages extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user, name, privacy, text', 'required'),
+			array('user, name, privacy', 'required'),
 			array('user, privacy', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>255),
 			array('time', 'safe'),
@@ -136,6 +136,7 @@ class BlogsMessages extends CActiveRecord
       if (Yii::app()->user->id == $_GET['id'])
       {
         $model->attributes = $_POST['BlogsMessages'];
+        $model->text = $_POST['BlogsMessages']['text'];
         $model->text = nl2br($model->text);
         $model->user = Yii::app()->user->id;
         $model->time = date('Y-m-d H:i:s',time());
@@ -163,6 +164,7 @@ class BlogsMessages extends CActiveRecord
       if(Yii::app()->user->id == $record->user)
       {
         $record->attributes = $_POST['BlogsMessages'];
+        $record->text = $_POST['BlogsMessages']['text'];
         $record->text = nl2br($record->text);
         $record->save() or die(print_r($record->getErrors()));
         if (isset($_POST['BlogsImages']))
@@ -171,20 +173,21 @@ class BlogsMessages extends CActiveRecord
 
           if ($image === NULL)
             $image = new BlogsImages;
-          else
+
+          $image->image = CUploadedFile::getInstance($image, 'filename');
+          if ($image->image !== NULL)
           {
-            $image->image = CUploadedFile::getInstance($image, 'filename');
-            if ($image->image !== NULL)
+            if ($image->filename != '')
             {
               $filename = 'bimages/'.$image->filename;
               unlink($filename);
-              $image->attributes = $_POST['BlogsImages'];
-              $name = md5(time().$image->image->name).strstr($image->image->name,'.');
-              $image->filename = $name;
-              $image->blog_message = $record->id;
-              if ($image->save())
-                $image->image->saveAs('bimages/'.$name);
             }
+            $image->attributes = $_POST['BlogsImages'];
+            $name = md5(time().$image->image->name).strstr($image->image->name,'.');
+            $image->filename = $name;
+            $image->blog_message = $record->id;
+            if ($image->save())
+              $image->image->saveAs('bimages/'.$name);
           }
         }
       }
