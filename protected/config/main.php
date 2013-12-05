@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
     return array(
         'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-        'name'=>'PolytechConnection',
+        'name'=>'Roxifi',
         'theme'=>'initial_black',
         'language'=>'ru',
 
@@ -74,11 +74,11 @@
                     'password' => '12345678',
 
 
-
-                   /*'connectionString' => 'mysql:host=localhost;dbname=roxifi',
+/*
+                   'connectionString' => 'mysql:host=localhost;dbname=roxifi',
                    'username' => 'root',
-                   'password' => '',*/
-
+                   'password' => ''
+*/
 
        ),
 

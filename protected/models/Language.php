@@ -2,7 +2,6 @@
   class Language
   {
     public $lang = 'ru';
-    private $pt = 'lang/';
 
     function Language()
     {
@@ -17,18 +16,6 @@
       {
         $this->lang = 'ru';
       }
-    }
-
-    public function Translate($str)
-    {
-      $file = $this->pt.$this->lang.'.conf';
-      $res = 'error';
-      if (file_exists($file))
-      {
-        $arr = parse_ini_file($file);
-        return isset($arr[$str]) ? '@'.$arr[$str] : '@'.$str;
-      }
-      return $res;
     }
   }
 ?>
