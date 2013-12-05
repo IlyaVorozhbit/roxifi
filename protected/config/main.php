@@ -55,7 +55,7 @@
                     'u<id:\d+>/notes'=>'users/notes',
                     'u<id:\d+>/materials'=>'users/materials',
                     'u<id:\d+>/edit'=>'users/edit',
-                    'u<id:\d+>/wrec'=>'users/wrec',
+                    'u<id:\d+>/wall'=>'users/wall',
                     'verify/<hash:\w+>'=>'site/verify',
                     '<controller:\w+>/<id:\d+>'=>'<controller>/view',
                     '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',

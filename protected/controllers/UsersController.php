@@ -262,6 +262,17 @@ class UsersController extends Controller
     if(is_null($record))
       throw new CHttpException(404,'Not found.');
 
+    if (isset($_GET['delete_image']))
+    {
+      $image = BlogsImages::model()->find('blog_message = :message', array(':message'=>$id));
+      if ($image !== NULL)
+      {
+        $filename = 'bimages/'.$image->filename;
+        unlink($filename);
+        $image->delete();
+      }
+      header('Location: /blog/edit/message/'.$id);      
+    }
     if(Yii::app()->user->id == $record->user)
     {
       if (isset($_POST['BlogsMessages']))
@@ -269,7 +280,7 @@ class UsersController extends Controller
         BlogsMessages::editMessage($record);
         $this->redirect('/blog/'.$record->user);
       }
-      $record->text = str_replace('<br>', '', $record->text);
+      $record->text = str_replace('<br />', "\r\n", $record->text);
       $this->render('blog/edit',array(
           'model'=>$record
       ));

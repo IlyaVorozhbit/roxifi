@@ -27,13 +27,14 @@
         </div>
 
         <?php
-            if($message->privacy)
-                if(Yii::app()->user->id == $_GET['id'])
+            if ($message->privacy)
+                if (Yii::app()->user->id == $_GET['id'])
                 {
                     echo '<div class="record_privacy">';
                     echo 'private';
                     echo '</div>';
                 }
+            $image = BlogsImages::model()->find('blog_message = :message', array(':message'=>$message->id));
         ?>
 
 
@@ -42,7 +43,11 @@
         </div>
 
         <div class="record_text">
-            <?php echo $message->text;?>
+          <?php echo $message->text; ?>
+        </div>
+
+        <div class="record_image">
+           <?php echo $image !== NULL ? '<img style="max-width: 500px" src="/bimages/'.$image->filename.'">' : ''; ?>
         </div>
 
         <?php

@@ -586,6 +586,11 @@ select
     padding: 10px;
 }
 
+.blog .blog_record .record_image
+{
+    padding: 10px;
+}
+
 .comment
 {
     border: 1px solid #DBDBDB;

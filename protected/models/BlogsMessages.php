@@ -11,6 +11,7 @@
  * @property string $time
  * @property integer $privacy
  */
+
 class BlogsMessages extends CActiveRecord
 {
 	/**
@@ -29,7 +30,7 @@ class BlogsMessages extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user, name, text, privacy', 'required'),
+			array('user, name, privacy, text', 'required'),
 			array('user, privacy', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>255),
 			array('time', 'safe'),
@@ -58,10 +59,10 @@ class BlogsMessages extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'user' => 'User',
-			'name' => Yii::t('blog', 'Name'),
-			'text' => Yii::t('blog', 'Text'),
+			'name' => Yii::t('blog', 'Name').':',
+			'text' => Yii::t('blog', 'Text').':',
 			'time' => 'Time',
-			'privacy' => Yii::t('blog', 'Privacy'),
+			'privacy' => Yii::t('blog', 'Privacy').':',
 		);
 	}
 
@@ -132,7 +133,7 @@ class BlogsMessages extends CActiveRecord
 
     public static function addMessage($model, $user)
     {
-      if(Yii::app()->user->id == $_GET['id'])
+      if (Yii::app()->user->id == $_GET['id'])
       {
         $model->attributes = $_POST['BlogsMessages'];
         $model->text = nl2br($model->text);
@@ -145,24 +146,47 @@ class BlogsMessages extends CActiveRecord
           $image = new BlogsImages;
           $image->attributes = $_POST['BlogsImages'];
           $image->image = CUploadedFile::getInstance($image, 'filename');
-          $name = md5(time().$image->image->name).strstr($image->image->name,'.');
-          $image->image->saveAs('bimages/'.$name);
-          $image->filename = $image->image->name;
-          $image->blog_message = $model->getPrimaryKey();
-          $image->save();
+          if ($image->image !== NULL)
+          {
+            $name = md5(time().$image->image->name).strstr($image->image->name,'.');
+            $image->filename = $name;
+            $image->blog_message = $model->getPrimaryKey();
+            if ($image->save())
+              $image->image->saveAs('bimages/'.$name);
+          }
         }
       }
     }
 
     public static function editMessage($record)
     {
-
-        if(Yii::app()->user->id == $record->user)
+      if(Yii::app()->user->id == $record->user)
+      {
+        $record->attributes = $_POST['BlogsMessages'];
+        $record->text = nl2br($record->text);
+        $record->save() or die(print_r($record->getErrors()));
+        if (isset($_POST['BlogsImages']))
         {
-            $record->attributes = $_POST['BlogsMessages'];
-            $record->text = nl2br($record->text);
-            $record->save() or die(print_r($record->getErrors()));
-        }
+          $image = BlogsImages::model()->find('blog_message = :message', array(':message'=>$record->id));
 
+          if ($image === NULL)
+            $image = new BlogsImages;
+          else
+          {
+            $image->image = CUploadedFile::getInstance($image, 'filename');
+            if ($image->image !== NULL)
+            {
+              $filename = 'bimages/'.$image->filename;
+              unlink($filename);
+              $image->attributes = $_POST['BlogsImages'];
+              $name = md5(time().$image->image->name).strstr($image->image->name,'.');
+              $image->filename = $name;
+              $image->blog_message = $record->id;
+              if ($image->save())
+                $image->image->saveAs('bimages/'.$name);
+            }
+          }
+        }
+      }
     }
 }

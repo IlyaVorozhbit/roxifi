@@ -36,6 +36,7 @@ class BlogsImages extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, blog_message, filename', 'safe', 'on'=>'search'),
+      array('image', 'file', 'types'=>'jpg, gif, png'),
 		);
 	}
 

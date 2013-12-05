@@ -28,13 +28,9 @@ class UsersImages extends CActiveRecord
 	 */
 	public function rules()
 	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
 		return array(
 			array('user, filename', 'required'),
 			array('user', 'numerical', 'integerOnly'=>true),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
 			array('id, user, filename', 'safe', 'on'=>'search'),
       array('image', 'file', 'types'=>'jpg, gif, png'),
 		);
