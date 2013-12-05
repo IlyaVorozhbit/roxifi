@@ -127,7 +127,6 @@ select
 
 .header
 {
-    #border: 1px solid #7C7C7C;
     border-radius: 4px;
 }
 
@@ -186,10 +185,9 @@ select
 {
     margin-top: 10px;
     margin-bottom: 10px;
-    #border:1px solid #7C7C7C;
+    margin-left: 5px;
     padding: 10px;
     color: #000;
-    #background-color: #fff;
 }
 
 .login_form

@@ -38,7 +38,7 @@
         </div>
 
         <div class="record_image">
-           <?php echo $image !== NULL ? '<a href="/bimages/'.$image->filename.'"><img style="max-width: 500px" src="/bimages/'.$image->filename.'">' : ''; ?>
+           <?php echo $image !== NULL ? '<a href="/bimages/'.$image->filename.'"><img style="max-width: 500px" src="/bimages/'.$image->filename.'"></a>' : ''; ?>
         </div>
 
         <div class="record_text">
