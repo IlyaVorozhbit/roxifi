@@ -277,9 +277,9 @@ select
 {
     border: 1px solid #F0F0F0;
     padding: 10px;
-    min-height: 150px;
     font-size: 12px;
     background-color: #fff;
+    min-height: 370px;
 }
 
 .user_profile .left_block .friends .friends_label
@@ -294,8 +294,9 @@ select
 .user_profile .left_block .friends .friend
 {
     float:left;
-    margin-left: 28px;
+    margin-left: 6px;
     text-align: center;
+    font-size: 11px;
 }
 
 .user_profile .right_block
