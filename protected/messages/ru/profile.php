@@ -29,6 +29,9 @@
         'activities'=>'Деятельность',
         'about'=>'О себе',
         'interests'=>'Интересы',
+        'university'=>'Институт',
+        'department'=>'Факультет',
+        'group number'=>'Номер группы',
     );
 
 ?>

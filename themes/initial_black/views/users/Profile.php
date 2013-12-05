@@ -62,7 +62,11 @@
 
             foreach($user->user_info as $field)
             {
-                if($field->field <> 2 and $field->field<>3)
+
+                if($field->field == 8)
+                    $field->value = Departments::model()->findByPk($field->value)->name;
+
+                if($field->field <> 2 and $field->field <> 3)
                 {
                     echo '<div class="label">'.$field->label.'</div>';
                     echo '<div class="about">'.$field->value.'</div>';

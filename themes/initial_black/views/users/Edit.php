@@ -40,6 +40,9 @@
         'htmlOptions'=>array('enctype'=>'multipart/form-data'),
     ));
 
+
+
+
     $fields = UsersFields::model()->findAll();
     echo '<table>';
     foreach($fields as $key=>$field)
@@ -49,12 +52,33 @@
         echo '<tr><td>';
         echo Yii::t('profile', $field->name);
         echo '</td></tr><tr><td>';
-        if ($field->name != 'about')
-            echo '<input type="text" style = "width:600px;" name="Infos['.$field->id.']" value="'.($model === NULL ? '' : $model->value).'">';
+        if ($field->name == 'about')
+            echo '<textarea style = "resize: none; width:600px; height:100px;" name="Infos['.$field->id.']">'.($model === NULL ? '' : $model->value).'</textarea>';
+        elseif($field->name=='department')
+        {
+            $departments = Departments::model()->getDepartments();
+            $departments_select = '<select name="Infos['.$field->id.']">';
+            foreach($departments as $key => $department)
+            {
+                if(!is_null($model->value))
+                    if($key==$model->value)
+                        $departments_select .= '<option selected value='.$key.'>'.$department.'</option>';
+                else
+                    $departments_select .= '<option value='.$key.'>'.$department.'</option>';
+            }
+
+            $departments_select .= '</select>';
+
+            echo $departments_select;
+        }
+
         else
-            echo '<textarea style = "resize: none; width:600px; height:200px;" name="Infos['.$field->id.']">'.($model === NULL ? '' : $model->value).'</textarea>';
+             echo '<input type="text" style = "width:600px;" name="Infos['.$field->id.']" value="'.($model === NULL ? '' : $model->value).'">';
         echo '</td></tr>';
     }
+
+
+
     echo '<tr><td>';
     echo CHtml::submitButton(Yii::t('profile', 'Apply'), array('style'=>'margin: 0px;'));
     echo '</td></tr></table>';
