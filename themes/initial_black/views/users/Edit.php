@@ -49,6 +49,15 @@
     {
         $model = UsersInfo::model()->find('user = :user AND field = :field', array(':user'=>Yii::app()->user->id,
             ':field'=>$field->id));
+
+        if(is_null($model))
+        {
+            $model = new UsersInfo();
+            $model->field = $field->id;
+            $model->user = Yii::app()->user->id;
+        }
+
+
         echo '<tr><td>';
         echo Yii::t('profile', $field->name);
         echo '</td></tr><tr><td>';
@@ -60,9 +69,13 @@
             $departments_select = '<select name="Infos['.$field->id.']">';
             foreach($departments as $key => $department)
             {
+                
                 if(!is_null($model->value))
+                {
                     if($key==$model->value)
                         $departments_select .= '<option selected value='.$key.'>'.$department.'</option>';
+                }
+
                 else
                     $departments_select .= '<option value='.$key.'>'.$department.'</option>';
             }

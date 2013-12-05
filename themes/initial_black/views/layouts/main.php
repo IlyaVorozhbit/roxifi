@@ -51,9 +51,9 @@
             array('label'=>Yii::t('friends', 'Friends'), 'url'=>array('/friends'), 'visible'=>!Yii::app()->user->isGuest),
             array('label'=>Yii::t('materials', 'Materials'), 'url'=>array('/materials'), 'visible'=>!Yii::app()->user->isGuest),
             array('label'=>Yii::t('events', 'Events'), 'url'=>array('/events'), 'visible'=>!Yii::app()->user->isGuest),
-            array('label'=>Yii::t('nav_buttons', 'Logout').' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest, 'itemOptions' => array('class' => 'logout_btn')),
-                array('label'=>Yii::t('nav_buttons', 'People'), 'url'=>array('/users'), 'visible'=>!Yii::app()->user->isGuest),
-            array('label'=>Yii::t('nav_buttons', 'Feedback'), 'url'=>array('/site/feedback'))
+            array('label'=>Yii::t('nav_buttons', 'People'), 'url'=>array('/users'), 'visible'=>!Yii::app()->user->isGuest),
+            array('label'=>Yii::t('nav_buttons', 'Feedback'), 'url'=>array('/site/feedback')),
+            array('label'=>Yii::t('nav_buttons', 'Logout').' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest, 'itemOptions' => array('class' => 'logout_btn'))
             ),
         ));
     ?>
