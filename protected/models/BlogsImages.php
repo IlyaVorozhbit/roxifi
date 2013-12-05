@@ -61,6 +61,7 @@ class BlogsImages extends CActiveRecord
 			'id' => 'ID',
 			'blog_message' => 'Blog Message',
 			'filename' => 'Filename',
+      'image' => Yii::t('blog', 'Image').':',
 		);
 	}
 

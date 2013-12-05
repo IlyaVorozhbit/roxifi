@@ -278,9 +278,9 @@ class UsersController extends Controller
       if (isset($_POST['BlogsMessages']))
       {
         BlogsMessages::editMessage($record);
-        $this->redirect('/blog/'.$record->user);
+        header('Location: /blog/message/'.$id);      
       }
-      $record->text = str_replace('<br />', "\r\n", $record->text);
+      $record->text = str_replace('<br />', '', $record->text);
       $this->render('blog/edit',array(
           'model'=>$record
       ));

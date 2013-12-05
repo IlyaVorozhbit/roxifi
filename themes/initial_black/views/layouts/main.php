@@ -17,7 +17,7 @@
     }
 
     ?>
-    <a href="<?php echo $url;?>">PolytechConnection</a>
+    <a href="<?php echo $url;?>">Roxifi</a>
 </div>
 
 
@@ -44,6 +44,7 @@
             'activeCssClass'	=> 'active',
             'items'=>array(
             array('label'=>Yii::t('nav_buttons', 'Profile'), 'url'=>array('/u'.Yii::app()->user->id), 'visible'=>!Yii::app()->user->isGuest),
+            array('label'=>Yii::t('nav_buttons', 'Blog'), 'url'=>array('/blog/'.Yii::app()->user->id), 'visible'=>!Yii::app()->user->isGuest),
             array('label'=>Yii::t('nav_buttons', 'Login'), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
             array('label'=>Yii::t('nav_buttons', 'Register'), 'url'=>array('/site/register'), 'visible'=>Yii::app()->user->isGuest),
             array('label'=>Yii::t('dialogs', 'Dialogs').$dialogs_label, 'url'=>array('/dialogs'), 'visible'=>!Yii::app()->user->isGuest),

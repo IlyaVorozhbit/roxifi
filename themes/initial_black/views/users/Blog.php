@@ -1,5 +1,5 @@
-<h1><?php echo Yii::t('blog', 'Blog')?></h1>
-
+<?php $user = Users::model()->findByPk($_GET['id']); ?>
+<h1><?php echo Yii::t('blog', 'Blog of user ');?><?php echo $user->name.' '.$user->surname;?></h1>
 <div class='form'>
     <?php
         $this->widget('CLinkPager',array(
@@ -18,10 +18,10 @@
           if (!empty($messages))
             foreach($messages as $message)
               $this->renderPartial('blog/_preview',array(
-                  'message'=>$message
+                  'message'=>$message,
               ));
           else
-            echo Yii::t('blog', 'User don\'t have messages yet');
+            echo Yii::t('blog', 'User don\'t have any messages yet');
       ?>
     </div>
 </div>

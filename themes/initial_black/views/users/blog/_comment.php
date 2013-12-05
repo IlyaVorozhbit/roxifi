@@ -20,14 +20,14 @@
   </div>
   <div class="comment_right_block">
     <div class="comment_username">
-        <a href="/u<?php echo $comment->user;?>"><?php echo $user->name.' '.$user->surname;?></a>, <!--сегодня в--> <?php echo $time;?>.
+        <a href="/u<?php echo $comment->user;?>"><?php echo $user->name.' '.$user->surname;?></a>, <!--сегодня в--> <?php echo $time;?>
     </div>
     <div class="text">
-        <?php echo $comment->text;
-          $blog = BlogsMessages::model()->findByPk($comment->blog_message);
-          echo ($comment->user == Yii::app()->user->id || $blog->user == Yii::app()->user->id) ?
-            '<a href="/blog/message/'.$comment->blog_message.'?comment_id='.$comment->id.'&delete"><img style="height: 30px; width: 30px;" src="/images/delete.png" align="right"/></a>' : '';
-        ?>
+      <?php echo $comment->text;
+        $blog = BlogsMessages::model()->findByPk($comment->blog_message);
+        echo ($comment->user == Yii::app()->user->id || $blog->user == Yii::app()->user->id) ?
+          '<a href="/blog/message/'.$comment->blog_message.'?comment_id='.$comment->id.'&delete"><img style="height: 30px; width: 30px;" src="/images/delete.png" align="right"/></a>' : '';
+      ?>
     </div>
   </div>
 </div>
