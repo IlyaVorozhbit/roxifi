@@ -7,6 +7,9 @@
  */
 class UserIdentity extends CUserIdentity
 {
+
+    const ERROR_USER_EMAIL_NOT_APPROVED = 3;
+
 	/**
 	 * Authenticates a user.
 	 * The example implementation makes sure if the username and password
@@ -18,28 +21,24 @@ class UserIdentity extends CUserIdentity
 	public function authenticate()
 	{
 		$user = Users::model()->find('login = :login', array(':login' => $this->username));
+
 		if($user === NULL)
 			$this->errorCode = self::ERROR_USERNAME_INVALID;
 		elseif(!$user->validatePassword($this->password))
 			$this->errorCode = self::ERROR_PASSWORD_INVALID;
         else
         {
-
-            $hash = UsersRegistryHash::model()->find('user=:user',array(
-                ':user'=>$user->id
-            ));
-
-            if(is_null($hash))
-            {
-                $this->errorCode = self::ERROR_NONE;
-                $this->setState('id', $user->id);
-            }
-
-            else
-                return 8;
-
+            $this->errorCode = self::ERROR_NONE;
+            $this->setState('id', $user->id);
         }
 
-		return !$this->errorCode;
+        $hash = UsersRegistryHash::model()->find('user=:user',array(
+            ':user'=>$user->id
+        ));
+
+        if(!is_null($hash))
+            $this->errorCode = self::ERROR_USER_EMAIL_NOT_APPROVED;
+
+		return $this->errorCode;
 	}
 }

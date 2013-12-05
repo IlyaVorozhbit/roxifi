@@ -51,8 +51,17 @@ class LoginForm extends CFormModel
 		if(!$this->hasErrors())
 		{
 			$this->_identity=new UserIdentity($this->username,$this->password);
-			if(!$this->_identity->authenticate())
+
+            $authenticate = $this->_identity->authenticate();
+
+
+			if($authenticate==UserIdentity::ERROR_PASSWORD_INVALID)
 				$this->addError('password','Incorrect username or password.');
+            elseif($authenticate==UserIdentity::ERROR_USER_EMAIL_NOT_APPROVED)
+                $this->addError('password',Yii::t('main','Your email has not been confirmed'));
+            elseif($authenticate==UserIdentity::ERROR_USERNAME_INVALID)
+                $this->addError('password',Yii::t('main','Username invalid.'));
+
 		}
 	}
 
