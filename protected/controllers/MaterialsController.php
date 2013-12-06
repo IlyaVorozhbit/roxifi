@@ -88,18 +88,27 @@
             if(!is_null($folder))
             {
 
-                if($folder->privacy == 1)
+                $model = new MaterialsComments();
+
+                if(isset($_POST['MaterialsComments']))
                 {
+                    $model->attributes = $_POST['MaterialsComments'];
+                    $model->user = Yii::app()->user->id;
+                    $model->folder = $id;
+                    $model->time =  date('Y-m-d H:i:s',time());
+                    if($model->save())
+                        $this->redirect('/materials/folder/'.$id);
+                }
+
+                if($folder->privacy == 1)
                    if((!UsersFriends::isFriends(Yii::app()->user->id,$folder->user) and ($folder->user!=Yii::app()->user->id)))
                        throw new CHttpException(403,'access denied');
-                }
 
                     $criteria=new CDbCriteria;
                     $criteria->condition = 'folder =:folder';
                     $criteria->order = 'time desc';
                     $criteria->params = array(
                         ':folder'=>$id,
-                        //':user'=>Yii::app()->user->id,
                     );
                     $pages=new CPagination(MaterialsFiles::model()->count($criteria));
                     $pages->pageSize=10;
@@ -109,8 +118,8 @@
                     $comments = MaterialsComments::getComments($id);
 
                     $this->render('folder',array(
+                        'model'=>$model,
                         'folder'=>$folder,
-                        'pages'=>$pages,
                         'files'=>$files,
                         'comments'=>$comments['comments'],
                         'pages'=>$comments['pages'],

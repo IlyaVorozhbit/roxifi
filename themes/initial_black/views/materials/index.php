@@ -14,7 +14,7 @@
 
 <div class="form">
 
-    <?php echo Yii::t('materials', 'about')?><br><br>
+    <?php echo Yii::t('materials', 'Materials - it is module, allowing transfer files between Roxifi users')?><br><br>
     <h2><?php echo Yii::t('materials', 'Folders')?></h2>
 
     <?php

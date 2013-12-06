@@ -1,3 +1,4 @@
+<?php $this->pageTitle .= Yii::t('blog','Blog');?>
 <?php $user = Users::model()->findByPk($_GET['id']); ?>
 <h1><?php echo Yii::t('blog', 'Blog of user ');?><?php echo $user->name.' '.$user->surname;?></h1>
 <div class='form'>

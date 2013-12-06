@@ -15,17 +15,17 @@
         </div>
 
         <div class="profile_buttons">
-            <?php echo $user->id == Yii::app()->user->id ? '<a class="btn" href="u'.$user->id.'/edit">Редактировать профиль</a>' : '';?>
+            <?php echo $user->id == Yii::app()->user->id ? '<a class="btn" href="u'.$user->id.'/edit">'.Yii::t('profile','Edit profile').'</a>' : '';?>
             <?php HProfile::renderSendMessageButton($user);?>
             <a class="btn" href="/blog/<?php echo $user->id;?>"><?php echo Yii::t('blog', 'Blog');?></a>
-            <?php echo $user->id == Yii::app()->user->id ? '<a class="btn" href="u'.$user->id.'/notes">Заметки</a>' : '';?>
+            <?php echo $user->id == Yii::app()->user->id ? '<a class="btn" href="u'.$user->id.'/notes">'.Yii::t('notes','Notes').'</a>' : '';?>
             <a class="btn" href="/u<?php echo $user->id;?>/materials"><?php echo Yii::t('materials', 'Materials');?></a>
         </div>
 
         <div class="friends">
 
             <div class="friends_label">
-                Friends
+                <?php echo Yii::t('profile','Friends');?>
             </div>
 
             <?php

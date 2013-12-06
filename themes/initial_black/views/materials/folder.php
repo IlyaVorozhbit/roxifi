@@ -11,6 +11,7 @@
   function showComments()
   {
     $("#comments").css("display", $("#comments").css("display") == "none" ? "block" : "none");
+    $( "#comments_btn").html( $("#comments").css("display") == "none" ? '<?php echo Yii::t('materials','Show comments');?>' : '<?php echo Yii::t('materials','Hide comments');?>' );
   }
 </script>
 
@@ -34,7 +35,27 @@
         ));
         ?>
 
-        <br><a class="btn" href="#" onclick="showComments();"><?php echo Yii::t('materials','Show comments');?></a><br><br>
+        <div class="form">
+
+            <?php $form=$this->beginWidget('CActiveForm'); ?>
+
+            <?php echo $form->errorSummary($model); ?>
+
+            <div class="row">
+                <?php echo $form->labelEx($model,'text'); ?>
+                <?php echo $form->textField($model,'text'); ?>
+                <?php echo $form->error($model,'text'); ?>
+            </div>
+
+            <div class="row buttons">
+                <?php echo CHtml::submitButton(Yii::t('materials','Send comment')); ?>
+            </div>
+
+            <?php $this->endWidget(); ?>
+
+        </div><!-- form -->
+
+        <br><a id="comments_btn" class="btn" onclick="showComments();"><?php echo Yii::t('materials','Show comments');?></a><br><br>
 
         <div class="comments" id="comments" style="display: none;">
             <?php

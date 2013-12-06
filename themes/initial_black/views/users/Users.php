@@ -1,3 +1,5 @@
+<?php $this->pageTitle .= Yii::t('nav_buttons', 'People');?>
+
 <h1><?php echo Yii::t('nav_buttons', 'People')?></h1>
 <div class='form'>
   <?php

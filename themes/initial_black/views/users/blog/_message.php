@@ -1,4 +1,4 @@
-
+<?php $this->pageTitle .= $message->name;?>
 <a href="/blog/<?php echo $message->user;?>"><h1><?php echo Yii::t('blog', 'Blog of user ');?><?php echo $author->name.' '.$author->surname;?></h1></a>
 
 <div class="blog">

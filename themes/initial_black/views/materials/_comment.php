@@ -2,7 +2,7 @@
 
     <div class="user">
         <div class="name">
-            <?php echo $author->name.' '.$author->surname;?>
+            <a href="/u<?php echo $author->id?>"><?php echo $author->name.' '.$author->surname;?></a>
         </div>
     </div>
 
