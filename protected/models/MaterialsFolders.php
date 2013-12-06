@@ -58,9 +58,9 @@ class MaterialsFolders extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'user' => 'User',
-			'name' => 'Name',
-			'description' => 'Description',
-			'privacy' => 'Privacy',
+			'name' => Yii::t('materials','Name'),
+			'description' => Yii::t('materials','Description'),
+			'privacy' => Yii::t('materials','Privacy'),
 			'time' => 'Time',
 		);
 	}

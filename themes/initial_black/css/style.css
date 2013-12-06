@@ -840,6 +840,28 @@ select
     -moz-border-radius: 4px;
 }
 
+.dialogs .dialog
+{
+    border: 1px solid #DFDFDF;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.dialogs .dialog .avatar
+{
+    display: inline-block;
+}
+
+.dialogs .dialog .user_name
+{
+    display: inline-block;
+}
+
+.dialogs .dialog .last_update
+{
+
+}
+
 .dialog
 {
 
@@ -868,6 +890,26 @@ select
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     padding: 20px;
+}
+
+.dialog .message .time
+{
+    color: #CFCFCF;
+    border-bottom: 1px solid #F3F3F3;
+    padding-top: 5px;
+}
+
+
+.dialog .message .user_message .delete_btn
+ {
+     margin-top: -57px;
+     margin-right: -12px;
+ }
+
+.dialog .message .friend_message .delete_btn
+{
+    margin-top: -57px;
+    margin-right: -12px;
 }
 
 .dialog .message .user_name{
