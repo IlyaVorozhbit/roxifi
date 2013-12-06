@@ -16,7 +16,8 @@
 
         <div class="profile_buttons">
             <?php echo $user->id == Yii::app()->user->id ? '<a class="btn" href="u'.$user->id.'/edit">'.Yii::t('profile','Edit profile').'</a>' : '';?>
-            <?php HProfile::renderSendMessageButton($user);?>
+            <?php HProfile::renderSendMessageButton($user); ?>
+            <?php HProfile::renderFriendsButtons($user); ?>
             <a class="btn" href="/blog/<?php echo $user->id;?>"><?php echo Yii::t('blog', 'Blog');?></a>
             <?php echo $user->id == Yii::app()->user->id ? '<a class="btn" href="u'.$user->id.'/notes">'.Yii::t('notes','Notes').'</a>' : '';?>
             <?php

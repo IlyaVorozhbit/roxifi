@@ -222,6 +222,7 @@ select
     margin-bottom: 10px;
     margin-left: 5px;
     padding: 10px;
+    padding-left: 20px;
     color: #000;
 }
 
@@ -258,7 +259,6 @@ select
 .user_profile .left_block
 {
     padding: 10px;
-    margin-left: 10px;
     width: 310px;
     min-height: 300px;
     position: absolute;
@@ -304,8 +304,6 @@ select
     margin-left: 35px;
     margin-top: 10px;
     margin-bottom: 10px;
-    border-top: 1px solid #DDDDDD;
-    border-bottom: 1px solid #DDDDDD;
     padding: 3px;
 }
 
@@ -330,14 +328,14 @@ select
 .user_profile .left_block .friends .friend
 {
     float:left;
-    margin-left: 6px;
+    margin-left: 10px;
     text-align: center;
     font-size: 11px;
 }
 
 .user_profile .right_block
 {
-    margin-left: 350px;
+    margin-left: 330px;
     width:900px;
     padding: 5px;
     border-radius: 3px;

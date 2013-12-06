@@ -5,14 +5,13 @@
     */
 
     $this->breadcrumbs=array(
-        Yii::t('dialogs', 'Dialogs')=>array('/dialogs'),
-        Yii::t('dialogs', 'Dialog with user '). ' '.$user_friend->login,
+        Yii::t('dialogs', 'Dialog with user '). ' '.$user_friend->name.' '.$user_friend->surname,
     );
 
     $this->pageTitle .= Yii::t('dialogs', 'Dialog with user '). ' '.$user_friend->login;
 
 ?>
-<h1><?php echo Yii::t('dialogs', 'Dialog with user ') .' <a href="/u'.$user_friend->id.'">'.$user_friend->login.'</a>'?></h1>
+<h1><?php echo Yii::t('dialogs', 'Dialog with user ') .' <a href="/u'.$user_friend->id.'">'.$user_friend->name.' '.$user_friend->surname.'</a>'?></h1>
 
 <div class="dialog">
 

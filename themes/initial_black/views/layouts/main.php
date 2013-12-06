@@ -72,8 +72,9 @@
     <div class="footer">
 
         <div class="footer_menu">
-            <a href="/site/rules"><?php echo Yii::t('main','Rules');?></a>
-            <a href="/site/about"><?php echo Yii::t('main','About');?></a>
+            <a href="/site/rules"><?php echo Yii::t('main', 'Rules');?></a>
+            <a href="/blog/0"><?php echo Yii::t('main', 'Developers\'s blog');?></a>
+            <a href="/site/about"><?php echo Yii::t('main', 'About');?></a>
         </div>
 
         Created by <i>0Medvedkoo</i> and <i>Porto</i>.

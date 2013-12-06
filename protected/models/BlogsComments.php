@@ -107,7 +107,7 @@ class BlogsComments extends CActiveRecord
   {
     $criteria = new CDbCriteria;
     $criteria->condition = 'blog_message =:blog';
-    $criteria->order = 'time asc';
+    $criteria->order = 'time desc';
     $criteria->params = array(':blog'=>$blog);
     $pages = new CPagination(self::model()->count($criteria));
     $pages->pageSize = 10;
