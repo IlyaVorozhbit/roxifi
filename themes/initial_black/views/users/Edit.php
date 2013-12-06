@@ -1,12 +1,14 @@
-<h1><?php echo Yii::t('profile', 'Profile info')?></h1>
+<?php $this->pageTitle .= Yii::t('profile','Profile edit');?>
+<h1><?php echo Yii::t('profile', 'Profile edit')?></h1>
 
-<?php
-  echo Yii::t('profile', 'Image').':';
-?>
-<div style= "border: 1px solid #f3f3f3; height: 300px; width: 300px; background: url('<?php $avatar = UsersImages::model()->find('user = :user', array('user'=>$user->id));
-    echo $avatar !== NULL ? '/avatars/u'.$user->id.'/'.$avatar->filename :
-        '/images/no_avatar.png'; ?>') no-repeat center;"></div>
-<?php
+<div class="edit_page">
+    <?php
+        echo Yii::t('profile', 'Image').':';
+    ?>
+    <div style= "border: 1px solid #f3f3f3; height: 300px; width: 300px; background: url('<?php $avatar = UsersImages::model()->find('user = :user', array('user'=>$user->id));
+        echo $avatar !== NULL ? '/avatars/u'.$user->id.'/'.$avatar->filename :
+            '/images/no_avatar.png'; ?>') no-repeat center;"></div>
+    <?php
     $form = $this->beginWidget('CActiveForm', array(
         'id'=>'users-info-form',
         'enableAjaxValidation'=>false,
@@ -63,13 +65,25 @@
         echo '</td></tr><tr><td>';
         if ($field->name == 'about')
             echo '<textarea style = "resize: none; width:600px; height:100px;" name="Infos['.$field->id.']">'.($model === NULL ? '' : $model->value).'</textarea>';
+        elseif($field->name=='birthday')
+        {
+            $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+                'value'=>$model->value,
+                'model'=>$model, 'name'=>'Infos['.$field->id.']',
+                'options'=>array(
+                    'dateFormat'=>'yy-mm-dd',
+                    'yearRange'=>'-70:+0',
+                    'changeYear'=>'true',
+                    'changeMonth'=>'true',
+                )));
+        }
         elseif($field->name=='department')
         {
             $departments = Departments::model()->getDepartments();
             $departments_select = '<select name="Infos['.$field->id.']">';
             foreach($departments as $key => $department)
             {
-                
+
                 if(!is_null($model->value))
                 {
                     if($key==$model->value)
@@ -86,7 +100,7 @@
         }
 
         else
-             echo '<input type="text" style = "width:600px;" name="Infos['.$field->id.']" value="'.($model === NULL ? '' : $model->value).'">';
+            echo '<input type="text" style = "width:600px;" name="Infos['.$field->id.']" value="'.($model === NULL ? '' : $model->value).'">';
         echo '</td></tr>';
     }
 
@@ -96,4 +110,6 @@
     echo CHtml::submitButton(Yii::t('profile', 'Apply'), array('style'=>'margin: 0px;'));
     echo '</td></tr></table>';
     $this->endWidget();
-?>
+    ?>
+
+</div>

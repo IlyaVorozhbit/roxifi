@@ -11,6 +11,7 @@
         'Login' => 'Логин',
         'Password' => 'Пароль',
         'Friends' => 'Друзья',
+        'Profile edit' => 'Редактирование профиля',
 
         'Add to friends'=> 'Добавить в друзья',
         'Remove from friends'=> 'Удалить из друзей',
@@ -34,6 +35,8 @@
         'university'=>'Институт',
         'department'=>'Факультет',
         'group number'=>'Номер группы',
+        'birthday'=>'День рождения',
+
     );
 
 ?>
