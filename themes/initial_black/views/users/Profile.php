@@ -11,7 +11,7 @@
     <div class="left_block">
 
         <div class="avatar">
-            <img style="width: 222px; height: 222px; border: 1px solid #E7E7E7;" src="<?php echo $profile_image;?>"/>
+            <a href='<?php echo $profile_image; ?>'><img align="center" style="max-height: 222px; max-width: 222px; border: 1px solid #E7E7E7;" src="<?php echo $profile_image;?>"/>
         </div>
 
         <div class="profile_buttons">

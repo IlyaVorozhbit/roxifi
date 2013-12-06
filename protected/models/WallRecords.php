@@ -113,6 +113,8 @@ class WallRecords extends CActiveRecord
     public static function sendRecordTo($model,$user)
     {
         $model->attributes = $_POST['WallRecords'];
+        $model->text = CHtml::encode($model->text);
+        $model->text = HTools::parseLink($model->text);
         $model->user_from = Yii::app()->user->id;
         $model->user_to = $user;
         $model->time = date('Y-m-d H:i:s',time());

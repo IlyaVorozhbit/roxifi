@@ -137,6 +137,8 @@ class BlogsMessages extends CActiveRecord
       {
         $model->attributes = $_POST['BlogsMessages'];
         $model->text = $_POST['BlogsMessages']['text'];
+        $model->text = CHtml::encode($model->text);
+        $model->text = HTools::parseLink($model->text);
         $model->text = nl2br($model->text);
         $model->user = Yii::app()->user->id;
         $model->time = date('Y-m-d H:i:s',time());
@@ -165,6 +167,8 @@ class BlogsMessages extends CActiveRecord
       {
         $record->attributes = $_POST['BlogsMessages'];
         $record->text = $_POST['BlogsMessages']['text'];
+        $record->text = CHtml::encode($record->text);
+        $record->text = HTools::parseLink($record->text);
         $record->text = nl2br($record->text);
         $record->save() or die(print_r($record->getErrors()));
         if (isset($_POST['BlogsImages']))

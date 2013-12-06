@@ -108,9 +108,10 @@ class UsersController extends Controller
              unlink($dirname.$file);
           closedir($op_dir);
         }
-        $model->image->saveAs('avatars/u'.Yii::app()->user->id.'/'.$model->image->name);
         $model->filename = $model->image->name;
-        $model->save();
+        $model->filename = md5(time().$model->image->name).strstr($model->filename, '.');
+        if ($model->save())
+          $model->image->saveAs('avatars/u'.Yii::app()->user->id.'/'.$model->filename);
       }
     }
     $this->render('Edit', array(
@@ -140,6 +141,8 @@ class UsersController extends Controller
         if (isset($_POST['Notes']['id']))
           $model = Notes::model()->findByPk($_POST['Notes']['id']);
         $model->attributes = $_POST['Notes'];
+        $model->text = CHtml::encode($model->text);
+        $model->text = HTools::parseLink($model->text);
         $model->creator = Yii::app()->user->id;
         $model->time = date('Y-m-d H:i:s',time());
         $model->save() or die(print_r($model->getErrors()));
@@ -221,6 +224,8 @@ class UsersController extends Controller
     {
       $comment = new BlogsComments;
       $comment->attributes = $_POST['BlogsComments'];
+      $comment->text = CHtml::encode($comment->text);
+      $comment->text = HTools::parseLink($comment->text);
       $comment->user = Yii::app()->user->id;
       $comment->time = date('Y-m-d H:i:s',time());
       $comment->blog_message = $id;
@@ -330,6 +335,8 @@ class UsersController extends Controller
         if(isset($_POST['UsersMinds']))
         {
             $model->attributes = $_POST['UsersMinds'];
+            $model->text = CHtml::encode($model->text);
+            $model->text = HTools::parseLink($model->text);
             $model->user = $id;
             $model->sender = Yii::app()->user->id;
             $model->time = date('Y-m-d H:i:s',time());
@@ -354,6 +361,8 @@ class UsersController extends Controller
             if(isset($_POST['UsersMinds']))
             {
                 $mind->attributes = $_POST['UsersMinds'];
+                $mind->text = CHtml::encode($mind->text);
+                $mind->text = HTools::parseLink($mind->text);
                 $mind->save();
                 $this->redirect('/minds/new/'.$mind->user);
             }
