@@ -78,6 +78,9 @@
                 if($field->field == 8)
                     $field->value = Departments::model()->findByPk($field->value)->name;
 
+                if($field->field == 10)
+                    $field->value = date('d/m/Y',strtotime($field->value));
+
                 if($field->field <> 2 and $field->field <> 3)
                 {
                     echo '<div class="label">'.$field->label.'</div>';

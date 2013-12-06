@@ -15,7 +15,7 @@
   }
 </script>
 
-<h1><?php echo Yii::t('materials', 'Materials')?></h1>
+<h1><a href="/materials"><?php echo Yii::t('materials', 'Materials')?></a></h1>
 
 
 <div class="form">
@@ -42,8 +42,7 @@
             <?php echo $form->errorSummary($model); ?>
 
             <div class="row">
-                <?php echo $form->labelEx($model,'text'); ?>
-                <?php echo $form->textField($model,'text'); ?>
+                <?php echo $form->textField($model,'text',array('placeholder'=>Yii::t('materials','Comment'),'class'=>'comment_input')); ?>
                 <?php echo $form->error($model,'text'); ?>
             </div>
 
@@ -79,6 +78,6 @@
             $this->renderPartial('_file',array('file'=>$file));
         ?>
     </div>
-    <hr>
+
     <br><a class="btn" href="/materials/upload?folder=<?php echo $folder->id ?>"><?php echo Yii::t('materials', 'Upload a file')?></a><br><br>
 </div>

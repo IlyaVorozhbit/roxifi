@@ -5,6 +5,8 @@
         'Materials - it is module, allowing transfer files between Roxifi users' => 'Материалы - модуль, позволяющий обмениваться файлами между пользователями Roxifi.',
         'Materials' => 'Материалы',
         'Latest files' => 'Последние файлы',
+        'Delete' => 'Удалить',
+        'Comment' => 'Комментарий',
         'Folders' => 'Папки',
         'Show comments' => 'Показать комментарии',
         'Hide comments' => 'Скрыть комментарии',
