@@ -286,6 +286,84 @@ class UsersController extends Controller
       ));
     }
   }
+
+  public function actionMinds()
+  {
+
+    $minds = UsersMinds::model()->getMindsAboutUser(Yii::app()->user->id);
+
+    $this->render('Minds',array(
+        'minds'=>$minds
+    ));
+
+    UsersMinds::makeMindsReaded($minds['minds']);
+  }
+
+  public function actionDeleteMind($id)
+  {
+    $mind = UsersMinds::model()->findByPk($id);
+    if(!is_null($mind))
+        if($mind->user == Yii::app()->user->id)
+            if($mind->delete())
+                $this->redirect('/minds');
+        if($mind->sender == Yii::app()->user->id){
+            $user = $mind->user;
+            if($mind->delete())
+                $this->redirect('/minds/new/'.$user);
+        }
+
+  }
+
+  public function actionNewMindToUser($id)
+  {
+    if($id == Yii::app()->user->id)
+        throw new CHttpException(403,Yii::t('minds','You can\'t write mind about yourself'));
+
+    $user = Users::model()->findByPk($id);
+    if(!is_null($user))
+    {
+
+        $user_minds = UsersMinds::getCurrentUserMindsAboutPerson($id);
+
+        $model = new UsersMinds;
+
+        if(isset($_POST['UsersMinds']))
+        {
+            $model->attributes = $_POST['UsersMinds'];
+            $model->user = $id;
+            $model->sender = Yii::app()->user->id;
+            $model->time = date('Y-m-d H:i:s',time());
+            if($model->save())
+                $this->redirect('/minds/new/'.$id);
+
+        }
+
+        $this->render('minds/leave',array(
+            'user_minds'=>$user_minds,
+            'user'=>$user,
+            'model'=>$model,
+        ));
+    }
+  }
+
+  public function actionEditMind($id)
+  {
+      $mind = UsersMinds::model()->findByPk($id);
+        if(!is_null($mind))
+        {
+            if(isset($_POST['UsersMinds']))
+            {
+                $mind->attributes = $_POST['UsersMinds'];
+                $mind->save();
+                $this->redirect('/minds/new/'.$mind->user);
+            }
+            if($mind->sender == Yii::app()->user->id)
+                $this->render('minds/_edit',array('model'=>$mind));
+        }
+
+  }
+
+
 }
 
 ?>

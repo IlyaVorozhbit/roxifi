@@ -8,7 +8,10 @@
         'Your email has not been confirmed' => 'Ваш email не был подтвержден',
         'Username invalid.' => 'Неверное имя пользователя',
         'Incorrect username or password.' => 'Неверное имя пользователя или пароль',
-        'Main page'=>'Главная страница'
+        'Main page'=>'Главная страница',
+        'Rules'=>'Правила сайта',
+        'About'=>'О сайте',
+        'Team'=>'Команда',
 
     );
 

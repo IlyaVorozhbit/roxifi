@@ -204,7 +204,17 @@ class Events extends CActiveRecord
         return EventsMembers::model()->exists('user=:user and event=:event and status=:status',array(
             ':event'=>$event,
             ':user'=>$user,
-            ':status'=>self::USER_JOINED
+            ':status'=>self::USER_JOINED,
+        ));
+    }
+
+    public static function isMemberOrInvited($user,$event)
+    {
+        return EventsMembers::model()->exists('user=:user and event=:event and (status=:status or status=:invited)',array(
+            ':event'=>$event,
+            ':user'=>$user,
+            ':status'=>self::USER_JOINED,
+            ':invited'=>self::USER_INVITED,
         ));
     }
 }

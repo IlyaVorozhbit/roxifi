@@ -24,6 +24,10 @@ h1{
     border-radius: 4px;
 }
 
+h1 a{
+    color: #793030;
+}
+
 hr
 {
     border: 0px;
@@ -75,14 +79,23 @@ tr
 
 .btn
 {
-    font-size: 12px;
-    display: inline;
+    font-size: 11px;
+    display: inline-block;
     background-color: #793030;
     border: 1px solid #686868;
     padding: 10px;
     margin: 1px;
     color:#fff;
     cursor: pointer;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.btn-mini
+{
+    padding: 4px;
+    font-size: 11px;
 }
 
 .btn a
@@ -150,13 +163,18 @@ select
 }
 
 .header .menu a{
-    color:#fff;
+    color: #fff;
     text-decoration: none;
     background-color: #793030;
     border: 1px solid #727272;
     padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     margin: 1px;
     font-size: 11px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
 }
 
 .header .menu a:hover
@@ -178,6 +196,24 @@ select
     border-radius: 4px;
     text-align: center;
     color: #000;
+}
+
+.footer .footer_menu
+{
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.footer .footer_menu a
+{
+    color: #793030;
+    font-weight: bold;
+    font-size: 14px;
+    border-right: 1px solid #A3A3A3;
+    padding-right: 7px;
+    padding-left: 5px;
 }
 
 .content
@@ -214,6 +250,7 @@ select
 
 .user_profile
 {
+    margin-bottom: 10px;
     margin-top: 10px;
     min-height: 600px;
 }
@@ -278,7 +315,7 @@ select
     padding: 10px;
     font-size: 12px;
     background-color: #fff;
-    min-height: 370px;
+    min-height: 210px;
 }
 
 .user_profile .left_block .friends .friends_label
@@ -827,5 +864,154 @@ select
 label
 {
     font-style: italic; 
+}
+
+.minds
+{
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+}
+
+.minds .mind
+{
+    border: 1px solid #E0E0E0;
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.minds .mind .time
+{
+    color: #D6D6D6;
+    border-bottom: 1px solid #EEEEEE;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.minds .mind .text
+{
+    font-size: 14px;
+    font-family: "Tahoma";
+}
+
+.minds .mind .delete_btn
+{
+    float: right;
+    margin-top: -28px;
+}
+
+.events
+{
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+}
+
+.events .menu
+{
+    padding-bottom: 7px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.events .invites{}
+
+.events .invites .invite
+{
+    border: 1px solid rgb(213, 213, 213);
+    padding: 10px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    margin: 5px;
+    font-size: 15px;
+}
+
+.events .invites .invite .event_name a
+{
+    color: #793030;
+    font-weight: bold;
+}
+
+.events .invites .invite .buttons
+{
+    margin-top: -22px;
+    float:right;
+}
+
+.events .event
+{
+    border: 1px solid rgb(213, 213, 213);
+    padding: 5px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    margin: 5px;
+}
+
+.events .event .time
+{
+    color: #D6D6D6;
+    border-bottom: 1px solid #EEEEEE;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.events .event .name
+{
+    font-size: 15px;
+}
+
+.events .event .name a
+{
+    color: #793030;
+    font-weight: bold;
+}
+
+.events .event .description
+{
+    font-size: 15px;
+}
+
+.events .event .members
+{
+    display: inline-block;
+}
+
+.events .event .members .member
+{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.events .event .members .member .name
+{
+    text-align: center;
+    font-size: 10px;
+}
+
+.events .event .friends_to_invite{}
+
+.events .event .friends_to_invite .friend
+{
+    padding: 10px;
+}
+
+.events .event_without_border
+{
+    border: none;
 }
 

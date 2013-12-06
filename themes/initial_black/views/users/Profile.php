@@ -19,6 +19,18 @@
             <?php HProfile::renderSendMessageButton($user);?>
             <a class="btn" href="/blog/<?php echo $user->id;?>"><?php echo Yii::t('blog', 'Blog');?></a>
             <?php echo $user->id == Yii::app()->user->id ? '<a class="btn" href="u'.$user->id.'/notes">'.Yii::t('notes','Notes').'</a>' : '';?>
+            <?php
+
+
+                $minds_count = '';
+
+                if(Yii::app()->user->id == $user->id)
+                    $minds_count = ' +'.UsersMinds::model()->count('user=:user and new = 1',array(':user'=>Yii::app()->user->id));
+                if($minds_count == 0)
+                    $minds_count ='';
+
+                echo $user->id == Yii::app()->user->id ? '<a class="btn" href="/minds">'.Yii::t('minds','Minds').$minds_count.'</a>' : '<a class="btn" href="/minds/new/'.$user->id.'">'.Yii::t('minds','Leave your mind').'</a>'
+            ?>
             <a class="btn" href="/u<?php echo $user->id;?>/materials"><?php echo Yii::t('materials', 'Materials');?></a>
         </div>
 

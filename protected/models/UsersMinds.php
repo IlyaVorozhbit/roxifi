@@ -1,31 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "events_members".
+ * This is the model class for table "users_minds".
  *
- * The followings are the available columns in table 'events_members':
+ * The followings are the available columns in table 'users_minds':
  * @property integer $id
  * @property integer $user
- * @property integer $event
- * @property integer $status
- *
- * The followings are the available model relations:
- * @property Events $event0
- * @property Users $user0
+ * @property integer $sender
+ * @property string $text
+ * @property string $time
  */
-class EventsMembers extends CActiveRecord
+class UsersMinds extends CActiveRecord
 {
-
-    const STATUS_INVITED = 0;
-    const STATUS_JOINED = 1;
-    const STATUS_LEAVED = 2;
-
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'events_members';
+		return 'users_minds';
 	}
 
 	/**
@@ -36,11 +28,12 @@ class EventsMembers extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user, event, status', 'required'),
-			array('user, event, status', 'numerical', 'integerOnly'=>true),
+			array('user, sender, text', 'required'),
+			array('user, sender', 'numerical', 'integerOnly'=>true),
+			array('time', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, user, event, status', 'safe', 'on'=>'search'),
+			array('id, user, sender, text, time', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -52,8 +45,6 @@ class EventsMembers extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'event0' => array(self::BELONGS_TO, 'Events', 'event'),
-			'user0' => array(self::BELONGS_TO, 'Users', 'user'),
 		);
 	}
 
@@ -65,8 +56,9 @@ class EventsMembers extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'user' => 'User',
-			'event' => 'Event',
-			'status' => 'Status',
+			'sender' => 'Sender',
+			'text' => 'Text',
+			'time' => 'Time',
 		);
 	}
 
@@ -90,8 +82,9 @@ class EventsMembers extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('user',$this->user);
-		$criteria->compare('event',$this->event);
-		$criteria->compare('status',$this->status);
+		$criteria->compare('sender',$this->sender);
+		$criteria->compare('text',$this->text,true);
+		$criteria->compare('time',$this->time,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -102,28 +95,49 @@ class EventsMembers extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return EventsMembers the static model class
+	 * @return UsersMinds the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
 
-    public static function getInvitesAndPages($user)
+    public static function getMindsAboutUser($user)
     {
         $criteria = new CDbCriteria();
         $criteria->condition = 'user=:user';
-        $criteria->params = array('user'=>$user);
-        $criteria->order = 'id desc';
+        $criteria->params = array(
+            ':user'=>$user
+        );
+        $criteria->order = 'time desc';
 
         $pages=new CPagination(self::model()->count($criteria));
         $pages->pageSize=10;
         $pages->applyLimit($criteria);
 
+        $ret['minds'] = self::model()->findAll($criteria);
         $ret['pages'] = $pages;
-        $ret['invites'] = self::model()->findAll($criteria);
 
         return $ret;
     }
 
+    public static function getCurrentUserMindsAboutPerson($user)
+    {
+        return self::model()->findAll('sender=:sender and user=:user',array(
+            ':user'=>$user,
+            ':sender'=>Yii::app()->user->id,
+        ));
+    }
+
+    public static function makeMindsReaded($minds)
+    {
+        foreach($minds as $mind)
+        {
+            if($mind->user == Yii::app()->user->id)
+            {
+                $mind->new = 0;
+                $mind->save();
+            }
+        }
+    }
 }

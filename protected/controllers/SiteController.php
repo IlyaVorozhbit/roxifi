@@ -107,5 +107,15 @@ class SiteController extends Controller
         $this->render('feedback');
     }
 
+    public function actionRules()
+    {
+        $this->render('rules');
+    }
+
+    public function actionAbout()
+    {
+        $this->render('about');
+    }
+
 
 }

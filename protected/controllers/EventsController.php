@@ -16,7 +16,7 @@
         {
             return array(
                 array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                    'actions'=>array('eventslist','members','myevents','view','create','del','edit','invite','accept','reject','join','leave'),
+                    'actions'=>array('eventslist','members','myevents','view','create','del','edit','invite','sendinvite','invites','accept','reject','join','leave'),
                     'users'=>array('@'),
                 ),
 
@@ -161,6 +161,79 @@
             if($event->delete())
                 $this->redirect('/events');
 
+        }
+
+        public function actionInvite($id)
+        {
+            $event = Events::model()->findByPk($id);
+
+            if(is_null($event))
+                throw new CHttpException(404,'Nothing found.');
+
+            $criteria=new CDbCriteria;
+            $criteria->condition = '(user_to =:user or user_from=:user) and status = 1';
+            $criteria->params = array(':user'=>Yii::app()->user->id);
+            $pages=new CPagination(UsersFriends::model()->count($criteria));
+            $pages->pageSize=10;
+            $pages->applyLimit($criteria);
+
+            $friends = UsersFriends::model()->findAll($criteria);
+            $friends = UsersFriends::getUsersAccountsByRequests($friends);
+
+            $this->render('invite',array(
+                'event'=>$event,
+                'friends'=>$friends,
+                'pages'=>$pages,
+            ));
+        }
+
+        public function actionsendinvite($id,$uid)
+        {
+            $event = Events::model()->findByPk($id);
+            if(!is_null($event))
+            {
+                if(Users::model()->exists('id=:id',array(':id'=>$uid)))
+                {
+                    if(!Events::isMemberOrInvited($uid,$id))
+                    {
+                        $member = new EventsMembers();
+                        $member->status = EventsMembers::STATUS_INVITED;
+                        $member->event = $event->id;
+                        $member->user = $uid;
+                        if($member->save())
+                            $this->redirect('/events/'.$event->id);
+                    }
+                }
+            }
+        }
+
+        public function actionInvites()
+        {
+            $invites = EventsMembers::getInvitesAndPages(Yii::app()->user->id);
+
+            $this->render('invites',array('invites'=>$invites));
+        }
+
+        public function actionAccept($id)
+        {
+            $invite = EventsMembers::model()->findByPk($id);
+            if(!is_null($invite))
+            {
+                $invite->status = EventsMembers::STATUS_JOINED;
+                if($invite->save())
+                    $this->redirect('/events/myevents');
+            }
+        }
+
+        public function actionReject($id)
+        {
+            $invite = EventsMembers::model()->findByPk($id);
+            if(!is_null($invite))
+            {
+                $invite->status = EventsMembers::STATUS_LEAVED;
+                if($invite->save())
+                    $this->redirect('/events/myevents');
+            }
         }
     }
 

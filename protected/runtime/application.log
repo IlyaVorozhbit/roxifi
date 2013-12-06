@@ -4654,3 +4654,507 @@ Stack trace:
 REQUEST_URI=/u7/edit
 HTTP_REFERER=http://roxifi/u7
 ---
+2013/12/06 18:41:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "u7/minds".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php:286
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('u7/minds')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 R:\home\roxifi\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/u7/minds
+HTTP_REFERER=http://roxifi/u7
+---
+2013/12/06 18:41:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "u7/minds".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php:286
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('u7/minds')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 R:\home\roxifi\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/u7/minds
+HTTP_REFERER=http://roxifi/u7
+---
+2013/12/06 18:42:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "minds".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('minds')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('minds')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/minds')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/minds
+HTTP_REFERER=http://roxifi/u7
+---
+2013/12/06 18:46:46 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `dialogs` `t` WHERE user=:user.
+in R:\home\roxifi\www\protected\models\UsersMinds.php (114)
+in R:\home\roxifi\www\protected\controllers\UsersController.php (293)
+in R:\home\roxifi\www\index.php (14)
+2013/12/06 18:46:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `dialogs` `t` WHERE user=:user' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php:543
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 R:\home\roxifi\www\protected\models\UsersMinds.php(114): CActiveRecord->count(Object(CDbCriteria))
+#3 R:\home\roxifi\www\protected\controllers\UsersController.php(293): UsersMinds::getMindsAboutUser('7')
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): UsersController->actionMinds()
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('minds')
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/minds')
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 R:\home\roxifi\www\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/minds
+HTTP_REFERER=http://roxifi/u7
+---
+2013/12/06 18:46:47 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `dialogs` `t` WHERE user=:user.
+in R:\home\roxifi\www\protected\models\UsersMinds.php (114)
+in R:\home\roxifi\www\protected\controllers\UsersController.php (293)
+in R:\home\roxifi\www\index.php (14)
+2013/12/06 18:46:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `dialogs` `t` WHERE user=:user' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php:543
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1601): CDbCommand->queryScalar()
+#2 R:\home\roxifi\www\protected\models\UsersMinds.php(114): CActiveRecord->count(Object(CDbCriteria))
+#3 R:\home\roxifi\www\protected\controllers\UsersController.php(293): UsersMinds::getMindsAboutUser('7')
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): UsersController->actionMinds()
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('minds')
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/minds')
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 R:\home\roxifi\www\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/minds
+HTTP_REFERER=http://roxifi/u7
+---
+2013/12/06 18:51:33 [error] [exception.CException] exception 'CException' with message 'UsersController cannot find the requested view "_mind".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:878
+Stack trace:
+#0 R:\home\roxifi\www\themes\initial_black\views\users\Minds.php(17): CController->renderPartial('_mind', Array)
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('R:\home\roxifi\...')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('R:\home\roxifi\...', Array, true)
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('R:\home\roxifi\...', Array, true)
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('Minds', Array, true)
+#5 R:\home\roxifi\www\protected\controllers\UsersController.php(294): CController->render('Minds', Array)
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): UsersController->actionMinds()
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('minds')
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/minds')
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 R:\home\roxifi\www\index.php(14): CApplication->run()
+#14 {main}
+REQUEST_URI=/minds
+HTTP_REFERER=http://roxifi/minds?page=2
+---
+2013/12/06 19:07:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "DeleteMind".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('DeleteMind')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('DeleteMind')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/DeleteMin...')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/minds/delete/1
+HTTP_REFERER=http://roxifi/minds
+---
+2013/12/06 19:08:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "mind".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php:286
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('mind')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 R:\home\roxifi\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/mind
+HTTP_REFERER=http://roxifi/minds
+---
+2013/12/06 19:11:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "minds/new".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php:286
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('minds/new')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 R:\home\roxifi\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/minds/new/1
+HTTP_REFERER=http://roxifi/u1
+---
+2013/12/06 19:11:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "NewMind".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('NewMind')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('NewMind')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/NewMind')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/minds/new/1
+HTTP_REFERER=http://roxifi/u1
+---
+2013/12/06 19:19:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You can't write mind about yourself' in R:\home\roxifi\www\protected\controllers\UsersController.php:309
+Stack trace:
+#0 [internal function]: UsersController->actionNewMind('7')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UsersController), Object(ReflectionMethod), Array)
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('NewMind')
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/NewMind')
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 R:\home\roxifi\www\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/minds/new/7
+---
+2013/12/06 19:26:12 [error] [php] Cannot modify header information - headers already sent by (output started at R:\home\roxifi\www\protected\controllers\UsersController.php:317) (R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CHttpRequest.php:803)
+Stack trace:
+#0 R:\home\roxifi\www\protected\controllers\UsersController.php(328): UsersController->redirect()
+#1 unknown(0): UsersController->actionNewMind()
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): UsersController->runAction()
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): UsersController->run()
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 R:\home\roxifi\www\index.php(14): CWebApplication->run()
+REQUEST_URI=/minds/new/1
+in R:\home\roxifi\www\protected\controllers\UsersController.php (328)
+in R:\home\roxifi\www\index.php (14)
+2013/12/06 19:34:20 [error] [exception.CException] exception 'CException' with message 'Контроллер UsersController не может найти представление "_form".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:878
+Stack trace:
+#0 R:\home\roxifi\www\themes\initial_black\views\users\minds\leave.php(18): CController->renderPartial('_form', Array)
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('R:\home\roxifi\...')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('R:\home\roxifi\...', Array, true)
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('R:\home\roxifi\...', Array, true)
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('minds/leave', Array, true)
+#5 R:\home\roxifi\www\protected\controllers\UsersController.php(340): CController->render('minds/leave', Array)
+#6 [internal function]: UsersController->actionNewMind('1')
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UsersController), Object(ReflectionMethod), Array)
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('NewMind')
+#13 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/NewMind')
+#14 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 R:\home\roxifi\www\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/minds/new/1
+HTTP_REFERER=http://roxifi/minds/new/1
+---
+2013/12/06 19:47:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Профиль не найден' in R:\home\roxifi\www\protected\models\Users.php:185
+Stack trace:
+#0 R:\home\roxifi\www\protected\controllers\UsersController.php(317): Users->findByPk('0')
+#1 [internal function]: UsersController->actionNewMindToUser('0')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UsersController), Object(ReflectionMethod), Array)
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('NewMindToUser')
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/NewMindTo...')
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 R:\home\roxifi\www\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/minds/new/0
+---
+2013/12/06 19:47:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "minds/new".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php:286
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('minds/new')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 R:\home\roxifi\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/minds/new/
+---
+2013/12/06 19:47:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Профиль не найден' in R:\home\roxifi\www\protected\models\Users.php:185
+Stack trace:
+#0 R:\home\roxifi\www\protected\controllers\UsersController.php(317): Users->findByPk('0')
+#1 [internal function]: UsersController->actionNewMindToUser('0')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UsersController), Object(ReflectionMethod), Array)
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('NewMindToUser')
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/NewMindTo...')
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 R:\home\roxifi\www\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/minds/new/0
+---
+2013/12/06 19:54:06 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "CPagination.user".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CComponent.php:130
+Stack trace:
+#0 R:\home\roxifi\www\protected\models\UsersMinds.php(136): CComponent->__get('user')
+#1 R:\home\roxifi\www\protected\controllers\UsersController.php(299): UsersMinds::makeMindsReaded(Array)
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): UsersController->actionMinds()
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('minds')
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('users/minds')
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 R:\home\roxifi\www\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/minds
+HTTP_REFERER=http://roxifi/u7
+---
+2013/12/06 20:24:47 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Некорректный запрос.' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:336
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('members')
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('events/members/...')
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 R:\home\roxifi\www\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/events/members/invite/6
+HTTP_REFERER=http://roxifi/events/members/6
+---
+2013/12/06 20:25:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "invite".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('invite')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('invite')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('events/invite')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/events/members/invite/6
+HTTP_REFERER=http://roxifi/events/members/6
+---
+2013/12/06 20:31:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Nothing found.' in R:\home\roxifi\www\protected\controllers\EventsController.php:171
+Stack trace:
+#0 [internal function]: EventsController->actionInvite('1')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(EventsController), Array)
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(EventsController), Object(ReflectionMethod), Array)
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('invite')
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('events/invite')
+#13 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 R:\home\roxifi\www\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/events/members/invite/1
+---
+2013/12/06 20:54:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "event/invite/e6/u1".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php:286
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('event/invite/e6...')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 R:\home\roxifi\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/event/invite/e6/u1
+HTTP_REFERER=http://roxifi/events/members/invite/6
+---
+2013/12/06 20:55:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "sendinvite".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('sendinvite')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('sendinvite')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('events/sendinvi...')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/event/invite/e6/u1
+HTTP_REFERER=http://roxifi/events/members/invite/6
+---
+2013/12/06 20:55:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), '?? ?????? ?????...')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('sendinvite')
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('events/sendinvi...')
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 R:\home\roxifi\www\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/event/invite/e6/u1
+HTTP_REFERER=http://roxifi/events/members/invite/6
+---
+2013/12/06 20:55:25 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), '?? ?????? ?????...')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('sendinvite')
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('events/sendinvi...')
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 R:\home\roxifi\www\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/event/invite/e6/u1
+HTTP_REFERER=http://roxifi/events/members/invite/6
+---
+2013/12/06 21:02:05 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetch(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. Выполнявшийся SQL-запрос: SELECT 1 FROM `events_members` `t` WHERE user=:user and event=:event and (status=:status or status=:invited) LIMIT 1.
+in R:\home\roxifi\www\protected\models\Events.php (218)
+in R:\home\roxifi\www\protected\controllers\EventsController.php (197)
+in R:\home\roxifi\www\index.php (14)
+2013/12/06 21:02:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined. The SQL statement executed was: SELECT 1 FROM `events_members` `t` WHERE user=:user and event=:event and (status=:status or status=:invited) LIMIT 1' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php:543
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\db\ar\CActiveRecord.php(1670): CDbCommand->queryRow()
+#2 R:\home\roxifi\www\protected\models\Events.php(218): CActiveRecord->exists('user=:user and ...', Array)
+#3 R:\home\roxifi\www\protected\controllers\EventsController.php(197): Events::isMemberOrInvited('1', '6')
+#4 [internal function]: EventsController->actionsendinvite('6', '1')
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(EventsController), Array)
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(EventsController), Object(ReflectionMethod), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#14 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('sendinvite')
+#16 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('events/sendinvi...')
+#17 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 R:\home\roxifi\www\index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/event/invite/e6/u1
+HTTP_REFERER=http://roxifi/events/members/invite/6
+---
+2013/12/06 21:15:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "invites".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('invites')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('invites')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('events/invites')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/events/invites
+HTTP_REFERER=http://roxifi/events
+---
+2013/12/06 21:15:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "invites".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('invites')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('invites')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('events/invites')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/events/invites
+HTTP_REFERER=http://roxifi/events
+---
+2013/12/06 21:17:37 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'У вас недостаточно прав для выполнения указанного действия.' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), '?? ?????? ?????...')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('invites')
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('events/invites')
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 R:\home\roxifi\www\index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/events/invites
+HTTP_REFERER=http://roxifi/events
+---
+2013/12/06 21:22:51 [error] [exception.CException] exception 'CException' with message 'Контроллер EventsController не может найти представление "_invite".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:878
+Stack trace:
+#0 R:\home\roxifi\www\themes\initial_black\views\events\invites.php(19): CController->renderPartial('_invite', Array)
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('R:\home\roxifi\...')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('R:\home\roxifi\...', Array, true)
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('R:\home\roxifi\...', Array, true)
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('invites', Array, true)
+#5 R:\home\roxifi\www\protected\controllers\EventsController.php(214): CController->render('invites', Array)
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): EventsController->actionInvites()
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#14 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('invites')
+#16 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('events/invites')
+#17 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 R:\home\roxifi\www\index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/events/invites
+HTTP_REFERER=http://roxifi/events
+---
+2013/12/06 21:23:30 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "CPagination.event".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CComponent.php:130
+Stack trace:
+#0 R:\home\roxifi\www\protected\views\events\_invite.php(3): CComponent->__get('event')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('R:\home\roxifi\...')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('R:\home\roxifi\...', Array, true)
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('R:\home\roxifi\...', Array, true)
+#4 R:\home\roxifi\www\themes\initial_black\views\events\invites.php(19): CController->renderPartial('_invite', Array)
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require('R:\home\roxifi\...')
+#6 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): CBaseController->renderInternal('R:\home\roxifi\...', Array, true)
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(869): CBaseController->renderFile('R:\home\roxifi\...', Array, true)
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(782): CController->renderPartial('invites', Array, true)
+#9 R:\home\roxifi\www\protected\controllers\EventsController.php(214): CController->render('invites', Array)
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): EventsController->actionInvites()
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#18 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('invites')
+#20 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('events/invites')
+#21 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 R:\home\roxifi\www\index.php(14): CApplication->run()
+#23 {main}
+REQUEST_URI=/events/invites
+HTTP_REFERER=http://roxifi/events
+---
+2013/12/06 21:23:48 [error] [php] Object of class Events could not be converted to string (R:\home\roxifi\www\protected\views\events\_invite.php:3)
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(869): EventsController->renderFile()
+#1 R:\home\roxifi\www\themes\initial_black\views\events\invites.php(19): EventsController->renderPartial()
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(126): require()
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CBaseController.php(95): EventsController->renderInternal()
+#4 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(869): EventsController->renderFile()
+#5 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(782): EventsController->renderPartial()
+#6 R:\home\roxifi\www\protected\controllers\EventsController.php(214): EventsController->render()
+#7 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\actions\CInlineAction.php(49): EventsController->actionInvites()
+#8 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(133): EventsController->runAction()
+#10 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CInlineFilter.php(58): EventsController->filterAccessControl()
+#13 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(291): CFilterChain->run()
+#15 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(265): EventsController->runActionWithFilters()
+#16 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): EventsController->run()
+#17 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 R:\home\roxifi\www\index.php(14): CWebApplication->run()
+REQUEST_URI=/events/invites
+in R:\home\roxifi\www\protected\views\events\_invite.php (3)
+in R:\home\roxifi\www\themes\initial_black\views\events\invites.php (19)
+in R:\home\roxifi\www\protected\controllers\EventsController.php (214)
+2013/12/06 21:30:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "accept".' in R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php:483
+Stack trace:
+#0 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CController.php(270): CController->missingAction('accept')
+#1 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(282): CController->run('accept')
+#2 R:\home\roxifi\yii-1.1.14.f0fee9\framework\web\CWebApplication.php(141): CWebApplication->runController('events/accept')
+#3 R:\home\roxifi\yii-1.1.14.f0fee9\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 R:\home\roxifi\www\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/events/invites/accept/10
+HTTP_REFERER=http://roxifi/events/invites
+---
