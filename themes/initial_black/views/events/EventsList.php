@@ -12,8 +12,6 @@
 
     $events_label ='';
 
-
-
 ?>
 
 <h1><?php echo Yii::t('events', 'Events')?></h1>
@@ -43,6 +41,12 @@
     </div>
 
     <?php
+
+        $this->widget('CLinkPager',array(
+            'pages'=>$pages,
+            'maxButtonCount' => 1,
+            'cssFile'=>'',
+        ));
 
         if(!empty($events))
             foreach($events as $event)

@@ -35,20 +35,24 @@
             <a class="btn" href="/u<?php echo $user->id;?>/materials"><?php echo Yii::t('materials', 'Materials');?></a>
         </div>
 
-        <div class="friends">
+        <div class="friends_block">
 
             <div class="friends_label">
                 <?php echo Yii::t('profile','Friends');?>
             </div>
 
-            <?php
+            <div class="friends">
+                <?php
                 foreach($friends as $friend)
                 {
                     if ($friend->id == $_GET['id'])
                         $friend = Users::model()->findByPk(Yii::app()->user->id);
                     $this->renderPartial('profile/_friend',array('friend'=>$friend));
                 }
-            ?>
+                ?>
+            </div>
+
+
 
         </div>
 
@@ -81,6 +85,9 @@
 
                 if($field->field == 10)
                     $field->value = date('d/m/Y',strtotime($field->value));
+
+                if($field->field == 11)
+                    $field->value == 1 ? $field->value=Yii::t('profile','female') : $field->value=Yii::t('profile','male');
 
                 if($field->field <> 2 and $field->field <> 3)
                 {

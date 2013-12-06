@@ -192,7 +192,6 @@ select
 
 .footer
 {
-    padding-top: 30px;
     border-radius: 4px;
     text-align: center;
     color: #000;
@@ -218,10 +217,7 @@ select
 
 .content
 {
-    margin-top: 10px;
-    margin-bottom: 10px;
     margin-left: 5px;
-    padding: 10px;
     padding-left: 20px;
     color: #000;
 }
@@ -253,7 +249,7 @@ select
 {
     margin-bottom: 10px;
     margin-top: 10px;
-    min-height: 600px;
+    min-height: 710px;
 }
 
 .user_profile .left_block
@@ -307,7 +303,7 @@ select
     padding: 3px;
 }
 
-.user_profile .left_block .friends
+.user_profile .left_block .friends_block
 {
     border: 1px solid #F0F0F0;
     padding: 10px;
@@ -316,7 +312,12 @@ select
     min-height: 210px;
 }
 
-.user_profile .left_block .friends .friends_label
+.user_profile .left_block .friends_block .friends
+{
+    margin-left: 15px;
+}
+
+.user_profile .left_block .friends_block .friends_label
 {
     text-align: center;
     margin-bottom: 10px;
@@ -325,7 +326,7 @@ select
     color: #fff;
 }
 
-.user_profile .left_block .friends .friend
+.user_profile .left_block .friends_block .friend
 {
     float:left;
     margin-left: 10px;
@@ -843,21 +844,47 @@ select
     border: 1px solid #DFDFDF;
     padding: 10px;
     margin-bottom: 5px;
+    cursor: pointer;
+    border-left: 1px solid #D6D6D6;
+    border-left-width: medium;
+    border-left-style: solid;
 }
 
-.dialogs .dialog .avatar
+.dialogs .dialog .left_block
 {
+    border: 1px solid #000;
     display: inline-block;
 }
 
-.dialogs .dialog .user_name
+.dialogs .dialog .left_block .avatar
 {
-    display: inline-block;
+    max-width: 100px;
+    max-height: 100px;
 }
 
-.dialogs .dialog .last_update
+.dialogs .dialog .right_block
 {
+    display: inline-table;
+    margin-top: -87px;
+}
 
+.dialogs .dialog .right_block .user_name
+{
+    display: inline;
+    margin-left: 10px;
+}
+
+.dialogs .dialog .right_block .user_name a
+{
+    color: #975249;
+    font-weight: bold;
+}
+
+.dialogs .dialog .right_block .last_update
+{
+    border-top: 1px solid #E4E4E4;
+    margin-left: 10px;
+    color: #CFCFCF;
 }
 
 .dialog

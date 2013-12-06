@@ -65,6 +65,30 @@
         echo '</td></tr><tr><td>';
         if ($field->name == 'about')
             echo '<textarea style = "resize: none; width:600px; height:100px;" name="Infos['.$field->id.']">'.($model === NULL ? '' : $model->value).'</textarea>';
+        elseif($field->name=='sex')
+        {
+            $gender = array(
+                0=>Yii::t('profile','male'),
+                1=>Yii::t('profile','female'),
+            );
+            $gender_select = '<select name="Infos['.$field->id.']">';
+            foreach($gender as $key => $entity)
+            {
+
+                if(!is_null($model->value))
+                {
+                    if($key==$model->value)
+                        $gender_select .= '<option selected value='.$key.'>'.$entity.'</option>';
+                }
+
+                else
+                    $gender_select .= '<option value='.$key.'>'.$entity.'</option>';
+            }
+
+            $gender_select .= '</select>';
+
+            echo $gender_select;
+        }
         elseif($field->name=='birthday')
         {
             $this->widget('zii.widgets.jui.CJuiDatePicker', array(

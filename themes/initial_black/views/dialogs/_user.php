@@ -3,12 +3,30 @@
     $dialogs_label = $messages_count > 0 ? ' +'.$messages_count.'' : '';
     $avatar = UsersImages::model()->find('user = :user', array('user'=>$user->id));
     $profile_image =  $avatar !== NULL ? '/avatars/u'.$user->id.'/'.$avatar->filename : '/images/no_avatar.png';
-    $fullname = Users::model()->getFullName($user->id);
 ?>
 
-<a style='padding: 20px; width: 220px;' href="/dialogs/view/<?php echo $dialog->id;?>">
-    <img style='margin-right: 10px; width: 50px; height: 50px;' src='<?php echo $profile_image;?>'>
-    <?php echo $fullname['name'].' '.$fullname['surname'].' '.$dialogs_label?>
-</a>
+<div class="dialog" onclick="window.location.href='/dialogs/view/<?php echo $dialog->id;?>'">
 
-<hr/>
+    <div class="left_block">
+        <div class="avatar">
+            <img style='width: 100px; height: 100px;' src='<?php echo $profile_image;?>'>
+        </div>
+    </div>
+
+    <div class="right_block">
+
+        <div class="user_name">
+            <a href="/dialogs/view/<?php echo $dialog->id;?>"><?php echo $user->name.' '.$user->surname.' '.$dialogs_label?></a>
+        </div>
+
+        <div class="last_update">
+            <?php echo $dialog->last_update;?>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+

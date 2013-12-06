@@ -29,6 +29,12 @@
         ?>
         <?php
 
+        $this->widget('CLinkPager',array(
+            'pages'=>$pages,
+            'maxButtonCount' => 1,
+            'cssFile'=>'',
+        ));
+
         if(!empty($friends))
             foreach($friends as $key=>$friend)
             {

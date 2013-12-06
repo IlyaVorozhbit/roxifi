@@ -62,6 +62,7 @@ class UsersController extends Controller
       header('Location: /');
     if (isset($_POST['Infos']))
     {
+
       foreach($_POST['Infos'] as $key => $field)
       {
         if ($field != '')
