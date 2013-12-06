@@ -1,6 +1,10 @@
 <?php
 
     return array(
+        'Folder' => 'Папка',
+        'Name' => 'Название',
+        'Description' => 'Описание',
+        'Privacy' => 'Приватность',
 
         'Materials - it is module, allowing transfer files between Roxifi users' => 'Материалы - модуль, позволяющий обмениваться файлами между пользователями Roxifi.',
         'Materials' => 'Материалы',
@@ -8,6 +12,7 @@
         'Delete' => 'Удалить',
         'Comment' => 'Комментарий',
         'Folders' => 'Папки',
+
         'Show comments' => 'Показать комментарии',
         'Hide comments' => 'Скрыть комментарии',
         'No materials found.' => 'Материалы отсутствуют.',

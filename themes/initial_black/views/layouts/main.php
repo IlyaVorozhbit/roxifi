@@ -26,7 +26,7 @@
         if(!Yii::app()->user->isGuest)
         {
 
-            $dialogs_label = Messages::model()->count('recipient=:user and status = 0 or status = 5',array(
+            $dialogs_label = Messages::model()->count('(recipient=:user) and (status = 0 or status = 5)',array(
                 ':user'=>Yii::app()->user->id
             ));
 
