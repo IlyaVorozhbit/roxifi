@@ -14,7 +14,7 @@
         if(!Yii::app()->user->isGuest)
             $url = '/u'.Yii::app()->user->id;
     ?>
-    <a href="<?php echo $url;?>">Roxifi</a>
+    <a href="<?php echo $url;?>">roxifi</a>
 </div>
 
 

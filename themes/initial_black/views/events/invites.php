@@ -17,6 +17,8 @@
             if(!empty($invites['invites']))
                foreach($invites['invites'] as $invite)
                    $this->renderPartial('_invite',array('invite'=>$invite));
+            else
+                echo Yii::t('events','Nothing found.');
         ?>
     </div>
 </div>

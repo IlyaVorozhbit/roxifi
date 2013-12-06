@@ -112,7 +112,7 @@ class EventsMembers extends CActiveRecord
     public static function getInvitesAndPages($user)
     {
         $criteria = new CDbCriteria();
-        $criteria->condition = 'user=:user';
+        $criteria->condition = 'user=:user and status = 0';
         $criteria->params = array('user'=>$user);
         $criteria->order = 'id desc';
 

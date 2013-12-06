@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
     return array(
         'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-        'name'=>'Roxifi',
+        'name'=>'roxifi',
         'theme'=>'initial_black',
         'language'=>'ru',
 
