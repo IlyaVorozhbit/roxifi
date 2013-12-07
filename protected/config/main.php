@@ -23,7 +23,7 @@
 
         'modules'=>array(
             // uncomment the following to enable the Gii tool
-            'admin',
+            'man',
             'gii'=>array(
                 'class'=>'system.gii.GiiModule',
                 'password'=>'1',
@@ -47,6 +47,7 @@
                 'caseSensitive'=>true,
                 'rules'=>array(
                     'u<id:\d+>'=>'users/profile',
+                    'u<id:\d+>/friends'=>'users/userfriends',
                     'events/members/invite/<id:\d+>'=>'events/invite',
                     'event/invite/e<id:\d+>/u<uid:\d+>'=>'events/sendinvite',
                     'events/invites/accept/<id:\d+>'=>'events/accept',

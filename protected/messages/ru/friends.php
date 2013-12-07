@@ -3,6 +3,7 @@
     return array(
 
         'Friends' => 'Друзья',
+        'Friends of user ' => 'Друзья пользователя ',
         'Adding to friends' => "Добавление в друзья",
         'Removing from friends' => "Удаление из друзей",
         'Incomming requests' => "Входящие заявки",

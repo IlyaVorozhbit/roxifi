@@ -16,7 +16,7 @@
         {
             return array(
                 array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                    'actions'=>array('eventslist','members','myevents','view','create','del','edit','invite','sendinvite','invites','accept','reject','join','leave'),
+                    'actions'=>array('eventslist','members','myevents','view','create','del','edit','invite','sendinvite','invites','accept','reject','join','leave','deletewallrecord'),
                     'users'=>array('@'),
                 ),
 
@@ -96,11 +96,27 @@
         {
 
             $event = Events::model()->findByPk($id);
+            $model = new EventsWallRecords;
 
             if(is_null($event))
                 throw new CHttpException(404,Yii::t('events', 'Nothing found.'));
 
-            $this->render('View',array('event'=>$event));
+            if(isset($_POST['EventsWallRecords']))
+            {
+                $model->attributes = $_POST['EventsWallRecords'];
+                $model->user = Yii::app()->user->id;
+                $model->event = $id;
+                $model->time = date('Y-m-d H:i:s',time());
+                if($model->save())
+                    $this->redirect('/events/'.$id);
+            }
+
+
+            $this->render('View',array(
+                'event'=>$event,
+                'model'=>$model,
+                'records'=>EventsWallRecords::getEventRecordsAndPages($id)
+            ));
 
         }
 
@@ -233,6 +249,18 @@
                 $invite->status = EventsMembers::STATUS_LEAVED;
                 if($invite->save())
                     $this->redirect('/events/myevents');
+            }
+        }
+
+        public function actionDeleteWallRecord($id)
+        {
+            $record = EventsWallRecords::model()->findByPk($id);
+            if(!is_null($record))
+            {
+                $event = $record->event;
+                if($record->user = Yii::app()->user->id)
+                    if($record->delete())
+                        $this->redirect('/events/'.$event);
             }
         }
     }

@@ -217,11 +217,39 @@ class UsersFriends extends CActiveRecord
         {
             foreach($requests as $key=>$request)
             {
-                $requests[$key] = Users::model()->findByPk(self::recognizeUserFriend($request));
+                $requests[$key] = Users::model()->findByPk(self::recognizeUserFriend($request, $user));
             }
         }
 
         return $requests;
+
+    }
+
+    public static function getUserFriendsAndPages($user)
+    {
+
+        $criteria=new CDbCriteria;
+        $criteria->condition = '((user_from=:user) or (user_to=:user)) and status = '.self::STATUS_FRIEND.'';
+        $criteria->params = array(
+            ':user'=>$user,
+        );
+        $criteria->order = 'id desc';
+        $pages=new CPagination(UsersFriends::model()->count($criteria));
+        $pages->pageSize=10;
+        $pages->applyLimit($criteria);
+
+        $ret['pages'] = $pages;
+        $ret['friends'] = UsersFriends::model()->findAll($criteria);
+
+        if(!empty($ret['friends']))
+        {
+            foreach($ret['friends'] as $key=>$request)
+            {
+                $ret['friends'][$key] = Users::model()->findByPk(self::recognizeUserFriend($request, $user));
+            }
+        }
+
+        return $ret;
 
     }
 

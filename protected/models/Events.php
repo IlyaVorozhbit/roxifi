@@ -126,6 +126,7 @@ class Events extends CActiveRecord
     {
         $criteria=new CDbCriteria;
         $criteria->condition = 'user=:user and status =:status';
+        $criteria->order = 't.id desc';
         $criteria->params = array(
             ':user'=>Yii::app()->user->id,
             ':status'=>Events::USER_JOINED

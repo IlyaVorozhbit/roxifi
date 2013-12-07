@@ -234,8 +234,36 @@ select
 
 .login_form
 {
-    #border: 1px solid #000;
-    padding: 3px;
+    border: 1px solid #C5C5C5;
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: start;
+    margin-left: 38%;
+}
+
+.login_form .row
+{
+    margin-bottom: 3px;
+}
+
+.login_form .margin
+{
+    margin-bottom: 10px;
+}
+
+.login_form .buttons
+{
+    border-top: 1px solid #DFDFDF;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.login_form .buttons input
+{
+    margin-top: 10px;
+    width:150px;
 }
 
 .login_button
@@ -310,9 +338,8 @@ select
 {
     width: 222px;
     height: 222px;
-    margin-left: 35px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-left: 47px;
+    margin-top: 20px;
     padding: 3px;
 }
 
@@ -337,7 +364,13 @@ select
     background-color: #975249;
     padding: 5px;
     color: #fff;
+    cursor: pointer;
 }
+.user_profile .left_block .friends_block .friends_label a
+{
+    color: #fff;
+}
+
 
 .user_profile .left_block .friends_block .friend
 {
@@ -562,6 +595,7 @@ select
 {
     float:left;
     width:100px;
+    margin-top: 2px;
 }
 
 .blog
@@ -793,8 +827,9 @@ select
 
 .folder .del_btn
 {
-    margin-top: -60px;
-    margin-left: 66px;
+    margin-top: 1px;
+    margin-right: 1px;
+    float: right;
 }
 
 .folder .file .extension
@@ -864,8 +899,8 @@ select
 
 .dialogs .dialog .left_block
 {
-    border: 1px solid #000;
-    display: inline-block;
+    #border: 1px solid #000;
+    #display: inline-block;
 }
 
 .dialogs .dialog .left_block .avatar
@@ -877,13 +912,15 @@ select
 .dialogs .dialog .right_block
 {
     display: inline-table;
-    margin-top: -87px;
+    margin-top: -89px;
+    margin-left: 105px;
+    position: absolute;
 }
 
 .dialogs .dialog .right_block .user_name
 {
     display: inline;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .dialogs .dialog .right_block .user_name a
@@ -895,7 +932,7 @@ select
 .dialogs .dialog .right_block .last_update
 {
     border-top: 1px solid #E4E4E4;
-    margin-left: 10px;
+    margin-left: 20px;
     color: #CFCFCF;
 }
 
@@ -1045,6 +1082,11 @@ label
     border-bottom: 1px solid #D8D8D8;
 }
 
+.events .menu_in_event
+{
+    padding-bottom: 7px;
+}
+
 .events .invites{}
 
 .events .invites .invite
@@ -1082,7 +1124,7 @@ label
 
 .events .event .time
 {
-    color: #D6D6D6;
+    color: #806F6F;
     border-bottom: 1px solid #EEEEEE;
     margin-bottom: 5px;
     padding-bottom: 5px;
@@ -1133,6 +1175,50 @@ label
     border: none;
 }
 
+.event_wall
+{
+    border-top: 1px solid #ECECEC;
+    margin-top: 22px;
+}
+
+.event_wall h2
+{
+    margin-top: 5px;
+}
+
+.event_wall .records
+{
+    padding: 10px;
+}
+
+.event_wall .records .record
+{
+    border: 1px solid #cacaca;
+    border-left: 4px solid #979797;
+    padding: 10px;
+}
+
+.event_wall .record .user_name
+{
+    border-bottom:1px solid #cacaca;
+    margin-bottom: 10px;
+    padding-bottom: 2px;
+    display: inline;
+}
+
+.event_wall .record .time
+{
+    color: #D6D6D6;
+    padding-bottom: 5px;
+    display: inline;
+}
+
+.event_wall .record  .user_name a
+{
+    color: #975249;
+    font-weight: bold;
+}
+
 .edit_page
 {
     background-color: #fff;
@@ -1142,6 +1228,14 @@ label
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     margin-bottom: 5px;
+}
+
+.edit_page .error
+{
+    background-color: #975249;
+    color:#fff;
+    padding: 10px;
+    font-size: 11px;
 }
 
 .site_about
@@ -1227,6 +1321,32 @@ label
 }
 
 .users_list .user .status  .offline
+{
+    position: absolute;
+    margin-left: 110px;
+    height: 10px;
+    width: 10px;
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+    background-color: #E59393;
+    border: 1px solid #BB1E1E;
+}
+
+.status .online
+{
+    position: absolute;
+    margin-left: 110px;
+    height: 10px;
+    width: 10px;
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+    background-color: #A1FFB4;
+    border: 1px solid #51C235;
+}
+
+.status  .offline
 {
     position: absolute;
     margin-left: 110px;

@@ -16,6 +16,8 @@
 
         'Member list' => 'Список участников',
         'Wall' => 'Стена',
+        'Comments' => 'Комментарии',
+        'Comment' => 'Комментарий',
         'Invites'=>'Приглашения',
 
         'Invite friends' => 'Пригласить друзей',
@@ -26,6 +28,7 @@
         'Leave' => 'Покинуть',
         'Accept' => 'Принять',
         'Reject' => 'Отказаться',
+        'Send' => 'Отправить',
         'Create event' => 'Создать мероприятие',
         'Update event' => 'Обновить мероприятие',
         'Delete event' => 'Удалить мероприятие',
@@ -34,6 +37,7 @@
         'You have been invited for '=>'Вы были приглашены на ',
         'You have been rejected invite'=>'Вы отклонили приглашение',
         'You have been accepted invite'=>'Вы приняли приглашение',
+        'This event have no comments yet.'=>'Это событие еще не было прокомментировано',
 
     );
 
