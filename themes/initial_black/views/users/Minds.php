@@ -5,17 +5,18 @@
 
     $this->widget('CLinkPager',array(
         'pages'=>$minds['pages'],
-        'maxButtonCount' => 2,
+        'maxButtonCount' => 1,
         'cssFile'=>'',
         'header' =>Yii::t('minds', 'Minds'),
     ));
 
-    if(empty($minds['minds']))
+
+    if(empty($minds))
         echo Yii::t('minds','No minds about you yet.');
     else
     {
         echo '<div class="minds">';
-        foreach($minds['minds'] as $mind)
+        foreach($minds as $mind)
             $this->renderPartial('minds/_mind',array(
                 'mind'=>$mind
             ));

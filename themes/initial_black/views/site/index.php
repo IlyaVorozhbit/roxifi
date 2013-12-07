@@ -7,5 +7,7 @@
 
 ?>
 
-<h1><?php echo Yii::t('main', 'Welcome to Roxifi.')?></h1>
-<p><?php echo Yii::t('main', 'Welcome to Roxifi')?></p>
+<h1><?php echo Yii::t('main', 'Welcome to Roxifi!')?></h1>
+<div class="form">
+    <p><?php echo Yii::t('main', 'We happy to see you!')?></p>
+</div>

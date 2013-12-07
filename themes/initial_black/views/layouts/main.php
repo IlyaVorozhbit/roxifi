@@ -14,7 +14,7 @@
         if(!Yii::app()->user->isGuest)
             $url = '/u'.Yii::app()->user->id;
     ?>
-    <a href="<?php echo $url;?>">roxifi</a>
+    <a href="<?php echo $url;?>">roxifi</a> <div class="alpha">alpha</div>
 </div>
 
 
@@ -75,6 +75,7 @@
             <a href="/site/rules"><?php echo Yii::t('main', 'Rules');?></a>
             <a href="/blog/0"><?php echo Yii::t('main', 'Developers\'s blog');?></a>
             <a href="/site/about"><?php echo Yii::t('main', 'About');?></a>
+            <a href="/site/polls"><?php echo Yii::t('main', 'Polls');?></a>
         </div>
 
         Created by <i>0Medvedkoo</i> and <i>Porto</i>.

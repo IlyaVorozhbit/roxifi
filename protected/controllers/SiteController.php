@@ -117,5 +117,84 @@ class SiteController extends Controller
         $this->render('about');
     }
 
+    public function actionLections()
+    {
+        $model = new UsersPollsVotes;
+
+        if(isset($_POST['UsersPollsVotes']))
+        {
+            $have_voted = UsersPollsVotes::model()->exists('user=:user and poll=:poll',array(
+                ':user'=>Yii::app()->user->id,
+                ':poll'=>1
+            ));
+
+            if(!$have_voted)
+
+            {
+                $model->attributes = $_POST['UsersPollsVotes'];
+                $option = UsersPollsOptions::model()->findByPk($model->option);
+                if(!empty($option))
+                {
+                    $model->poll = UsersPollsOptions::model()->findByPk($model->option)->poll;
+                    $model->user = Yii::app()->user->id;
+                    $model->save();
+
+                    $option = UsersPollsOptions::model()->findByPk($model->option);
+                    $option->votes_count++;
+                    $option->save();
+                    $this->redirect('/site/lections');
+                }
+
+            }
+
+        }
+
+        $this->render('lections',array(
+            'model'=>$model
+        ));
+    }
+
+    public function actionPolls()
+    {
+        $this->render('polls');
+    }
+
+    public function actionTalants()
+    {
+        $model = new UsersPollsVotes;
+
+        if(isset($_POST['UsersPollsVotes']))
+        {
+            $have_voted = UsersPollsVotes::model()->exists('user=:user and poll=:poll',array(
+                ':user'=>Yii::app()->user->id,
+                ':poll'=>2
+            ));
+
+            if(!$have_voted)
+
+            {
+                $model->attributes = $_POST['UsersPollsVotes'];
+                $option = UsersPollsOptions::model()->findByPk($model->option);
+                if(!empty($option))
+                {
+                    $model->poll = UsersPollsOptions::model()->findByPk($model->option)->poll;
+                    $model->user = Yii::app()->user->id;
+                    $model->save();
+
+                    $option = UsersPollsOptions::model()->findByPk($model->option);
+                    $option->votes_count++;
+                    $option->save();
+                    $this->redirect('/site/talants');
+                }
+
+            }
+
+        }
+
+        $this->render('talants',array(
+            'model'=>$model
+        ));
+    }
+
 
 }

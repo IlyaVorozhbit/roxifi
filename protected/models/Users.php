@@ -208,7 +208,7 @@ class Users extends CActiveRecord
     public static function getUsersAndPages()
     {
       $criteria=new CDbCriteria;
-      $criteria->order = 'id desc';
+      $criteria->order = 'last_update desc, id desc';
       $pages=new CPagination(Users::model()->count($criteria));
       $pages->pageSize=10;
       $pages->applyLimit($criteria);

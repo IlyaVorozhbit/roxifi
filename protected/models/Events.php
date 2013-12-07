@@ -63,9 +63,9 @@ class Events extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
-			'description' => 'Description',
-			'time' => 'Time',
+			'name' => Yii::t('events','Name'),
+			'description' => Yii::t('events','Description'),
+			'time' => Yii::t('events','Date')
 		);
 	}
 

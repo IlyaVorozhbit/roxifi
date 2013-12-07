@@ -2,7 +2,8 @@
 
     return array(
 
-        'Welcome to Roxifi' => 'Добро пожаловать в Roxifi.<br>Мы рады приветствовать Вас.',
+        'Welcome to Roxifi!' => 'Добро пожаловать в Roxifi!',
+        'We happy to see you!' => 'Мы рады приветствовать Вас!',
         'Search' => 'Поиск',
         'No users found.' => 'Ни одного пользователя не найдено.',
         'Your email has not been confirmed' => 'Ваш email не был подтвержден',
@@ -13,6 +14,9 @@
         'About'=>'О сайте',
         'Developers\'s blog'=>'Блог разработчиков',
         'Team'=>'Команда',
+        'Lections'=>'Лекции',
+        'Talants'=>'Таланты',
+        'Polls'=>'Опросы',
 
     );
 

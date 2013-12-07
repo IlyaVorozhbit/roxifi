@@ -1,25 +1,22 @@
 <?php
 
 /**
- * This is the model class for table "blogs_comments".
+ * This is the model class for table "users_polls".
  *
- * The followings are the available columns in table 'blogs_comments':
+ * The followings are the available columns in table 'users_polls':
  * @property integer $id
  * @property integer $user
- * @property string $text
+ * @property string $description
  * @property string $time
- *
- * The followings are the available model relations:
- * @property Users $user0
  */
-class BlogsComments extends CActiveRecord
+class UsersPolls extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'blogs_comments';
+		return 'users_polls';
 	}
 
 	/**
@@ -30,11 +27,12 @@ class BlogsComments extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user, text, time, blog_message', 'required'),
-			array('user, blog_message', 'numerical', 'integerOnly'=>true),
+			array('user, description, time', 'required'),
+			array('user', 'numerical', 'integerOnly'=>true),
+			array('description', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, user, text, time, blog_message', 'safe', 'on'=>'search'),
+			array('id, user, description, time', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -46,7 +44,6 @@ class BlogsComments extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'user0' => array(self::BELONGS_TO, 'Users', 'user'),
 		);
 	}
 
@@ -58,7 +55,7 @@ class BlogsComments extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'user' => 'User',
-			'text' => 'Text',
+			'description' => 'Description',
 			'time' => 'Time',
 		);
 	}
@@ -83,9 +80,8 @@ class BlogsComments extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('user',$this->user);
-		$criteria->compare('text',$this->text,true);
+		$criteria->compare('description',$this->description,true);
 		$criteria->compare('time',$this->time,true);
-		$criteria->compare('blog_message',$this->blog_message,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -96,27 +92,10 @@ class BlogsComments extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return BlogsComments the static model class
+	 * @return UsersPolls the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
-
-  public static function getBlogComments($blog)
-  {
-    $criteria = new CDbCriteria;
-    $criteria->condition = 'blog_message =:blog';
-    $criteria->order = 'time asc';
-    $criteria->params = array(':blog'=>$blog);
-    $pages = new CPagination(self::model()->count($criteria));
-    $pages->pageSize = 10;
-    $pages->applyLimit($criteria);
-    $comments = self::model()->findAll($criteria);
-    $ret = array();
-    $ret['pages'] = $pages;
-    $ret['comments'] = $comments;
-
-    return $ret;
-  }
 }

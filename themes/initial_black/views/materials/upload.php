@@ -32,7 +32,7 @@
       $this->endWidget();
     }
     else
-      header('Location: /materials'); 
+      header('Location: /materials');
   }
 ?>
 

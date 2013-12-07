@@ -32,7 +32,7 @@ class UsersImages extends CActiveRecord
 			array('user, filename', 'required'),
 			array('user', 'numerical', 'integerOnly'=>true),
 			array('id, user, filename', 'safe', 'on'=>'search'),
-      array('image', 'file', 'types'=>'jpg, gif, png'),
+            array('image', 'file', 'types'=>'jpg, gif, png'),
 		);
 	}
 

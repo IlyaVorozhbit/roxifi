@@ -2,6 +2,7 @@
 
 <h1><?php echo Yii::t('nav_buttons', 'People')?></h1>
 <div class='form'>
+
   <?php
       $form = $this->beginWidget('CActiveForm', array(
         'id'=>'search-user',
@@ -17,10 +18,15 @@
           'cssFile'=>'',
       ));
       if (!empty($users))
-        foreach($users as $user)
-          $this->renderPartial('_user', array(
-              'user'=>$user
-          ));
+      {
+          echo '<div class="users_list">';
+          foreach($users as $user)
+              $this->renderPartial('_user', array(
+                  'user'=>$user
+              ));
+          echo '</div>';
+      }
+
       else
         echo Yii::t('main', 'No users found.');
   ?>
