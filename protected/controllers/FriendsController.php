@@ -70,6 +70,7 @@ class FriendsController extends Controller
 
         $criteria=new CDbCriteria;
         $criteria->condition = '(user_to =:user or user_from=:user) and status = 1';
+        $criteria->order = '(select last_update from users where id = t.user_to) desc';
         $criteria->params = array(':user'=>Yii::app()->user->id);
         $pages=new CPagination(UsersFriends::model()->count($criteria));
         $pages->pageSize=10;
