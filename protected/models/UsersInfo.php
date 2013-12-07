@@ -109,6 +109,6 @@ class UsersInfo extends CActiveRecord
 
   public static function getUserFilledFields($user)
   {
-    return UsersInfo::model()->findAll('user = :user', array(':user' => $user));
+    return UsersInfo::model()->findAll('user = :user ORDER BY field ASC', array(':user' => $user));
   }
 }
