@@ -50,7 +50,17 @@ class SiteController extends Controller
 			$model->attributes=$_POST['LoginForm'];
 
 			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
+            {
+                if((empty(Yii::app()->session['last_update'])) or (time()-strtotime(Yii::app()->session['last_update'])>120))
+                {
+                    Yii::app()->session['last_update'] = date('Y-m-d H:i:s',time());
+                    $user = Users::model()->findByPk(Yii::app()->user->id);
+                    $user->last_update = Yii::app()->session['last_update'];
+                    $user->save();
+                }
+                $this->redirect(Yii::app()->user->returnUrl);
+            }
+
 		}
 
 		$this->render('login',array('model'=>$model));
