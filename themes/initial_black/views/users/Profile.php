@@ -83,6 +83,9 @@
                 if($field->field == 8)
                     $field->value = Departments::model()->findByPk($field->value)->name;
 
+                if($field->field == 9)
+                    $field->value = '<a href="/users?group='.$field->value.'">'.$field->value.'</a>';
+
                 if($field->field == 10)
                     $field->value = date('d/m/Y',strtotime($field->value));
 

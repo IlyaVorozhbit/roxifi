@@ -12,6 +12,7 @@
         'Password' => 'Пароль',
         'Friends' => 'Друзья',
         'Profile edit' => 'Редактирование профиля',
+        'Remember me next time' => 'Запомнить меня',
 
         'Add to friends'=> 'Добавить в друзья',
         'Remove from friends'=> 'Удалить из друзей',

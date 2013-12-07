@@ -15,15 +15,24 @@ class UsersController extends Controller
 
   public function actionUsers()
   {
-    if (isset($_POST['Search']))
-      if ($_POST['Search']['criteria'] != '')
-      {
-        $users = Search::model()->searchByString($_POST['Search']['criteria']);
-        $this->render('Users', array(
-            'users'=>$users['users'],
-            'pages'=>$users['pages'],));
-        return;
-      }
+    if (isset($_GET['group']))
+    {
+      $users = Search::model()->searchByGroup($_GET['group']);
+      $this->render('Users', array(
+          'users'=>$users['users'],
+          'pages'=>$users['pages'],));
+      return;
+    }
+    else
+      if (isset($_POST['Search']))
+        if ($_POST['Search']['criteria'] != '')
+        {
+          $users = Search::model()->searchByString($_POST['Search']['criteria']);
+          $this->render('Users', array(
+              'users'=>$users['users'],
+              'pages'=>$users['pages'],));
+          return;
+        }
 
     $users = Users::getUsersAndPages();
     $this->render('Users', array(

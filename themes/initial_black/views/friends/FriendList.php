@@ -23,9 +23,6 @@
                 ));
             }
 
-        if(!empty($requests))
-            echo '<hr/>';
-
         ?>
         <?php
 
@@ -34,6 +31,8 @@
             'maxButtonCount' => 1,
             'cssFile'=>'',
         ));
+
+        echo '<h5>'.Yii::t('friends', 'Friends').'</h5>';
 
         if(!empty($friends))
             foreach($friends as $key=>$friend)
