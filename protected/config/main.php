@@ -24,12 +24,12 @@
         'modules'=>array(
             // uncomment the following to enable the Gii tool
             'man',
-            'gii'=>array(
+            /*'gii'=>array(
                 'class'=>'system.gii.GiiModule',
                 'password'=>'1',
                 // If removed, Gii defaults to localhost only. Edit carefully to taste.
                 'ipFilters'=>array('127.0.0.1','::1'),
-            ),
+            ),*/
 
         ),
 
@@ -78,10 +78,17 @@
                                 'charset' => 'utf8',
                 ///*
 
+                       'connectionString' => 'mysql:host=178.32.53.111;dbname=roxifi_db',
+                       'username' => 'roxifi_user',
+                       'password' => 'H709PqKJ6d',
+                //*/
+
+                /*
+
                        'connectionString' => 'mysql:host=178.32.53.111;dbname=roxifi_roxifi',
                        'username' => 'roxifi_roxifi',
                        'password' => '12345678',
-                //*/
+                */
 
                 /*
                                    'connectionString' => 'mysql:host=localhost;dbname=roxifi',
