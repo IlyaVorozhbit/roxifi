@@ -37,8 +37,8 @@
 
         <div class="friends_block">
 
-            <div class="friends_label">
-                <?php echo Yii::t('profile','Friends');?>
+            <div class="friends_label" onclick="window.location.href='/u<?php echo $user->id?>/friends'">
+                <a href="/u<?php echo $user->id?>/friends"><?php echo Yii::t('profile','Friends');?></a>
             </div>
 
             <div class="friends">

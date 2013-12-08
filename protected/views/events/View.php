@@ -34,3 +34,4 @@
 <hr>
 <?php echo Yii::t('events', 'Date')?>: <?php echo  date('m/d/y',strtotime($event->time));?><hr>
 <?php echo $event->description;?><hr>
+

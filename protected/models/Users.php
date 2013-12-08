@@ -194,9 +194,9 @@ class Users extends CActiveRecord
 
     public function sendRegisterMessage($email,$hash)
     {
-      $message = 'Благодарим Вас за регистрацию на сайте. Для того чтобы подтвердить аккаунт, перейдите по ссылке: http://roxifi.ru/verify/'.$hash;
+      $message = 'Благодарим Вас за регистрацию на сайте. Для того чтобы подтвердить аккаунт, перейдите по ссылке: http://roxifi.net/verify/'.$hash;
       $mailer = Yii::createComponent('application.extensions.mailer.EMailer');
-      $mailer->From = 'no-reply@roxifi.ru';
+      $mailer->From = 'no-reply@roxifi.net';
       $mailer->AddAddress($email);
       $mailer->FromName = 'Roxifi Team';
       $mailer->CharSet = 'UTF-8';

@@ -53,6 +53,7 @@ class UsersController extends Controller
 
   public function actionEdit($id)
   {
+    $errors = array();
     if ($id == Yii::app()->user->id)
     {
       if (isset($_GET['delete_image']))
@@ -105,7 +106,9 @@ class UsersController extends Controller
       }
       $model->attributes = $_POST['UsersImages'];
       $model->image = CUploadedFile::getInstance($model, 'filename');
-      if ($model->image !== NULL)
+      $image_size = getimagesize($model->image->tempName);
+
+      if ($model->image !== NULL and ($image_size[0] == 200 and $image_size[1]==200))
       {
         $dirname = 'avatars/u'.Yii::app()->user->id.'/';
         if (!file_exists($dirname))
@@ -123,9 +126,15 @@ class UsersController extends Controller
         if ($model->save())
           $model->image->saveAs('avatars/u'.Yii::app()->user->id.'/'.$model->filename);
       }
+      else
+      {
+        $errors['avatar'] = Yii::t('profile','Image must be 200x200px');
+      }
     }
     $this->render('Edit', array(
-      'user'=>Users::model()->with('usersInfos')->findByPk($id),));
+      'user'=>Users::model()->with('usersInfos')->findByPk($id),
+      'errors'=>$errors
+    ));
 }
 
   public function actionWall($id)
@@ -200,6 +209,14 @@ class UsersController extends Controller
             'model'=>new WallRecords()
         ));
 	}
+
+    public function actionUserFriends($id)
+    {
+        $this->render('userfriends',array(
+            'user'=>Users::model()->findByPk($id),
+            'friends'=>UsersFriends::getUserFriendsAndPages($id)
+        ));
+    }
 
   public function actionBlog($id)
   {

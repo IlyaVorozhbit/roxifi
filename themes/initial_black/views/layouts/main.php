@@ -3,7 +3,7 @@
 <head>
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css" />
-    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 
 <body>
@@ -44,6 +44,15 @@
                 $events_label = ' (+'.$events_label.')';
             else
                 $events_label = '';
+
+            $friends_label = UsersFriends::model()->count('user_to=:user and status = 0',array(
+                ':user'=>Yii::app()->user->id
+            ));
+
+            if($friends_label>0)
+                $friends_label = ' (+'.$friends_label.')';
+            else
+                $friends_label = '';
         }
 
         $this->widget('zii.widgets.CMenu',
@@ -56,7 +65,7 @@
             array('label'=>Yii::t('nav_buttons', 'Login'), 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
             array('label'=>Yii::t('nav_buttons', 'Register'), 'url'=>array('/site/register'), 'visible'=>Yii::app()->user->isGuest),
             array('label'=>Yii::t('dialogs', 'Dialogs').$dialogs_label, 'url'=>array('/dialogs'), 'visible'=>!Yii::app()->user->isGuest),
-            array('label'=>Yii::t('friends', 'Friends'), 'url'=>array('/friends'), 'visible'=>!Yii::app()->user->isGuest),
+            array('label'=>Yii::t('friends', 'Friends').$friends_label, 'url'=>array('/friends'), 'visible'=>!Yii::app()->user->isGuest),
             array('label'=>Yii::t('materials', 'Materials'), 'url'=>array('/materials'), 'visible'=>!Yii::app()->user->isGuest),
             array('label'=>Yii::t('events', 'Events').$events_label, 'url'=>array('/events'), 'visible'=>!Yii::app()->user->isGuest),
             array('label'=>Yii::t('nav_buttons', 'People'), 'url'=>array('/users'), 'visible'=>!Yii::app()->user->isGuest),

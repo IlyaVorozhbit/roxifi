@@ -19,27 +19,32 @@
     ),
 )); ?>
 
+    <div class="login_form">
 
-    <div class="row">
-        <?php echo $form->labelEx($model,'username'); ?>
-        <?php echo $form->textField($model,'username'); ?>
-        <?php echo $form->error($model,'username'); ?>
-    </div>
+        <div class="row">
+            <?php echo $form->labelEx($model,'username'); ?>
+            <?php echo $form->textField($model,'username'); ?>
+            <?php echo $form->error($model,'username'); ?>
+        </div>
 
-    <div class="row">
-        <?php echo $form->labelEx($model,'password'); ?>
-        <?php echo $form->PasswordField($model,'password'); ?>
-        <?php echo $form->error($model,'password'); ?>
-    </div>
+        <div class="row">
+            <?php echo $form->labelEx($model,'password'); ?>
+            <?php echo $form->PasswordField($model,'password'); ?>
+            <?php echo $form->error($model,'password'); ?>
+        </div>
 
-    <div class="row">
-        <?php echo $form->labelEx($model,'rememberMe'); ?>
-        <?php echo $form->checkBox($model,'rememberMe'); ?>
-        <?php echo $form->error($model,'rememberMe'); ?>
-    </div>
+        <div class="row">
+            <?php echo $form->labelEx($model,'rememberMe'); ?>
+            <?php echo $form->checkBox($model,'rememberMe'); ?>
+            <?php echo $form->error($model,'rememberMe'); ?>
+        </div>
 
-    <div class="row buttons">
-        <?php echo CHtml::submitButton('Login'); ?>
+        <div class="margin"></div>
+
+        <div class="row buttons">
+            <?php echo CHtml::submitButton('Войти'); ?>
+        </div>
+
     </div>
 
     <?php $this->endWidget(); ?>

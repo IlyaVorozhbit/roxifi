@@ -5,7 +5,7 @@
     <?php
         echo Yii::t('profile', 'Image').':';
     ?>
-    <div style= "border: 1px solid #f3f3f3; height: 300px; width: 300px; background: url('<?php $avatar = UsersImages::model()->find('user = :user', array('user'=>$user->id));
+    <div style= "border: 1px solid #f3f3f3; height: 200px; width: 200px; background: url('<?php $avatar = UsersImages::model()->find('user = :user', array('user'=>$user->id));
         echo $avatar !== NULL ? '/avatars/u'.$user->id.'/'.$avatar->filename :
             '/images/no_avatar.png'; ?>') no-repeat center;"></div>
     <?php
@@ -25,7 +25,15 @@
         'id'=>'users-form',
         'enableAjaxValidation'=>false,
         'htmlOptions'=>array('enctype'=>'multipart/form-data'),
-    ));
+    ));?>
+
+    <?php if(!empty($errors['avatar'])):?>
+        <div class="error">
+            <?php echo $errors['avatar'];?>
+        </div>
+    <?php endif?>
+
+    <?php
     echo '<table><tr><td>';
     echo Yii::t('profile', 'Language').':';
     echo '</td></tr><tr><td>';
