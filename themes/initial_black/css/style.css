@@ -165,12 +165,6 @@ select
     display: inline;
 }
 
-.header .menu .logout_btn
-{
-    float: right;
-    margin-right: 10px;
-}
-
 .header .menu a{
     color: #FFFFFF;
     text-decoration: none;

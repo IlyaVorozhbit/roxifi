@@ -23,6 +23,7 @@
     <?php
         $dialogs_label = '';
         $events_label = '';
+        $friends_label = '';
 
         if(!Yii::app()->user->isGuest)
         {
@@ -31,28 +32,19 @@
                 ':user'=>Yii::app()->user->id
             ));
 
-            if($dialogs_label>0)
-                $dialogs_label = ' (+'.$dialogs_label.')';
-            else
-                $dialogs_label = '';
+            $dialogs_label = $dialogs_label > 0 ? ' (+'.$dialogs_label.')' : '';
 
             $events_label = EventsMembers::model()->count('user=:user and status = 0',array(
                 ':user'=>Yii::app()->user->id
             ));
 
-            if($events_label>0)
-                $events_label = ' (+'.$events_label.')';
-            else
-                $events_label = '';
+            $events_label = $events_label > 0 ? ' (+'.$events_label.')' : '';
 
             $friends_label = UsersFriends::model()->count('user_to=:user and status = 0',array(
                 ':user'=>Yii::app()->user->id
             ));
 
-            if($friends_label>0)
-                $friends_label = ' (+'.$friends_label.')';
-            else
-                $friends_label = '';
+            $friends_label = $friends_label > 0 ? ' (+'.$friends_label.')' : '';
         }
 
         $this->widget('zii.widgets.CMenu',
@@ -70,7 +62,7 @@
             array('label'=>Yii::t('events', 'Events').$events_label, 'url'=>array('/events'), 'visible'=>!Yii::app()->user->isGuest),
             array('label'=>Yii::t('nav_buttons', 'People'), 'url'=>array('/users'), 'visible'=>!Yii::app()->user->isGuest),
             array('label'=>Yii::t('nav_buttons', 'Feedback'), 'url'=>array('/site/feedback')),
-            array('label'=>Yii::t('nav_buttons', 'Logout').' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest, 'itemOptions' => array('class' => 'logout_btn'))
+            array('label'=>Yii::t('nav_buttons', 'Logout').' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest, 'itemOptions' => array('style' => 'float: right;'))
             ),
         ));
     ?>

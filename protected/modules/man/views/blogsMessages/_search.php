@@ -1,6 +1,6 @@
 <?php
-/* @var $this NotesController */
-/* @var $model Notes */
+/* @var $this BlogsMessagesController */
+/* @var $model BlogsMessages */
 /* @var $form CActiveForm */
 ?>
 
@@ -17,6 +17,11 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'user'); ?>
+		<?php echo $form->textField($model,'user'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'name'); ?>
 		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
@@ -27,13 +32,13 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'creator'); ?>
-		<?php echo $form->textField($model,'creator'); ?>
+		<?php echo $form->label($model,'time'); ?>
+		<?php echo $form->textField($model,'time'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'time'); ?>
-		<?php echo $form->textField($model,'time'); ?>
+		<?php echo $form->label($model,'privacy'); ?>
+		<?php echo $form->textField($model,'privacy'); ?>
 	</div>
 
 	<div class="row buttons">

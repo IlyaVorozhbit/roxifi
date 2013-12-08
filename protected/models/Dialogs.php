@@ -168,9 +168,9 @@ class Dialogs extends CActiveRecord
         $message->dialog = $dialog->id;
         $message->sender = $sender;
         $message->recipient = $recipient;
+        $message->text = $text;
         $message->text = CHtml::encode($message->text);
         $message->text = HTools::parseLink($message->text);
-        $message->text = $text;
         $message->time = date('Y-m-d H:i:s',time());
 
         $dialog->last_update = date('Y-m-d H:i:s',time());

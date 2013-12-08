@@ -26,6 +26,26 @@
 		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'name'); ?>
+		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'surname'); ?>
+		<?php echo $form->textField($model,'surname',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'language'); ?>
+		<?php echo $form->textField($model,'language',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'last_update'); ?>
+		<?php echo $form->textField($model,'last_update'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

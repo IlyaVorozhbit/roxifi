@@ -32,9 +32,33 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'name'); ?>
+		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'name'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'surname'); ?>
+		<?php echo $form->textField($model,'surname',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'surname'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'password'); ?>
 		<?php echo $form->passwordField($model,'password',array('size'=>60,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'password'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'language'); ?>
+		<?php echo $form->textField($model,'language',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'language'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'last_update'); ?>
+		<?php echo $form->textField($model,'last_update'); ?>
+		<?php echo $form->error($model,'last_update'); ?>
 	</div>
 
 	<div class="row buttons">

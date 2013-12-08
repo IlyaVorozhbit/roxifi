@@ -206,5 +206,42 @@ class SiteController extends Controller
         ));
     }
 
+    public function actionStuff()
+    {
+        $model = new UsersPollsVotes;
+
+        if(isset($_POST['UsersPollsVotes']))
+        {
+            $have_voted = UsersPollsVotes::model()->exists('user=:user and poll=:poll',array(
+                ':user'=>Yii::app()->user->id,
+                ':poll'=>3
+            ));
+
+            if(!$have_voted)
+
+            {
+                $model->attributes = $_POST['UsersPollsVotes'];
+                $option = UsersPollsOptions::model()->findByPk($model->option);
+                if(!empty($option))
+                {
+                    $model->poll = UsersPollsOptions::model()->findByPk($model->option)->poll;
+                    $model->user = Yii::app()->user->id;
+                    $model->save();
+
+                    $option = UsersPollsOptions::model()->findByPk($model->option);
+                    $option->votes_count++;
+                    $option->save();
+                    $this->redirect('/site/stuff');
+                }
+
+            }
+
+        }
+
+        $this->render('stuff',array(
+            'model'=>$model
+        ));
+    }
+
 
 }

@@ -17,6 +17,6 @@
 
     <a class="btn" href="/site/lections">Лекции</a><br>
     <a class="btn" href="/site/talants">Таланты</a><br>
-
+    <a class="btn" href="/site/stuff">Фишки</a><br>
 
 </div>
