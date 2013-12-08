@@ -79,6 +79,7 @@
 
             foreach($user->user_info as $field)
             {
+                $field->value = CHtml::encode($field->value);
 
                 if($field->field == 8)
                     $field->value = Departments::model()->findByPk($field->value)->name;
