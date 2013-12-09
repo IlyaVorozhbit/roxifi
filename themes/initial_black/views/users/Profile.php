@@ -35,27 +35,32 @@
             <a class="btn" href="/u<?php echo $user->id;?>/materials"><?php echo Yii::t('materials', 'Materials');?></a>
         </div>
 
-        <div class="friends_block">
+        <?php if (!empty($friends)) : ?>
+          <div class="friends_block">
 
-            <div class="friends_label" onclick="window.location.href='/u<?php echo $user->id?>/friends'">
-                <a href="/u<?php echo $user->id?>/friends"><?php echo Yii::t('profile','Friends');?></a>
-            </div>
+              <div class="friends_label" onclick="window.location.href='/u<?php echo $user->id?>/friends'">
+                  <a href="/u<?php echo $user->id?>/friends"><?php echo Yii::t('profile','Friends');?></a>
+              </div>
 
-            <div class="friends">
-                <?php
-                foreach($friends as $friend)
-                {
-                    if ($friend->id == $_GET['id'])
-                        $friend = Users::model()->findByPk(Yii::app()->user->id);
-                    $this->renderPartial('profile/_friend',array('friend'=>$friend));
-                }
-                ?>
-            </div>
+              <table class='friends_table'>
+                <tr>
+                  <?php
+                  $num_friends = count($friends);
+                  for ($i = 0; $i < $num_friends; $i++)
+                  {
+                    if ($i != 0 && $i % 3 == 0 && $i != $num_friends)
+                      echo '</tr><tr>';
+                    if ($friends[$i]->id == $_GET['id'])
+                      $friends[$i] = Users::model()->findByPk(Yii::app()->user->id);
+                    $this->renderPartial('profile/_friend',array('friend'=>$friends[$i]));
+                    if ($i == $num_friends - 1)
+                      echo $num_friends % 3 == 1 ? '<td></td><td></td></tr>' : ($num_friends % 3 != 0 ? '<td></td></tr>' : '');
+                  }
+                  ?>
+              </table>
 
-
-
-        </div>
-
+          </div>
+        <?php endif;?>
     </div>
 
     <div class="right_block">

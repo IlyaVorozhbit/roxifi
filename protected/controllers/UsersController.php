@@ -332,7 +332,8 @@ class UsersController extends Controller
     $minds = UsersMinds::model()->getMindsAboutUser(Yii::app()->user->id);
 
     $this->render('Minds',array(
-        'minds'=>$minds['minds']
+        'minds'=>$minds['minds'],
+        'pages'=>$minds['pages'],
     ));
 
     UsersMinds::makeMindsReaded($minds['minds']);

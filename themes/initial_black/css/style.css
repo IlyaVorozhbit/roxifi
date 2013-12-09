@@ -343,12 +343,16 @@ select
     padding: 10px;
     font-size: 12px;
     background-color: #fff;
-    min-height: 210px;
 }
 
 .user_profile .left_block .friends_block .friends
 {
     margin-left: 15px;
+}
+
+.user_profile .left_block .friends_block .friends_table
+{
+    width: 100%;
 }
 
 .user_profile .left_block .friends_block .friends_label
@@ -366,12 +370,11 @@ select
 }
 
 
-.user_profile .left_block .friends_block .friend
+.user_profile .left_block .friend
 {
-    float:left;
-    margin-left: 10px;
     text-align: center;
     font-size: 11px;
+    padding-top: 10px;
 }
 
 .user_profile .right_block
