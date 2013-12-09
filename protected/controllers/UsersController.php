@@ -287,6 +287,16 @@ class UsersController extends Controller
     }
   }
 
+  public function actionBlogs()
+  {
+    $writers = BlogsMessages::getWritersAndPages();
+
+    $this->render('blogs',array(
+        'writers'=>$writers['writers'],
+        'pages'=>$writers['pages']
+    ));
+  }
+
   public function actionBlogEditMessage($id)
   {
     $record = BlogsMessages::model()->findByPk($id);

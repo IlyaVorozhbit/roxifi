@@ -54,6 +54,7 @@
                     'events/invites/reject/<id:\d+>'=>'events/reject',
                     'blog/<id:\d+>'=>'users/blog',
                     'minds'=>'users/minds',
+                    'blogs'=>'users/blogs',
                     'minds/new/<id:\d+>'=>'users/NewMindToUser',
                     'minds/edit/<id:\d+>'=>'users/EditMind',
                     'minds/delete/<id:\d+>'=>'users/DeleteMind',
@@ -78,9 +79,9 @@
                                 'charset' => 'utf8',
                 ///*
 
-                       'connectionString' => 'mysql:host=178.32.53.111;dbname=roxifi_db',
-                       'username' => 'roxifi_user',
-                       'password' => 'H709PqKJ6d',
+                'connectionString' => 'mysql:host=178.32.53.111;dbname=roxifi_roxifi',
+                'username' => 'roxifi_roxifi',
+                'password' => '12345678',
                 //*/
 
                 /*

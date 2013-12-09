@@ -196,4 +196,30 @@ class BlogsMessages extends CActiveRecord
         }
       }
     }
+
+    public static function getWritersAndPages()
+    {
+        $criteria = new CDbCriteria();
+        $criteria->select = 'user';
+        $criteria->distinct = true;
+
+        $pages=new CPagination(BlogsMessages::model()->count($criteria));
+        $pages->pageSize=10;
+        $pages->applyLimit($criteria);
+
+        $ret['writers'] = BlogsMessages::model()->findAll($criteria);
+        $ret['pages'] = $pages;
+
+        return $ret;
+    }
+
+    public static function getUserLastMessage($user)
+    {
+        $criteria = new CDbCriteria();
+        $criteria->condition = 'user=:user and privacy = 0';
+        $criteria->params = array(':user'=>$user);
+        $criteria->limit = '1';
+        $criteria->order = 'id desc';
+        return BlogsMessages::model()->find($criteria);
+    }
 }

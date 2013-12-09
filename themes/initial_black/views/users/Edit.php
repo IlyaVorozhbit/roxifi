@@ -100,6 +100,7 @@
         elseif($field->name=='birthday')
         {
             $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+                'language'=>'ru',
                 'value'=>$model->value,
                 'model'=>$model, 'name'=>'Infos['.$field->id.']',
                 'options'=>array(
