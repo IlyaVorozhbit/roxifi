@@ -28,6 +28,11 @@
                 ':poll'=>$poll->id
             ));
 
+            if(Yii::app()->user->isGuest)
+            {
+                $have_voted = 1;
+            }
+
             $poll_votes_count = UsersPollsVotes::model()->count('poll=:poll',array(':poll'=>$poll->id));
 
             foreach($options as $key => $option)

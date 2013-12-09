@@ -62,7 +62,9 @@
             array('label'=>Yii::t('events', 'Events').$events_label, 'url'=>array('/events'), 'visible'=>!Yii::app()->user->isGuest),
             array('label'=>Yii::t('nav_buttons', 'People'), 'url'=>array('/users'), 'visible'=>!Yii::app()->user->isGuest),
             array('label'=>Yii::t('nav_buttons', 'Feedback'), 'url'=>array('/site/feedback')),
-            array('label'=>Yii::t('nav_buttons', 'Logout').' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest, 'itemOptions' => array('style' => 'float: right;'))
+            array('label'=>Yii::t('nav_buttons', 'Logout').' ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest,
+                //'itemOptions' => array('style' => 'float: right;')
+            )
             ),
         ));
     ?>

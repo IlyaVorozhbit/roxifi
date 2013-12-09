@@ -16,7 +16,7 @@
     else
     {
         echo '<div class="minds">';
-        foreach($minds as $mind)
+        foreach($minds['minds'] as $mind)
             $this->renderPartial('minds/_mind',array(
                 'mind'=>$mind
             ));
