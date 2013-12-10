@@ -13,7 +13,7 @@
           $time = ($lang->lang == 'ru' ? $arr[3].'.'.$arr[2] : $arr[2].'.'.$arr[3]) .'.'.$arr[1].' '.$arr[4].':'.$arr[5].':'.$arr[6];
         ?>
         <div class="record_name">
-          <?php echo '<a href="/blog/message/'.$message->id.'">'.$message->name.'</a>';?>
+          <?php echo '<a href="/blog/message/'.$message->id.'">'.CHtml::encode($message->name).'</a>';?>
         </div>
 
         <?php

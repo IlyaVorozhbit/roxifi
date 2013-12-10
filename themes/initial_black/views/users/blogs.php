@@ -14,8 +14,8 @@
     ?>
 
     <?php
-        if(!empty($writers))
-            foreach($writers as $writer)
+    if(!empty($writers))
+        foreach($writers as $writer)
                 $this->renderPartial('blog/_writer',array('writer'=>$writer->user))
     ?>
 

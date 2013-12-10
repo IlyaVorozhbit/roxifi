@@ -10,7 +10,7 @@
 <div class="record">
   <div class="user_status">
     <?php
-      echo time()-strtotime($user->last_update) < 120 ? '<div class="online"></div>' : '<div class="offline"></div>';
+      echo time()-strtotime($user->last_update) < 60*10 ? '<div class="online"></div>' : '<div class="offline"></div>';
     ?>
   </div>
   <div class="wall_record_avatar">
@@ -18,7 +18,7 @@
   </div>
   <div class="wall_record_right_block">
     <div class="wall_record_username">
-      <a href="/u<?php echo $record->user_from;?>"><?php echo $user->name.' '.$user->surname;?></a>, <!--сегодня в--> <?php echo $time;?>.
+      <a href="/u<?php echo $record->user_from;?>"><?php echo CHtml::encode($user->name).' '.CHtml::encode($user->surname);?></a>, <!--сегодня в--> <?php echo $time;?>.
     </div>
     <div class="text">
       <?php echo $record->text;

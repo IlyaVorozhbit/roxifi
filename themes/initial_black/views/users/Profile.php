@@ -1,8 +1,8 @@
 <?php
-  $this->pageTitle .= $user->name.' '.$user->surname;
-  $user->user_info = HUsers::getUserInfo($user->id);
-  $avatar = UsersImages::model()->find('user = :user', array('user'=>$user->id));
-  $profile_image =  $avatar !== NULL ? '/avatars/u'.$user->id.'/'.$avatar->filename : '/images/no_avatar.png';
+    $this->pageTitle .= $user->name.' '.$user->surname;
+    $user->user_info = HUsers::getUserInfo($user->id);
+    $avatar = UsersImages::model()->find('user = :user', array('user'=>$user->id));
+    $profile_image =  $avatar !== NULL ? '/avatars/u'.$user->id.'/'.$avatar->filename : '/images/no_avatar.png';
 ?>
 
 <div class="user_profile">
@@ -23,43 +23,43 @@
             <?php
 
 
-                $minds_count = '';
+            $minds_count = '';
 
-                if(Yii::app()->user->id == $user->id)
-                    $minds_count = ' +'.UsersMinds::model()->count('user=:user and new = 1',array(':user'=>Yii::app()->user->id));
-                if($minds_count == 0)
-                    $minds_count ='';
+            if(Yii::app()->user->id == $user->id)
+                $minds_count = ' +'.UsersMinds::model()->count('user=:user and new = 1',array(':user'=>Yii::app()->user->id));
+            if($minds_count == 0)
+                $minds_count ='';
 
-                echo $user->id == Yii::app()->user->id ? '<a class="btn" href="/minds">'.Yii::t('minds','Minds').$minds_count.'</a>' : '<a class="btn" href="/minds/new/'.$user->id.'">'.Yii::t('minds','Leave your mind').'</a>'
+            echo $user->id == Yii::app()->user->id ? '<a class="btn" href="/minds">'.Yii::t('minds','Minds').$minds_count.'</a>' : '<a class="btn" href="/minds/new/'.$user->id.'">'.Yii::t('minds','Leave your mind').'</a>'
             ?>
             <a class="btn" href="/u<?php echo $user->id;?>/materials"><?php echo Yii::t('materials', 'Materials');?></a>
         </div>
 
         <?php if (!empty($friends)) : ?>
-          <div class="friends_block">
+        <div class="friends_block">
 
-              <div class="friends_label" onclick="window.location.href='/u<?php echo $user->id?>/friends'">
-                  <a href="/u<?php echo $user->id?>/friends"><?php echo Yii::t('profile','Friends');?></a>
-              </div>
+            <div class="friends_label" onclick="window.location.href='/u<?php echo $user->id?>/friends'">
+                <a href="/u<?php echo $user->id?>/friends"><?php echo Yii::t('profile','Friends');?></a>
+            </div>
 
-              <table class='friends_table'>
+            <table class='friends_table'>
                 <tr>
-                  <?php
-                  $num_friends = count($friends);
-                  for ($i = 0; $i < $num_friends; $i++)
-                  {
-                    if ($i != 0 && $i % 3 == 0 && $i != $num_friends)
-                      echo '</tr><tr>';
-                    if ($friends[$i]->id == $_GET['id'])
-                      $friends[$i] = Users::model()->findByPk(Yii::app()->user->id);
-                    $this->renderPartial('profile/_friend',array('friend'=>$friends[$i]));
-                    if ($i == $num_friends - 1)
-                      echo $num_friends % 3 == 1 ? '<td></td><td></td></tr>' : ($num_friends % 3 != 0 ? '<td></td></tr>' : '');
-                  }
-                  ?>
-              </table>
+                    <?php
+                    $num_friends = count($friends);
+                    for ($i = 0; $i < $num_friends; $i++)
+                    {
+                        if ($i != 0 && $i % 3 == 0 && $i != $num_friends)
+                            echo '</tr><tr>';
+                        if ($friends[$i]->id == $_GET['id'])
+                            $friends[$i] = Users::model()->findByPk(Yii::app()->user->id);
+                        $this->renderPartial('profile/_friend',array('friend'=>$friends[$i]));
+                        if ($i == $num_friends - 1)
+                            echo $num_friends % 3 == 1 ? '<td></td><td></td></tr>' : ($num_friends % 3 != 0 ? '<td></td></tr>' : '');
+                    }
+                    ?>
+            </table>
 
-          </div>
+        </div>
         <?php endif;?>
     </div>
 
@@ -69,15 +69,15 @@
 
             <div class="user_status">
                 <?php
-                    if(time()-strtotime($user->last_update)<120)
-                        echo '<div class="online"></div>';
-                    else
-                        echo '<div class="offline"></div>';
+                if(time()-strtotime($user->last_update)<10*60)
+                    echo '<div class="online"></div>';
+                else
+                    echo '<div class="offline"></div>';
                 ?>
             </div>
 
             <div class="user_name">
-                <?php echo $user->name.' '.$user->surname;?>
+                <?php echo CHtml::encode($user->name).' '.CHtml::encode($user->surname);?>
             </div>
 
             <?php
@@ -90,7 +90,7 @@
                     $field->value = Departments::model()->findByPk($field->value)->name;
 
                 if($field->field == 9)
-                    $field->value = '<a href="/users?group='.$field->value.'">'.$field->value.'</a>';
+                    $field->value = '<a href="/users?group='.$field->value.'"><b>'.$field->value.'</b></a>';
 
                 if($field->field == 10)
                     $field->value = date('d/m/Y',strtotime($field->value));
@@ -133,19 +133,19 @@
                 'header' => '',
             ));
 
-                foreach($wallRecords as $key=>$record)
-                    if(empty($authors[$record->user_from]))
-                        $authors[$record->user_from] = Users::model()->findByPk($record->user_from);
+            foreach($wallRecords as $key=>$record)
+                if(empty($authors[$record->user_from]))
+                    $authors[$record->user_from] = Users::model()->findByPk($record->user_from);
 
-                foreach($wallRecords as $key=>$record)
-                    $this->renderPartial('profile/wallRecord',array(
-                        'authors'=>$authors,
-                        'record'=>$record
-                    ));
+            foreach($wallRecords as $key=>$record)
+                $this->renderPartial('profile/wallRecord',array(
+                    'authors'=>$authors,
+                    'record'=>$record
+                ));
 
-                if (empty($wallRecords))
-                  echo Yii::t('profile', ($user->id == Yii::app()->user->id ? 'You' : 'User').' have no records yet.');
-                ?>
+            if (empty($wallRecords))
+                echo Yii::t('profile', ($user->id == Yii::app()->user->id ? 'You' : 'User').' have no records yet.');
+            ?>
 
         </div>
 

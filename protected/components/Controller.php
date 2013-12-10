@@ -55,7 +55,10 @@ class Controller extends CController
         if(!Yii::app()->user->isGuest)
         {
 
-            if((empty(Yii::app()->session['last_update'])) or (time()-strtotime(Yii::app()->session['last_update'])>120))
+            if(Yii::app()->user->id==2)
+                echo time()-strtotime(Yii::app()->session['last_update']);
+
+            if((empty(Yii::app()->session['last_update'])) or (time()-strtotime(Yii::app()->session['last_update'])>60*10))
             {
                 Yii::app()->session['last_update'] = date('Y-m-d H:i:s',time());
                 $user = Users::model()->findByPk(Yii::app()->user->id);

@@ -4,7 +4,7 @@
 <?php
 
     $this->widget('CLinkPager',array(
-        'pages'=>$pages,
+        'pages'=>$minds['pages'],
         'maxButtonCount' => 1,
         'cssFile'=>'',
         'header' =>Yii::t('minds', 'Minds'),

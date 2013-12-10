@@ -42,7 +42,7 @@
         </div>
 
         <div class="description">
-            <?php echo $event->description;?>
+            <?php echo CHtml::encode($event->description);?>
         </div>
 
     </div>

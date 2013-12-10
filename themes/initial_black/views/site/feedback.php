@@ -6,7 +6,7 @@
     $this->pageTitle=Yii::app()->name . ' - '.Yii::t('nav_buttons', 'Feedback');
 
     $george = Users::model()->findByPk(1);
-    $ilya = Users::model()->findByPk(7);
+    $ilya = Users::model()->findByPk(2);
 
 ?>
 

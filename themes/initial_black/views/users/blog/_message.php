@@ -1,5 +1,5 @@
 <?php $this->pageTitle .= $message->name;?>
-<a href="/blog/<?php echo $message->user;?>"><h1><?php echo Yii::t('blog', 'Blog of user ');?><?php echo $author->name.' '.$author->surname;?></h1></a>
+<a href="/blog/<?php echo $message->user;?>"><h1><?php echo Yii::t('blog', 'Blog of user ');?><?php echo CHtml::encode($author->name).' '.CHtml::encode($author->surname);?></h1></a>
 
 <div class="blog">
 
@@ -19,7 +19,7 @@
         ?>
 
         <div class="record_name">
-            <?php echo $message->name;?>
+            <?php echo CHtml::encode($message->name);?>
         </div>
 
         <?php

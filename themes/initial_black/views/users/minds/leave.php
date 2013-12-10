@@ -1,5 +1,5 @@
 <?php $this->pageTitle .= Yii::t('minds','Leave your mind');?>
-<h1><?php echo Yii::t('minds','Leave your mind about ').'<a href="/u'.$user->id.'">'.$user->name.' '.$user->surname.'</a>';?></h1>
+<h1><?php echo Yii::t('minds','Leave your mind about ').'<a href="/u'.$user->id.'">'.CHtml::encode($user->name).' '.CHtml::encode($user->surname).'</a>';?></h1>
 
 <div class="minds">
 

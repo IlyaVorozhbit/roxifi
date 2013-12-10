@@ -10,10 +10,10 @@
 <div class="blog">
     <div class="blog_record">
         <div class="record_name">
-            <a href="/blog/<?php echo $user->id;?>"><?php echo $user->name.' '.$user->surname;?></a>
+            <a href="/blog/<?php echo $user->id;?>"><?php echo CHtml::encode($user->name).' '.CHtml::encode($user->surname);?></a>
         </div>
         <div class="record_image">
-            <?php echo $image !== NULL ? '<a href="/bimages/'.$image->filename.'"><img style="max-width: 500px" src="/bimages/'.$image->filename.'"></a>' : ''; ?>
+            <?php echo $image !== NULL ? '<a href="/blog/'.$user->id.'"><img style="max-width: 500px" src="/bimages/'.$image->filename.'"></a>' : ''; ?>
         </div>
 
         <div class="record_post_time">

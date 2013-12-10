@@ -2,7 +2,7 @@
 
     <div class="user">
         <div class="name">
-            <a href="/u<?php echo $author->id?>"><?php echo $author->name.' '.$author->surname;?></a>
+            <a href="/u<?php echo $author->id?>"><?php echo CHtml::encode($author->name).' '.CHtml::encode($author->surname);?></a>
         </div>
     </div>
 
@@ -15,5 +15,5 @@
         ?>
     </div>
 
-    <?php echo $comment->text;?>
+    <?php echo CHtml::encode($comment->text);?>
 </div>

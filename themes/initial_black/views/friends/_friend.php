@@ -7,14 +7,14 @@
 <div class="friend" onclick="location.href='/u<?php echo $friend->id;?>'">
     <div class="user_status" style='float: left;'>
         <?php
-            if(time()-strtotime($friend->last_update)<120)
+            if(time()-strtotime($friend->last_update)<60*10)
                 echo '<div class="online" style="margin-right: 0px; margin-top: 15px;"></div>';
             else
                 echo '<div class="offline" style="margin-right: 0px; margin-top: 15px;"></div>';
         ?>
     </div>
     <div class="user_name">
-        <?php echo $fullname['name'].' '.$fullname['surname']?>
+        <?php echo CHtml::encode($fullname['name']).' '.CHtml::encode($fullname['surname'])?>
     </div>
     <div class="right_block">
         <a class="btn" href="/friends/del/<?php echo $friend->id?>"><?php echo Yii::t('friends', 'Delete friend')?></a>
