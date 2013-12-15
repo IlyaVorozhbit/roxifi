@@ -5,7 +5,7 @@
     </div>
 
     <div class="name">
-        <a href="/events/<?php echo $event->id;?>"><?php echo $event->name;?></a>.
+        <a href="/events/<?php echo $event->id;?>"><?php echo CHtml::encode($event->name);?></a>.
     </div>
 
 </div>

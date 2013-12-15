@@ -23,7 +23,7 @@
     <div class="folder">
 
         <div class="folder_name">
-            <?php echo $folder->name?>
+            <?php echo CHtml::encode($folder->name);?>
         </div>
 
         <?php

@@ -6,7 +6,7 @@
     preg_match('/^(\d{4})\-(\d{2})\-(\d{2})\s(\d{2}):(\d{2}):(\d{2})$/', $message->time, $arr);
     $time = $arr[4].':'.$arr[5].':'.$arr[6].', '.$arr[3].'.'.$arr[2].'.'.$arr[1];
     ?>
-    <a href="/u<?php echo $author->id;?>"><div class="user_name"><?php echo $author->name.' '.$author->surname;?></div></a>
+    <a href="/u<?php echo $author->id;?>"><div class="user_name"><?php echo CHtml::encode($author->name).' '.CHtml::encode($author->surname);?></div></a>
     <div class="time">
         <?php echo $time;?>
     </div>

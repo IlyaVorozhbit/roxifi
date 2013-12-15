@@ -3,6 +3,7 @@
     return array(
 
         'Blog' => 'Блог',
+        'Blogs' => 'Блоги',
         'Blog of user ' => 'Блог пользователя ',
         'Add' => 'Добавить',
         'Delete' => 'Удалить',

@@ -1,6 +1,6 @@
 <?php $this->pageTitle .= Yii::t('nav_buttons', 'People');?>
 
-<h1><?php echo Yii::t('friends', 'Friends of user ').'<a href="/u'.$user->id.'">'.$user->name. ' '.$user->surname?></a></h1>
+<h1><?php echo Yii::t('friends', 'Friends of user ').'<a href="/u'.$user->id.'">'.CHtml::encode($user->name). ' '.CHtml::encode($user->surname);?></a></h1>
 <div class='form'>
 
     <?php

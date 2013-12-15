@@ -1,6 +1,6 @@
 <div class="file">
     <div class="name">
-      <?php echo $file->name;?>
+      <?php echo CHtml::encode($file->name);?>
     </div>
     <div class="del_btn">
         <a href="/materials/DeleteFile/<?php echo $file->id?>" class="btn del_btn"><?php echo Yii::t('materials','Delete');?></a>

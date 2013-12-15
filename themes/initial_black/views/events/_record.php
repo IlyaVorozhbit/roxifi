@@ -9,7 +9,7 @@
 <div class="record">
     <div class="user_status">
         <?php
-        echo time()-strtotime($author->last_update) < 120 ? '<div class="online"></div>' : '<div class="offline"></div>';
+        echo time()-strtotime($author->last_update) < 60*10 ? '<div class="online"></div>' : '<div class="offline"></div>';
         ?>
     </div>
     <div class="wall_record_avatar">
@@ -17,10 +17,10 @@
     </div>
     <div class="wall_record_right_block">
         <div class="wall_record_username">
-            <a href="/u<?php echo $record->user;?>"><?php echo $author->name.' '.$author->surname;?></a>, <!--сегодня в--> <?php echo $time;?>.
+            <a href="/u<?php echo $record->user;?>"><?php echo CHtml::encode($author->name).' '.CHtml::encode($author->surname);?></a>, <!--сегодня в--> <?php echo $time;?>.
         </div>
         <div class="text">
-            <?php echo $record->text;
+            <?php echo CHtml::encode($record->text);
             echo ($record->user == Yii::app()->user->id || $owner == Yii::app()->user->id) ?
                 '<a href="/events/deletewallrecord/'.$record->id.'"><img style="height: 30px; width: 30px;" src="/images/delete.png" align="right"/></a>' : '';
             ?>

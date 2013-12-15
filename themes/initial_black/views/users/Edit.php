@@ -87,6 +87,8 @@
                 {
                     if($key==$model->value)
                         $gender_select .= '<option selected value='.$key.'>'.$entity.'</option>';
+                    else
+                        $gender_select .= '<option value='.$key.'>'.$entity.'</option>';
                 }
 
                 else
@@ -100,6 +102,7 @@
         elseif($field->name=='birthday')
         {
             $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+                'language'=>'ru',
                 'value'=>$model->value,
                 'model'=>$model, 'name'=>'Infos['.$field->id.']',
                 'options'=>array(
@@ -120,6 +123,8 @@
                 {
                     if($key==$model->value)
                         $departments_select .= '<option selected value='.$key.'>'.$department.'</option>';
+                    else
+                        $departments_select .= '<option value='.$key.'>'.$department.'</option>';
                 }
 
                 else

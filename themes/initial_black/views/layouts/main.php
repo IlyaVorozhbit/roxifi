@@ -3,19 +3,18 @@
 <head>
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css" />
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAA
+AAAAAAAAAAAASVKXAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARAAAAEQAAABEAAAERAAAAEQAAERAAAAARAAAR
+AAAAABEAARAAAAAAEQAREAAAAAAREREREAAAABERERERAAAAEQAAABEAAAARAAAAEQAAABEAAAAR
+AAAAEREREREAAAABEREREAAAAAAAAAAAAAD//wAA//8AAM/PAADPjwAAzx8AAM8/AADOfwAAzH8A
+AMAfAADADwAAz88AAM/PAADPzwAAwA8AAOAfAAD//wAA" rel="shortcut icon" type="image/x-icon" />
 </head>
 
 <body>
 
 <div class="logo">
-    <?php
-        $url = '/';
-
-        if(!Yii::app()->user->isGuest)
-            $url = '/u'.Yii::app()->user->id;
-    ?>
-    <a href="<?php echo $url;?>">roxifi</a> <div class="alpha">alpha</div>
+    <a href="/">roxifi</a> <div class="alpha">alpha</div>
 </div>
 
 
