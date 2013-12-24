@@ -39,7 +39,7 @@ class MaterialsFiles extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, folder, user, file, name, description, time', 'safe', 'on'=>'search'),
-            array('F', 'file'),
+      array('F', 'file', 'types'=>'jpg, gif, png, doc, txt, docx, pdf, rtf, odt, xls, psd, zip, rar, tgz, f90, m, tif, jpeg, tga, bmp, c, cpp, h'),
 		);
 	}
 
